@@ -904,7 +904,7 @@
 }
 
 .section1-4 {
-  margin-top: 90px;
+  margin-top: 100px;
   .header {
     display: flex;
     gap: 5px;
@@ -918,6 +918,7 @@
     overflow: hidden;
   }
   @media screen and (min-width: 1800px) {
+    margin-top: 120px;
     p {
       font-size: 30px;
     }
@@ -944,7 +945,7 @@
         input {
           border: none;
           background-color: #212121;
-          padding: 10px 80px 10px 10px;
+          padding: 10px 70px 10px 10px;
           outline: none;
         }
         ::placeholder {
@@ -1050,6 +1051,9 @@
 
 //section 2
 .section2-4 {
+  img{
+    width: 100%;
+  }
   margin-top: 20px;
   margin-bottom: 20px;
   .gresole {
@@ -1069,6 +1073,12 @@
     font-size: 20px;
   }
   @media screen and (min-width: 1800px) {
+    h4{
+      font-size: 30px;
+    }
+    p{
+      font-size: 25px;
+    }
   }
 }
 
@@ -1120,6 +1130,7 @@
 
 //section 6
 .section5-4 {
+  margin-bottom: 20px;
   .card {
       h3 {
         overflow: hidden;
@@ -1135,6 +1146,11 @@
         display: flex;
         gap: 10px;
         .card {
+          &:hover{
+            .clickbtn{
+              display: flex;
+            }
+          }
           .card-body {
             width: 100%;
             img {
@@ -1154,18 +1170,56 @@
               }
             }
           }
+          .clickbtn{
+            display: none;
+            gap: 5px;
+            margin-bottom: 15px;
+            button{
+              display: flex;
+              gap: 3px;
+              outline: none;
+              border-radius: 5px;
+              padding: 3px 5px;
+              margin-left: 3px;
+              border: 1px solid #bd3a3a;
+            }              
+            img{
+              width: 22%;
+              margin-top: 4px;
+            }
+            .wishlist{
+              background: transparent;
+              color: #bd3a3a;
+            }
+            .buynow{
+              background: #bd3a3a;
+              color: white;
+            }
+          }
         }
       }
     }
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     display: none;    
+  }
+  @media screen and (min-width: 1000px) and (max-width: 1310px) {
+    .card{
+      .card-body{
+        .starlight{
+          flex-wrap: wrap;
+        }
+      }
+    }   
   }
   @media screen and (min-width: 1800px) {
     font-size: 25px;
     .card{
+      margin-bottom: 20px;
       .card-body{
        margin-left: 25px;
+       justify-content: center;
+       margin-bottom: 10px;
       }
     }    
   }
@@ -1173,7 +1227,9 @@
 
 //section 5-md
 .section5-4-md{
+  margin-bottom: 20px;
   .card {
+
     h3 {
       overflow: hidden;
       margin-top: 10px;
@@ -1188,6 +1244,11 @@
     .carousel-inner{
       .carousel-item{
       .card{
+        &:hover{
+          .clickbtn{
+            display: flex;
+          }
+        }
         .card-body{
           img{
             width: 100%;
@@ -1206,12 +1267,246 @@
             }
           }
         }
+        .clickbtn{
+          display: none;
+          gap: 5px;
+          margin-bottom: 15px;
+          button{
+            display: inline-block;
+            width: 100%;
+            gap: 3px;
+            outline: none;
+            border-radius: 5px;
+            padding: 3px 5px;
+            margin-left: 3px;
+            border: 1px solid #bd3a3a;
+            font-size: 20px;
+          }              
+          img{
+            width: 15%;
+            margin-top: 4px;
+          }
+          .wishlist{
+            background: transparent;
+            color: #bd3a3a;
+          }
+          .buynow{
+            background: #bd3a3a;
+            color: white;
+          }
+        }
       }
     }
     }
 }
   @media screen and (min-width:992px) {
-    display: none;    
+    display: none;
   }
 }
 
+//section 5
+.section1-5 {
+  margin-top: 100px;
+  .header {
+    display: flex;
+    gap: 5px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  h1 {
+    font-weight: 800;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 1800px) {
+    margin-top: 120px;
+    p {
+      font-size: 30px;
+    }
+    h1 {
+      font-weight: 800;
+    }
+  }
+}
+
+.section2-5{
+  img{
+  width: 100%;
+}
+}
+
+.section3-5{
+  margin-top: 20px;
+  margin-bottom: 20px;
+    .row{
+      .godfather{
+        display: flex;
+        align-items: center !important;
+        gap: 5px;
+        margin-bottom: 10px;
+        img{
+          width: 30%;
+          height: 40%;
+        }
+        .words{
+          h3{
+            overflow: hidden;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+
+        }
+      }
+    }
+    @media screen and (max-width:994px){
+      font-size: 20px;      
+    }
+    @media screen and (min-width: 1800px) {
+      font-size: 25px;      
+    }
+}
+
+//section 4-5
+.section4-5{
+  margin-top: 10px;
+  h3{
+    overflow: hidden;
+    font-weight: 700;
+  }
+  .detailsof{
+    .blake{
+      input{
+        border-color: red ;
+        background-color: transparent;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 10px;
+      }
+    }
+  }
+  .detailsof1{
+    input{
+      border-color: red;
+      background-color: transparent;
+      padding: 10px 0;
+        width: 100%;
+        border-radius: 10px;      
+    }
+  }
+  .rsub{
+    width: 100%;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    padding: 10px 0;
+  }
+  @media screen and (max-width: 500px) {
+    .detailsof{
+      .blake{
+        input{
+          border-color: red ;
+          background-color: transparent;
+          border-radius: 10px;
+        }
+      }
+    }
+    .detailsof1{
+      input{
+        border-color: red;
+        background-color: transparent;
+          border-radius: 10px;      
+      }
+    }
+    .rsub{
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: 500px) and (max-width: 1250px) {
+
+    .detailsof{
+      font-size: 20px;
+      .blake{
+        input{
+          border-color: red ;
+          background-color: transparent;
+          border-radius: 10px;
+        }
+      }
+    }
+    .detailsof1{
+      font-size: 20px;
+      input{
+        border-color: red;
+        background-color: transparent;
+          border-radius: 10px;      
+      }
+    }
+    .rsub{
+      font-size: 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.section2-6{
+  .card{
+    .card-body{
+      h3{
+        overflow: hidden;
+      }
+      fieldset {
+        border: 1px solid #5A5B6A;
+        margin-top: 10px;
+        width: 27%;
+        border-radius: 5px;
+        padding-left: 18px;
+        padding-right: 81px;
+        margin-left: 73%;
+        margin-top: 20px;
+      }
+      legend {
+        font-size: 12px;
+        padding-left: 10px;
+        font-weight: 700;
+        color: #5A5B6A;
+      }
+      select {
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+        color: #5A5B6A;
+        font-weight: 600;
+      }
+      @media screen and (min-width: 786px) and (max-width:997px) {
+        fieldset{
+          width: 100%;
+          margin-left: 0;
+          padding-left: 10px;
+          padding-right: 600px;
+        }
+      }
+      @media screen and (max-width: 785px) {
+        fieldset{
+          width: 50%;
+          margin-left: 0;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}

@@ -855,7 +855,7 @@
 }
 
 .section1-4 {
-  margin-top: 90px;
+  margin-top: 100px;
 }
 .section1-4 .header {
   display: flex;
@@ -870,6 +870,9 @@
   overflow: hidden;
 }
 @media screen and (min-width: 1800px) {
+  .section1-4 {
+    margin-top: 120px;
+  }
   .section1-4 p {
     font-size: 30px;
   }
@@ -895,7 +898,7 @@
 .footer .row .form-email .formnum input {
   border: none;
   background-color: #212121;
-  padding: 10px 80px 10px 10px;
+  padding: 10px 70px 10px 10px;
   outline: none;
 }
 .footer .row .form-email .formnum ::placeholder {
@@ -988,6 +991,9 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.section2-4 img {
+  width: 100%;
+}
 .section2-4 .gresole {
   display: flex;
   gap: 40px img;
@@ -1003,6 +1009,15 @@
   width: 100%;
   font-size: 20px;
 }
+@media screen and (min-width: 1800px) {
+  .section2-4 h4 {
+    font-size: 30px;
+  }
+  .section2-4 p {
+    font-size: 25px;
+  }
+}
+
 .section3-4 h1 {
   overflow: hidden;
   font-weight: 800;
@@ -1047,6 +1062,9 @@
   }
 }
 
+.section5-4 {
+  margin-bottom: 20px;
+}
 .section5-4 .card h3 {
   overflow: hidden;
   margin-top: 10px;
@@ -1059,6 +1077,9 @@
 .section5-4 .card .card-body .mentos {
   display: flex;
   gap: 10px;
+}
+.section5-4 .card .card-body .mentos .card:hover .clickbtn {
+  display: flex;
 }
 .section5-4 .card .card-body .mentos .card .card-body {
   width: 100%;
@@ -1077,20 +1098,59 @@
 .section5-4 .card .card-body .mentos .card .card-body .starlight .imgs img {
   width: auto;
 }
-@media screen and (max-width: 1200px) {
+.section5-4 .card .card-body .mentos .card .clickbtn {
+  display: none;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+.section5-4 .card .card-body .mentos .card .clickbtn button {
+  display: flex;
+  gap: 3px;
+  outline: none;
+  border-radius: 5px;
+  padding: 3px 5px;
+  margin-left: 3px;
+  border: 1px solid #bd3a3a;
+}
+.section5-4 .card .card-body .mentos .card .clickbtn img {
+  width: 22%;
+  margin-top: 4px;
+}
+.section5-4 .card .card-body .mentos .card .clickbtn .wishlist {
+  background: transparent;
+  color: #bd3a3a;
+}
+.section5-4 .card .card-body .mentos .card .clickbtn .buynow {
+  background: #bd3a3a;
+  color: white;
+}
+@media screen and (max-width: 1000px) {
   .section5-4 {
     display: none;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1310px) {
+  .section5-4 .card .card-body .starlight {
+    flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 1800px) {
   .section5-4 {
     font-size: 25px;
   }
+  .section5-4 .card {
+    margin-bottom: 20px;
+  }
   .section5-4 .card .card-body {
     margin-left: 25px;
+    justify-content: center;
+    margin-bottom: 10px;
   }
 }
 
+.section5-4-md {
+  margin-bottom: 20px;
+}
 .section5-4-md .card h3 {
   overflow: hidden;
   margin-top: 10px;
@@ -1099,6 +1159,9 @@
 .section5-4-md .card .candy {
   color: red;
   padding: 1px 30px;
+}
+.section5-4-md .carousel .carousel-inner .carousel-item .card:hover .clickbtn {
+  display: flex;
 }
 .section5-4-md .carousel .carousel-inner .carousel-item .card .card-body img {
   width: 100%;
@@ -1114,9 +1177,220 @@
 .section5-4-md .carousel .carousel-inner .carousel-item .card .card-body .starlight .imgs img {
   width: auto;
 }
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn {
+  display: none;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn button {
+  display: inline-block;
+  width: 100%;
+  gap: 3px;
+  outline: none;
+  border-radius: 5px;
+  padding: 3px 5px;
+  margin-left: 3px;
+  border: 1px solid #bd3a3a;
+  font-size: 20px;
+}
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn img {
+  width: 15%;
+  margin-top: 4px;
+}
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn .wishlist {
+  background: transparent;
+  color: #bd3a3a;
+}
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn .buynow {
+  background: #bd3a3a;
+  color: white;
+}
 @media screen and (min-width: 992px) {
   .section5-4-md {
     display: none;
+  }
+}
+
+.section1-5 {
+  margin-top: 100px;
+}
+.section1-5 .header {
+  display: flex;
+  gap: 5px;
+}
+.section1-5 .header a {
+  text-decoration: none;
+  color: black;
+}
+.section1-5 h1 {
+  font-weight: 800;
+  overflow: hidden;
+}
+@media screen and (min-width: 1800px) {
+  .section1-5 {
+    margin-top: 120px;
+  }
+  .section1-5 p {
+    font-size: 30px;
+  }
+  .section1-5 h1 {
+    font-weight: 800;
+  }
+}
+
+.section2-5 img {
+  width: 100%;
+}
+
+.section3-5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.section3-5 .row .godfather {
+  display: flex;
+  align-items: center !important;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.section3-5 .row .godfather img {
+  width: 30%;
+  height: 40%;
+}
+.section3-5 .row .godfather .words h3 {
+  overflow: hidden;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 994px) {
+  .section3-5 {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .section3-5 {
+    font-size: 25px;
+  }
+}
+
+.section4-5 {
+  margin-top: 10px;
+}
+.section4-5 h3 {
+  overflow: hidden;
+  font-weight: 700;
+}
+.section4-5 .detailsof .blake input {
+  border-color: red;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.section4-5 .detailsof1 input {
+  border-color: red;
+  background-color: transparent;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 10px;
+}
+.section4-5 .rsub {
+  width: 100%;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  padding: 10px 0;
+}
+@media screen and (max-width: 500px) {
+  .section4-5 .detailsof .blake input {
+    border-color: red;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+  .section4-5 .detailsof1 input {
+    border-color: red;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+  .section4-5 .rsub {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 1250px) {
+  .section4-5 .detailsof {
+    font-size: 20px;
+  }
+  .section4-5 .detailsof .blake input {
+    border-color: red;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+  .section4-5 .detailsof1 {
+    font-size: 20px;
+  }
+  .section4-5 .detailsof1 input {
+    border-color: red;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+  .section4-5 .rsub {
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.section2-6 .card .card-body h3 {
+  overflow: hidden;
+}
+.section2-6 .card .card-body fieldset {
+  border: 1px solid #5A5B6A;
+  margin-top: 10px;
+  width: 27%;
+  border-radius: 5px;
+  padding-left: 18px;
+  padding-right: 81px;
+  margin-left: 73%;
+  margin-top: 20px;
+}
+.section2-6 .card .card-body legend {
+  font-size: 12px;
+  padding-left: 10px;
+  font-weight: 700;
+  color: #5A5B6A;
+}
+.section2-6 .card .card-body select {
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  color: #5A5B6A;
+  font-weight: 600;
+}
+@media screen and (min-width: 786px) and (max-width: 997px) {
+  .section2-6 .card .card-body fieldset {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 600px;
+  }
+}
+@media screen and (max-width: 785px) {
+  .section2-6 .card .card-body fieldset {
+    width: 50%;
+    margin-left: 0;
+    padding-left: 10px;
   }
 }
 
