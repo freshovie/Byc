@@ -794,12 +794,9 @@
 .section4-2 {
   margin-top: 40px;
   margin-bottom: 20px;
-  align-items: center;
 }
-@media screen and (min-width: 1800px) {
-  .section4-2 {
-    font-size: 30px;
-  }
+.section4-2 .pagination .page-item .page-link {
+  color: black;
 }
 
 .section1-3 {
@@ -1352,24 +1349,27 @@
   }
 }
 
+.section2-6 .card .card-body {
+  display: flexbox;
+}
 .section2-6 .card .card-body h3 {
   overflow: hidden;
 }
 .section2-6 .card .card-body fieldset {
   border: 1px solid #5A5B6A;
-  margin-top: 10px;
-  width: 27%;
+  width: 50%;
   border-radius: 5px;
-  padding-left: 18px;
-  padding-right: 81px;
-  margin-left: 73%;
+  padding-left: 20px;
+  padding-right: 115px;
   margin-top: 20px;
+  margin-left: 230px;
 }
 .section2-6 .card .card-body legend {
-  font-size: 12px;
-  padding-left: 10px;
-  font-weight: 700;
   color: #5A5B6A;
+  display: block;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: none;
 }
 .section2-6 .card .card-body select {
   border: none;
@@ -1377,6 +1377,28 @@
   margin-bottom: 10px;
   color: #5A5B6A;
   font-weight: 600;
+}
+@media screen and (max-width: 530px) {
+  .section2-6 .card .card-body fieldset {
+    margin-left: 66%;
+    padding-left: 10px;
+    padding-right: 29px;
+    width: 30% !important;
+  }
+  .section2-6 .card .card-body legend {
+    font-size: 10px;
+  }
+  .section2-6 .card .card-body select {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .section2-6 .card .card-body fieldset {
+    margin-left: 91%;
+    padding-left: 14px;
+    padding-right: 49px;
+    width: 7% !important;
+  }
 }
 @media screen and (min-width: 786px) and (max-width: 997px) {
   .section2-6 .card .card-body fieldset {
@@ -1392,6 +1414,39 @@
     margin-left: 0;
     padding-left: 10px;
   }
+}
+
+.section4-7 .container {
+  display: flex;
+  justify-content: end;
+}
+.section4-7 .container .row {
+  display: flex;
+}
+.section4-7 .container .row .card {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 0px;
+  font-size: 25px;
+  box-shadow: inset;
+}
+
+.section4-8 {
+  margin-top: 30rem;
+  margin-bottom: 20px;
+}
+.section4-8 .pagination .page-item .page-link {
+  color: black;
+}
+
+.section1-8 .header {
+  margin-top: 80px;
+  display: flex;
+}
+.section1-8 .header a {
+  text-decoration: none;
+  color: #909090;
 }
 
 /*# sourceMappingURL=style.css.map */

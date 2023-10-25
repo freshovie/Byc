@@ -845,11 +845,14 @@
 .section4-2 {
   margin-top: 40px;
   margin-bottom: 20px;
-  align-items: center;
-  @media screen and (min-width: 1800px) {
-    font-size: 30px;
+    .pagination{
+      .page-item{
+        .page-link{
+          color: black
+        }
+      }
+    }
   }
-}
 
 .section1-3 {
   margin-top: 90px;
@@ -1466,24 +1469,26 @@
 .section2-6{
   .card{
     .card-body{
+      display: flexbox;
       h3{
         overflow: hidden;
       }
       fieldset {
         border: 1px solid #5A5B6A;
-        margin-top: 10px;
-        width: 27%;
+        // margin-top: 10px;
+        width: 50%;
         border-radius: 5px;
-        padding-left: 18px;
-        padding-right: 81px;
-        margin-left: 73%;
+        padding-left: 20px;
+        padding-right: 115px;
         margin-top: 20px;
+        margin-left: 230px;
       }
       legend {
-        font-size: 12px;
-        padding-left: 10px;
-        font-weight: 700;
         color: #5A5B6A;
+        display: block;
+        padding-left: 2px;
+        padding-right: 2px;
+        border: none;
       }
       select {
         border: none;
@@ -1491,6 +1496,28 @@
         margin-bottom: 10px;
         color: #5A5B6A;
         font-weight: 600;
+      }
+      @media screen and (max-width: 530px) {
+        fieldset {
+          margin-left: 66%;
+          padding-left: 10px;
+          padding-right: 29px;
+          width: 30% !important;
+        }
+        legend {
+          font-size: 10px;
+        }
+        select {
+          font-size: 14px;
+        }
+      }
+      @media screen and (min-width: 2000px) {
+        fieldset {
+          margin-left: 91%;
+          padding-left: 14px;
+          padding-right: 49px;
+          width: 7% !important;
+        }
       }
       @media screen and (min-width: 786px) and (max-width:997px) {
         fieldset{
@@ -1510,3 +1537,44 @@
     }
   }
 }
+
+.section4-7{
+  .container{
+    display: flex;
+    justify-content: end;
+    .row{
+      display: flex;
+      .card{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        gap: 0px;
+        font-size: 25px;
+        box-shadow: inset;
+      }
+    }
+  }
+}
+
+.section4-8 {
+  margin-top: 30rem;
+  margin-bottom: 20px;
+    .pagination{
+      .page-item{
+        .page-link{
+          color: black
+        }
+      }
+    }
+  }
+
+  .section1-8{
+    .header{
+      margin-top: 80px;
+      display: flex;
+      a {
+        text-decoration: none;
+        color: #909090;
+      }
+    }
+  }
