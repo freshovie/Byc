@@ -1,184 +1,358 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-<title>Blog</title>
+
+    <title>Cart</title>
 </head>
 <body>
 
     <!-- large view -->
 <div class="navl fixed-top ">
-<div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-1"></div>
-    <div class="col-sm-12 col-md-12 col-lg-10">
-        
-            <nav class="navbar navbar-expand-lg navbar-light">
-
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Shop Products <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active">
-                      <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active">
-                      <a class="nav-link" href="#">FAQ <span class="sr-only">(current)</span></a>
-                  </li>
-                </ul>
-                
-                <img src="./assets/BYC LOGO JPG FILE 1.png" alt="" class="mt-1">
-              
-              <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active mr-3">
-                      <a class="nav-link" href="#">Contacts <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active">
-                      <img src="./assets/ant-design_search-outlined.png" alt="" class="navimg mr-3">
-                  </li>
-                  <li class="nav-item active">
-                      <img src="./assets/ant-design_user-outlined.png" alt="" class="navimg mr-3">
-                  </li>
-                  <li class="nav-item active">
-                      <img src="./assets/akar-icons_heart.png" alt="" class="navimg mr-3">
-                  </li>
-                  <li class="nav-item active">
-                      <img src="./assets/ant-design_shopping-cart-outlined.png" alt="" class="navimg">
-                  </li>
-                </ul>
-             
-          </nav>
-        
-
-    </div>
-    <div class="col-sm-12 col-md-12 col-lg-1"></div>
-</div>
-</div> 
-
-<!-- mobile view -->
-
-<div class="navs fixed-top bg-light">
-<div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-1"></div>
-    <div class="col-sm-12 col-md-12 col-lg-10">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light">
-            <a class="navbar-brand" href="#">
-              <img src="./assets/BYC LOGO JPG FILE 1.png" alt="" class="mt-2">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Shop Product <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">FAQ <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
-                </li>
-                <div class="d-flex">
-                    <li class="nav-item active">
-                        <img src="./assets/ant-design_search-outlined.png" alt="" class="navimg mr-3">
-                    </li>
-                    <li class="nav-item active">
-                        <img src="./assets/ant-design_user-outlined.png" alt="" class="navimg mr-3">
-                    </li>
-                    <li class="nav-item active">
-                        <img src="./assets/akar-icons_heart.png" alt="" class="navimg mr-3">
-                    </li>
-                    <li class="nav-item active">
-                        <img src="./assets/ant-design_shopping-cart-outlined.png" alt="" class="navimg">
-                    </li>
-                </div>
-            </div>
-          </nav>
-    </div>
-    <div class="col-sm-12 col-md-12 col-lg-1"></div>
-</div>
-</div> 
-
-
-<section>
-    <div class="section1-8">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-1"></div>
             <div class="col-sm-12 col-md-12 col-lg-10">
-                <div class="header">
-                                <p><a href="/index.html">Home</a></p>
-                                <p><a href="">> Women</a></p>
-                                <p>> camosle</p>
-                            </div>                            
+                
+                    <nav class="navbar navbar-expand-lg navbar-light">
+        
+                        <ul class="navbar-nav mr-auto">
+                          <li class="nav-item active">
+                            <a class="nav-link" href="/Homepage.html">Shop Products <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item active">
+                              <a class="nav-link" href="/Blog1.html">Blog <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item active">
+                              <a class="nav-link" href="#">FAQ <span class="sr-only">(current)</span></a>
+                          </li>
+                        </ul>
+                        
+                        <a href="/Homepage.html"><img src="./assets/BYC LOGO JPG FILE 1.png" alt="" class="mt-1"></a>
+                      
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item active">
+                            <a class="nav-link" href="/Aboutus.html">About Us <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item active mr-3">
+                              <a class="nav-link" href="/contactpage.html">Contacts <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item active">
+                              <img src="./assets/ant-design_search-outlined.png" alt="" class="navimg mr-3">
+                          </li>
+                          <li class="nav-item active">
+                              <img src="./assets/ant-design_user-outlined.png" alt="" class="navimg mr-3">
+                          </li>
+                          <li class="nav-item active">
+                              <img src="./assets/akar-icons_heart.png" alt="" class="navimg mr-3">
+                          </li>
+                          <li class="nav-item active">
+                              <img src="./assets/ant-design_shopping-cart-outlined.png" alt="" class="navimg">
+                          </li>
+                        </ul>
+                     
+                  </nav>
+                
+        
             </div>
             <div class="col-sm-12 col-md-12 col-lg-1"></div>
+        </div>
+        </div> 
+        
+        <!-- mobile view -->
+        
+<div class="navs fixed-top bg-light">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-1"></div>
+            <div class="col-sm-12 col-md-12 col-lg-10">
+                <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+                    <a class="navbar-brand" href="/Homepage.html">
+                      <img src="./assets/BYC LOGO JPG FILE 1.png" alt="" class="mt-2">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="/Homepage.html">Shop Product <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Blog1.html">Blog <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">FAQ <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Aboutus.html">About Us <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/contactpage.html">Contact<span class="sr-only">(current)</span></a>
+                        </li>
+                        <div class="d-flex">
+                            <li class="nav-item active">
+                                <img src="./assets/ant-design_search-outlined.png" alt="" class="navimg mr-3">
+                            </li>
+                            <li class="nav-item active">
+                                <img src="./assets/ant-design_user-outlined.png" alt="" class="navimg mr-3">
+                            </li>
+                            <li class="nav-item active">
+                                <img src="./assets/akar-icons_heart.png" alt="" class="navimg mr-3">
+                            </li>
+                            <li class="nav-item active">
+                                <img src="./assets/ant-design_shopping-cart-outlined.png" alt="" class="navimg">
+                            </li>
+                        </div>
+                    </div>
+                  </nav>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-1"></div>
+        </div>
+        </div> 
+
+        <!--section 1-->
+<section>
+    <div class="section1-5">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-1"></div> 
+            <div class="col-sm-12 col-md-12 col-lg-10">
+                <div class="header">
+                <p><a href="/index.html">Home</a></p>
+                
+                <p> > Men</p>
+
+                <p style="color: red;"> > cart</p>
+            
+            </div>
+            </div> 
+            <div class="col-sm-12 col-md-12 col-lg-1"></div> 
         </div>
     </div>
 </section>
 
-<!--section 2-->
+<!--Section 2-->
 <section>
-    <div class="section2-6">
+    <div class="section1-10">
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-1"></div>
-            <div class="col-sm-12 col-md-12 col-lg-10">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="ohno d-flex">
-                            <h3><strong>All Products</strong></h3>
-                            <form action="">
-                                <fieldset class="border p-2 ml-auto">
-                                    <legend  class="w-auto">SORT BY</legend>
-                                    <select name="" id="">
-                                        <option value="">Most Sold</option>
-                                        <option value="">Recents</option>
-                                        <option value="">Popular</option>
-                                    </select>
-                                 </fieldset>
-                            </form>
+        <div class="col-sm-12 col-md-12 col-lg-1"></div> 
+        <div class="col-sm-12 col-md-12 col-lg-10">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                   
+                    <!-- Container for the image gallery -->
+<!-- Container for the image gallery -->
+<div class="containerr">
+
+    <!-- Full-width images with number text -->
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+        <img src="./Assets/Image 1.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+        <img src="./Assets/Image 2.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+        <img src="./Assets/Image 1.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+        <img src="./Assets/Image 2.png" style="width:100%">
+    </div>
+  
+    <!-- <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+        <img src="./Assets/Image 1.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+        <img src="./Assets/Image 2.png" style="width:100%">
+    </div> -->
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Thumbnail images -->
+    <div class="roww">
+      <div class="columnn">
+        <img class="demo cursor" src="./Assets/Image 1.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      </div>
+      <div class="columnn">
+        <img class="demo cursor" src="./Assets/Image 2.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+      </div>
+      <div class="columnn">
+        <img class="demo cursor" src="./Assets/Image 3.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      </div>
+      <div class="columnn">
+        <img class="demo cursor" src="./Assets/Image 4.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      </div>
+      <!-- <div class="columnn">
+        <img class="demo cursor" src="./Assets/Image 1.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+      </div>
+      <div class="columnn">
+        <img class="demo cursor" src="./Assets/Image 2.png" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+      </div> -->
+    </div>
+  </div>
+  
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="face-place">
+                        <h3>MEN BOXER</h3>
+                    <h3>BYC 1166</h3>
+                    <p style="font-weight: 400;">100% Cotton 12 Pieces Of Mens Boxer</p>
+                    <div class="starlight">
+                        <div class="imgs">
+                        <img src="/Assets/star.png" alt="">
+                        <img src="/Assets/star.png" alt="">
+                        <img src="/Assets/star.png" alt="">
+                        <img src="/Assets/star.png" alt="">
+                        <img src="/Assets/star-half.png" alt=""> 
+                       </div>
+                       <p style="color: grey;">4.05</p>
+                    </div>
+                    <img src="/Assets/Rectangle small.png" alt="">
+                    <h3>₦2,800.00</h3>
+                    <div class="availables">
+                        <div class="sizes">
+                            <p>Availables Sizes</p>
+                            <div class="farewell">
+                                <div class="card">
+                                    <div class="card-body">S</div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">M</div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">L</div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">XL</div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="colors">
+                            <p class="text-center">Available Colours</p>
+                            <div class="farewell1">
+                                <div class="card">
+                                    <div class="card-body" style="background-color: #3870c4;"></div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body" style="background-color: #ff05e6;"></div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body" style="background-color: #fb8200;"></div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body" style="background-color: #000;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="crement">
+                        <button>1</button>
+                        
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-1"></div>            
-        </div>
+        </div> 
+        <div class="col-sm-12 col-md-12 col-lg-1"></div>         
+    </div>
     </div>
 </section>
 
 <!--Section 3-->
 <section>
-    <div class="section4-7">
-        <div class="container">
-            <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-1"></div>
-        <div class="col-sm-12 col-md-12 col-lg-10">
-            <div class="card">
-                <div class="card-body bg-secondary">
-                    <div class="card bg-secondary">
-                <i class='bx bxs-grid-alt'></i>
-            </div>
-            </div>
-            <div class="card-body">
-                <div class="card">
-                <i class='bx bx-list-ul'></i>
-            </div>
-            </div>
-            </div>
-            </div>
-                <div class="col-sm-12 col-md-12 col-lg-1"></div>
+    <div class="section2-10">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-1"></div> 
+            <div class="col-sm-12 col-md-12 col-lg-10">
+               <div class="card">
+                <div class="card-body">
+                    <h2>Product Description</h2>  
+                    <p>This set of boxers will make you feel comfortable. The hem doesn't ravel. It is made from cotton which allows aeration around your body. It suitable for both adults and teenagers. 
+                        These pair of boxers give good fit and sits appropriately, they ensure there is no unsightly bulge and they also give support to an important part of your body, which overall improves 
+                        your confidence. It has a comfortable cotton material. It comes in different beautiful colors and patterns.  It has cool and comfortable fit with flexible hem that doesn't ravel and comes 
+                        tag -free for maximum comfort. Soft breathable fabric for air movement and forms to your body for best Fit.</p> 
+                        <p>It is made of 100% premium cotton and is perfect for crotch, so you don't have to worry about ugly bumps.</p>
+                        <p>For pure organic softness and premium lingerie support, pair this four-in-one suit with yourself or the special man in your life.</p>                
                 </div>
+                </div>
+               </div> 
+            <div class="col-sm-12 col-md-12 col-lg-1"></div> 
+</section>
+
+<!--Section 4-->
+<section>
+    <div class="section3-10">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-1"></div>
+            <div class="col-sm-12 col-md-12 col-lg-10">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Customer Reviews</h2>
+                        <img src="/Assets/Rectangle small.png" alt="">
+                        <p>PRODUCT RATINGS (1129)</p>
+                        <div class="emmet">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p><span>4.5</span>/5.0</p>
+                                    <div class="imgs">
+                                        <img src="/Assets/star.png" alt="">
+                               <img src="/Assets/star.png" alt="">
+                               <img src="/Assets/star.png" alt="">
+                               <img src="/Assets/star.png" alt="">
+                               <img src="/Assets/star-half.png" alt=""> 
+                                   </div>                                
+                                </div>
+                            </div>
+                                <div class="p-ratings">
+                                    <div class="ratings">
+                                        <img src="/Assets/star.png" alt="">
+                                        <p>5</p>
+                                        <img src="/Assets/Group 33.png" alt="">
+                                    </div>
+                                    <div class="ratings">
+                                        <img src="/Assets/star.png" alt="">
+                                        <p>4</p>
+                                        <img src="/Assets/Group 32.png" alt="">
+                                    </div>
+                                    <div class="ratings">
+                                        <img src="/Assets/star.png" alt="">
+                                        <p>3</p>
+                                        <img src="/Assets/Group 34.png" alt="">
+                                    </div>
+                                    <div class="ratings">
+                                        <img src="/Assets/star.png" alt="">
+                                        <p>2</p>
+                                        <img src="/Assets/Group 35.png" alt="">
+                                    </div>
+                                    <div class="ratings">
+                                        <img src="/Assets/star.png" alt="">
+                                        <p>1</p>
+                                        <img src="/Assets/Group 36.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-1"></div>
         </div>
-    </div>
 </section>
 
 <!--section 6-->
@@ -529,8 +703,7 @@
     </div>
 </section>
 
-
-<!--Footer-->
+        <!--Footer-->
 <footer>
     <div class="footer-wrapper">
         <div class="row">
@@ -540,7 +713,7 @@
             <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8">
               <div class="footer-section">
-                <nav class="footer-nav">
+                <nav class="footer-nav text-center">
                   <div>
                     <h3>Company Info</h3>
                     <ul>
@@ -576,7 +749,7 @@
             </div>
             <div class="col-sm-12 col-md-12 col-lg-4">
               <div class="footer-subscribe">
-                <h2>
+                <h2 class="text-center">
                   Signup For The Latest News
                 </h2>
                 <div class="input-box">
@@ -619,10 +792,10 @@
     </div>
   </footer>
 
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="main.js"></script>
+
 </body>
 </html>

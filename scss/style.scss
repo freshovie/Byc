@@ -931,125 +931,6 @@
   }
 }
 
-// .footer {
-//   background-color: #212121;
-//   color: #fff;
-//   .row {
-//     .p-signal {
-//       font-weight: 900;
-//       margin-top: 70px;
-//     }
-//     .form-email {
-//       display: flex;
-//       .formnum {
-//         border: 1px solid white;
-
-//         // padding: 5px 20px;
-//         input {
-//           border: none;
-//           background-color: #212121;
-//           padding: 10px 70px 10px 10px;
-//           outline: none;
-//         }
-//         ::placeholder {
-//           color: white;
-//           font-size: 14px;
-//         }
-//         img {
-//           padding-right: 10px;
-//         }
-//       }
-//     }
-//   }
-//   .mail {
-//     display: flex;
-//     gap: 15px;
-//     align-items: baseline;
-//     margin-top: 20px;
-//     font-size: 15px;
-//   }
-//   .phone {
-//     display: flex;
-//     gap: 10px;
-//     align-items: baseline;
-//     margin-top: 15px;
-//     width: 100%;
-//     font-size: 15px;
-//   }
-//   .social-media {
-//     justify-content: center;
-//     margin-top: 60px;
-//     margin-bottom: 20px;
-//     display: flex;
-//     gap: 30px;
-//   }
-//   @media screen and (min-width: 1800px) {
-//     .row {
-//       .p-signal {
-//         font-size: 30px;
-//       }
-//       p {
-//         font-size: 25px;
-//       }
-//       .imgs {
-//         width: 100%;
-//       }
-//       .form-email {
-//         .formnum {
-//           ::placeholder {
-//             font-size: 20px;
-//           }
-//         }
-//       }
-//     }
-//   }
-//   @media screen and (min-width: 765px) and (max-width: 999px) {
-//     .row {
-//       .hit1 {
-//         display: flexbox;
-//         .p-signal {
-//           font-size: 30px;
-//         }
-//         p {
-//           font-size: 20px;
-//         }
-//       }
-//       display: grid;
-//       .imgs {
-//         display: row;
-//         gap: 10px;
-//         img {
-//           display: flex;
-//           margin-top: 5px;
-//         }
-//       }
-//     }
-//   }
-
-//   @media screen and (min-width: 1000px) and (max-width: 1279px) {
-//     .row {
-//       .hit1 {
-//         display: flexbox;
-//       }
-//       display: grid;
-//       .imgs {
-//         display: row;
-//         gap: 10px;
-//         img {
-//           display: flex;
-//           margin-top: 5px;
-//         }
-//       }
-//       .form-email {
-//         .formnum {
-//           padding: 5px 25px 5px 5px;
-//           display: flex;
-//         }
-//       }
-//     }
-//   }
-// }
-
 //section-4
 
 //section 2
@@ -1134,6 +1015,7 @@
 //section 6
 .section5-4 {
   margin-bottom: 20px;
+  margin-top: 10px;
   .card {
     width: 100%;
     h3 {
@@ -1150,6 +1032,7 @@
         display: flex;
         gap: 10px;
         .card {
+          padding-bottom: 20px;
           &:hover {
             .clickbtn {
               display: flex;
@@ -1166,6 +1049,7 @@
             }
             .starlight {
               display: flex;
+              margin-bottom: 20px;
               gap: 10px;
               .imgs {
                 img {
@@ -1177,7 +1061,8 @@
           .clickbtn {
             display: none;
             gap: 5px;
-            margin-bottom: 15px;
+            margin-top: -32px;
+            // margin-bottom: 20px;
             button {
               display: flex;
               gap: 3px;
@@ -1257,6 +1142,7 @@
 //section 5-md
 .section5-4-md {
   margin-bottom: 20px;
+  margin-top: 10px;
   .card {
     h3 {
       overflow: hidden;
@@ -1371,11 +1257,12 @@
     .godfather {
       display: flex;
       align-items: center !important;
-      gap: 5px;
+      gap: 30px;
+      // display: inline-table;
       margin-bottom: 10px;
       img {
-        width: 30%;
-        height: 40%;
+        width: 50%;
+        height: 50%;
       }
       .words {
         h3 {
@@ -1420,6 +1307,7 @@
       padding: 10px 0;
       width: 100%;
       border-radius: 10px;
+      line-height: 10;
     }
   }
   .rsub {
@@ -1494,13 +1382,15 @@
     .card-body {
       .ohno {
         display: flex;
-        // gap: 46rem;
+        h3 {
+          font-weight: bold;
+        }
         @media screen and (min-width: 992px) {
           gap: 30rem;
           display: flex;
         }
         @media screen and (min-width: 1600px) and (max-width: 1799px) {
-          gap: 62rem;
+          gap: 60rem;
         }
         @media screen and (min-width: 1800px) {
           gap: 92rem;
@@ -1524,13 +1414,14 @@
 .section4-7 {
   .container {
     display: flex;
-    justify-content: end;
-    align-items: end;
-    .row {
+    .wis {
       display: flex;
+      justify-content: space-evenly;
       .card {
         display: flex;
-        justify-content: space-evenly;
+        align-items: end;
+        justify-content: end;
+
         flex-direction: row;
         gap: 0px;
         font-size: 25px;
@@ -1571,8 +1462,9 @@ footer {
   background-color: #212121;
   background-repeat: no-repeat;
   color: white;
+  justify-content: center;
   // padding: 3.5rem clamp(3rem, 6vw, 14rem);
-  
+
   input,
   a,
   button,
@@ -1587,7 +1479,8 @@ footer {
   .footer-wrapper {
     margin-top: 7rem;
     margin-bottom: 4rem;
-    .desfoot, .row{
+    .desfoot,
+    .row {
       justify-content: space-between;
       display: flex;
       flex-wrap: nowrap;
@@ -1597,46 +1490,56 @@ footer {
         .footer-nav {
           display: flex;
           flex-wrap: wrap;
+          justify-content: center;
           gap: clamp(3rem, 4vw, 7rem);
           .freeflex {
             display: flex;
             gap: 5px;
             @media screen and (min-width: 1800px) {
-              img{
+              img {
                 width: 100px;
               }
+            }
           }
-          }
-           div > h3 {
+          div > h3 {
             font-size: 25px;
             overflow: hidden;
             @media screen and (min-width: 1800px) {
               font-size: 40px;
               font-weight: 600;
+            }
           }
-          }
-           div > ul {
+          div > ul {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
             margin-top: 2rem;
           }
-           div li {
+          div li {
             font-size: 1rem;
             font-weight: 500;
             transition: opacity 200ms ease;
             @media screen and (min-width: 1800px) {
               font-size: 30px;
+            }
           }
-          }
-           div li:hover {
+          div li:hover {
             opacity: 0.5;
           }
         }
       }
+      .golden {
+        @media screen and (max-width: 1000px) {
+          align-items: center;
+          flex-direction: column;
+          display: flex;
+        }
+      }
       .footer-subscribe {
         max-width: clamp(20rem, 33vw, 33rem);
-         h2 {
+        justify-content: center;
+
+        h2 {
           // font-size: clamp(1.5rem, 2.3vw, 2.25rem);
           font-size: 25px;
           overflow: hidden;
@@ -1648,7 +1551,7 @@ footer {
           border: 1px solid white;
           border-radius: 5px;
           margin-top: 1rem;
-           input {
+          input {
             flex-grow: 1;
 
             button {
@@ -1657,65 +1560,208 @@ footer {
               .bx-right-arrow-alt:before {
                 font-size: 22px;
                 @media screen and (min-width: 1800px) {
-                  font-size: 36px;          
+                  font-size: 36px;
                 }
               }
             }
             @media screen and (min-width: 1800px) {
-              font-size: 30px;       
+              font-size: 30px;
             }
           }
         }
-    }
-    .footer-copyright {
-      flex-wrap: wrap;
-      font-size: 0.875rem;
-      margin-top: 1rem;
-      @media screen and (min-width: 1800px) {
-        font-size: 30px;          
       }
-      .mail, .phone{
-        display: flex;
-        align-items: baseline;
-        gap: 5px;
+      .footer-copyright {
+        flex-wrap: wrap;
+        font-size: 0.875rem;
+        margin-top: 1rem;
         @media screen and (min-width: 1800px) {
-          font-size: 30px;          
+          font-size: 30px;
+        }
+        .mail,
+        .phone {
+          display: flex;
+          align-items: baseline;
+          gap: 5px;
+          @media screen and (min-width: 1800px) {
+            font-size: 30px;
+          }
+        }
+        @media (width <= 53rem) {
+          max-width: 100%;
         }
       }
-    @media (width <= 53rem) {
-        max-width: 100%;
+      @media screen and (max-width: 997px) {
+        flex-direction: column;
+      }
+      @media screen and (min-width: 1800px) {
+        justify-content: space-between;
+        gap: 1rem;
+        display: flex;
+        flex-wrap: nowrap;
+      }
     }
   }
-  @media screen and (max-width: 997px) {
-    flex-direction: column;   
-  }
-  @media screen and (min-width:1800px) {
-    justify-content: space-between; 
-    gap: 1rem;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  }
 }
-.footer-social{
-  .f-footer{
+.footer-social {
+  .f-footer {
     margin-top: 1.5rem;
     margin-bottom: 3rem;
   }
   @media screen and (min-width: 1800px) {
-    .imgs{
-      img{
+    .imgs {
+      img {
         width: 100px;
       }
     }
-    .f-footer{
-      img{
+    .f-footer {
+      img {
         width: 90%;
       }
-      p{
+      p {
         font-size: 30px;
       }
     }
+  }
 }
+
+.section2-10 {
+  h2 {
+    font-weight: bold;
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
+
+.section3-10 {
+  .emmet {
+    span {
+      font-weight: bold;
+    }
+    .card {
+      background-color: #f8f5f5;
+      align-items: center;
+      border-width: 5rem;
+    }
+  }
 }
+
+.section1-10{
+  .containerr {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    .mySlides {
+      display: none;
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+    }
+  
+    .prev,
+    .next {
+      cursor: pointer;
+      background-color: white;
+      position: absolute;
+      bottom: 4%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: red;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      border-color: red;
+      box-shadow: red;
+      user-select: none;
+      -webkit-user-select: none;
+      z-index: 1;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  
+    .caption-container {
+      text-align: center;
+      background-color: #222;
+      padding: 2px 16px;
+      color: white;
+    }
+    .roww {
+      width: 90%;
+      margin: auto;
+      .columnn {
+        float: left;
+        width: 25%;
+  
+        .demo {
+          opacity: 0.6;
+        }
+        .cursor {
+          cursor: pointer;
+        }
+      }
+    }
+    .roww:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
+  }
+
+  .face-place{
+    h3{
+      overflow: hidden;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    .starlight{
+      display: flex;
+      gap: 20px;
+    }
+    .availables{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      p{
+        font-weight: 600;
+      }
+      
+      .sizes{
+        .farewell{
+          display: flex;
+          gap: 10px;
+        }
+      }
+      .colors{
+        .farewell1{
+          display: flex;
+          gap: 10px;
+          .card{
+            .card-body{
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
