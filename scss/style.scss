@@ -1624,31 +1624,7 @@ footer {
   }
 }
 
-.section2-10 {
-  h2 {
-    font-weight: bold;
-    overflow: hidden;
-    margin-bottom: 10px;
-    margin-top: 5px;
-  }
-  p {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
 
-.section3-10 {
-  .emmet {
-    span {
-      font-weight: bold;
-    }
-    .card {
-      background-color: #f8f5f5;
-      align-items: center;
-      border-width: 5rem;
-    }
-  }
-}
 
 .section1-10{
   .containerr {
@@ -1703,6 +1679,7 @@ footer {
     .roww {
       width: 90%;
       margin: auto;
+      margin-top: 20px;
       .columnn {
         float: left;
         width: 25%;
@@ -1740,6 +1717,7 @@ footer {
       display: flex;
       align-items: center;
       gap: 20px;
+      margin-bottom: 10px;
       p{
         font-weight: 600;
       }
@@ -1755,6 +1733,7 @@ footer {
           display: flex;
           gap: 10px;
           .card{
+            border-radius: 50%;
             .card-body{
               border-radius: 50%;
             }
@@ -1762,6 +1741,129 @@ footer {
         }
       }
     }
+    .addwishlist{
+      display: flex;
+      gap: 30px;
+      margin-bottom: 10px;
+      align-items: center;
+      .crement{
+        display: flex;
+        display: inline-flex;
+        gap: 15px;
+        p{
+          margin-top: 15px;
+        }
+        button{
+          padding: 15px;
+          font-weight: bold;
+          color: white;
+          font-size: 20px;
+          background-color: #bd3a3a;
+          border: none;
+        }
+        }
+        .wishl{
+          display: inline;
+          display: flex;
+          padding: 15px 60px;
+          width: 40%;
+          justify-content: space-evenly;
+          color: #bd3a3a;
+          background-color: transparent;
+          border-radius: 5px;
+          border: 1px solid #bd3a3a;
+          align-items: center;
+        }
+      }
+      .addtocart{
+        display: flex;
+        width: 40%;
+        align-items: center;
+        display: inline;
+        padding: 15px 60px;
+        width: 70%;
+        gap: 2rem;
+        color: white;
+        background-color: #bd3a3a;
+        border-radius: 5px;
+        border: 1px solid white;
+        justify-content: space-evenly;
+      }
+      @media screen and (max-width: 992px) {
+        .availables{
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-content: center;
+          align-items: center;
+        }
+        .addwishlist{
+          flex-direction: column;
+          gap: 5px;
+          
+          .wishl{
+            width: 100%;
+            align-items: center;
+          }
+        }
+        .addtocart{
+          flex-direction: column;
+          width: 100%;
+        }
+        
+      }
+      @media screen and (min-width: 980px) and (max-width: 1240px) {
+        .availables{
+          flex-direction: column;
+          align-items: center;
+        }
+        .addwishlist{
+          flex-direction: column;
+          .wishl{
+            width: 100%;
+          }
+        }
+        .addtocart{
+          width: 100%;
+        }
+      }
+    }
   }
-}
+
+  .section2-10 {
+    margin-top: 15px;
+    h2 {
+      font-weight: 600;
+      overflow: hidden;
+      margin-bottom: 10px;
+      margin-top: 5px;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  
+  .section3-10 {
+    margin-top: 15px;
+    h2{
+      overflow: hidden;
+      font-weight: 600;
+    }
+    .emmet {
+      span {
+        font-weight: bold;
+      }
+      .card {
+        // background-color: #f8f5f5;
+        align-items: center;
+        border-width: 5rem;
+        display: flex;
+        .card-body{
+          display: flex;
+          background-color: #909090;
+        }
+      }
+    }
+  }
+
 
