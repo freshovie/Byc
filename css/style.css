@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Poppins:wght@200;300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Poppins:wght@200;300;500&display=swap");
 * {
   font-family: "Jost", sans-serif;
   padding: 0;
@@ -42,6 +43,17 @@
     width: 30px;
   }
 }
+* {
+  font-family: "Jost", sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.row {
+  margin: 0 !important;
+}
+
 .firstsection .firstone {
   margin-top: 100px;
   text-align: center;
@@ -999,20 +1011,23 @@
 }
 .section5-4 .card .card-body .mentos .card .clickbtn {
   display: none;
-  gap: 5px;
+  gap: 3px;
   margin-top: -32px;
+  justify-content: center;
 }
 .section5-4 .card .card-body .mentos .card .clickbtn button {
   display: flex;
-  gap: 3px;
+  gap: 2px;
   outline: none;
   border-radius: 5px;
-  padding: 3px 5px;
+  padding: 3px 10px;
+  align-items: center;
+  justify-content: space-around;
   margin-left: 3px;
   border: 1px solid #bd3a3a;
 }
 .section5-4 .card .card-body .mentos .card .clickbtn img {
-  width: 22%;
+  width: auto;
   margin-top: 4px;
 }
 .section5-4 .card .card-body .mentos .card .clickbtn .wishlist {
@@ -1163,17 +1178,21 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.section3-5 .row .godfather {
+.section3-5 .dride {
+  justify-content: space-between;
+  display: flex;
+}
+.section3-5 .dride .godfather {
   display: flex;
   align-items: center !important;
-  gap: 30px;
+  gap: 50px;
   margin-bottom: 10px;
 }
-.section3-5 .row .godfather img {
-  width: 50%;
-  height: 50%;
+.section3-5 .dride .godfather img {
+  width: auto;
+  height: auto;
 }
-.section3-5 .row .godfather .words h3 {
+.section3-5 .dride .godfather .words h3 {
   overflow: hidden;
   font-weight: 700;
   margin-top: 10px;
@@ -1182,6 +1201,12 @@
 @media screen and (max-width: 994px) {
   .section3-5 {
     font-size: 20px;
+  }
+  .section3-5 .dride {
+    flex-direction: column;
+  }
+  .section3-5 .dride img {
+    width: auto;
   }
 }
 @media screen and (min-width: 1800px) {
@@ -1652,8 +1677,8 @@ footer .footer-wrapper .row .footer-copyright .phone {
 }
 .section1-10 .face-place .addwishlist .crement {
   display: flex;
-  display: inline-flex;
   gap: 15px;
+  justify-content: space-between;
 }
 .section1-10 .face-place .addwishlist .crement p {
   margin-top: 15px;
