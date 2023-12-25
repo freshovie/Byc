@@ -990,6 +990,7 @@
 }
 .section5-4 .card .card-body .mentos .card:hover .clickbtn {
   display: flex;
+  flex-wrap: wrap;
 }
 .section5-4 .card .card-body .mentos .card .card-body {
   width: 100%;
@@ -1370,6 +1371,20 @@ footer {
   background-repeat: no-repeat;
   color: white;
   justify-content: center;
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  footer .down-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 766px) {
+  footer .down-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 footer input,
 footer a,
@@ -1785,6 +1800,170 @@ footer .footer-wrapper .row .footer-copyright .phone {
 .section3-10 .emmet .card .card-body {
   display: flex;
   background-color: #909090;
+}
+
+.section1-11 {
+  margin-top: 6rem;
+}
+.section1-11 h3,
+.section1-11 h4 {
+  overflow: hidden;
+}
+.section1-11 .div-full {
+  display: flex;
+}
+.section1-11 .div-full .full-words .div-button {
+  display: flex;
+  justify-content: space-around;
+}
+.section1-11 .div-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.section1-11 .div-center .mid-center .crement {
+  display: flex;
+}
+.section1-11 .div-end {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+.section1-11 .div-end .mid-end {
+  align-items: center;
+}
+.section1-11 .div-end .mid-end span {
+  font-weight: bolder;
+}
+.section1-11 .div-side {
+  display: grid;
+  gap: 1rem;
+  place-self: end;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  margin-right: 2rem;
+}
+.section1-11 .div-side .figures {
+  display: flex;
+}
+.section1-11 .div-side .figures .ender {
+  margin-left: auto;
+}
+.section1-11 .div-side .figures .button-end {
+  display: flex;
+  gap: 10px;
+}
+.section1-11 .div-button {
+  flex-wrap: wrap;
+}
+.section1-11 .cartrepo {
+  display: flex;
+  width: auto;
+  align-items: center;
+  padding: 10px 40px;
+  color: white;
+  background-color: #bd3a3a;
+  border-radius: 5px;
+  border: 1px solid white;
+  justify-content: space-evenly;
+}
+.section1-11 .heartrepo {
+  display: flex;
+  padding: 10px 40px;
+  width: auto;
+  justify-content: space-evenly;
+  color: #bd3a3a;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #bd3a3a;
+  align-items: center;
+}
+.section1-11 .crement {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+.section1-11 .crement button {
+  padding: 10px;
+  color: white;
+  background-color: #bd3a3a;
+  border: 1px solid white;
+}
+@media screen and (max-width: 767px) {
+  .section1-11 .card-body {
+    flex-direction: column;
+  }
+  .section1-11 .card-body .div-full {
+    flex-direction: column;
+  }
+  .section1-11 .card-body .div-full .full-words {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .section1-11 .card-body .div-full .full-words h4 {
+    margin-bottom: 10px;
+  }
+  .section1-11 .card-body .div-full .div-button {
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+  .section1-11 .card-body .heartrepo {
+    margin-bottom: 10px;
+  }
+  .section1-11 .card-body .cartrepo {
+    margin-bottom: 10px;
+  }
+  .section1-11 .card-body .div-center img,
+  .section1-11 .card-body .div-center img,
+  .section1-11 .card-body .div-end img {
+    display: none;
+  }
+  .section1-11 .div-side {
+    width: 100%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .section1-11 .div-full {
+    justify-content: space-around;
+    gap: 10px;
+  }
+  .section1-11 .div-full img {
+    width: 70%;
+  }
+  .section1-11 .div-side {
+    width: 100%;
+    margin: auto;
+  }
+  .section1-11 .div-center img,
+  .section1-11 .div-end img {
+    display: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .section1-11 .heartrepo,
+  .section1-11 .cartrepo {
+    padding: 10px 9px;
+  }
+  .section1-11 .button-end {
+    justify-content: center;
+  }
+}
+
+.section1-12 {
+  margin-top: 6rem;
+}
+.section1-12 .card h3, .section1-12 .card h4 {
+  margin-top: 1rem;
+  overflow: hidden;
+}
+.section1-12 .card .div-full {
+  display: flex;
+}
+.section1-12 .card .hs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */

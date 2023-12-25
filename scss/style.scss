@@ -1001,6 +1001,7 @@
           &:hover {
             .clickbtn {
               display: flex;
+              flex-wrap: wrap;
             }
           }
           .card-body {
@@ -1221,7 +1222,7 @@
 .section3-5 {
   margin-top: 20px;
   margin-bottom: 20px;
-  .dride{
+  .dride {
     justify-content: space-between;
     display: flex;
     .godfather {
@@ -1246,9 +1247,9 @@
   }
   @media screen and (max-width: 994px) {
     font-size: 20px;
-    .dride{
+    .dride {
       flex-direction: column;
-      img{
+      img {
         width: auto;
       }
     }
@@ -1441,6 +1442,18 @@ footer {
   justify-content: center;
   // padding: 3.5rem clamp(3rem, 6vw, 14rem);
 
+  .down-footer {
+    @media screen and (min-width: 767px) and (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media screen and (max-width: 766px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
   input,
   a,
   button,
@@ -1540,6 +1553,7 @@ footer {
                 }
               }
             }
+
             @media screen and (min-width: 1800px) {
               font-size: 30px;
             }
@@ -1835,6 +1849,185 @@ footer {
         display: flex;
         background-color: #909090;
       }
+    }
+  }
+}
+
+.section1-11 {
+  h3,
+  h4 {
+    overflow: hidden;
+  }
+  margin-top: 6rem;
+  .div-full {
+    display: flex;
+    .full-words {
+      .div-button {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+  .div-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .mid-center {
+      .crement {
+        display: flex;
+      }
+    }
+  }
+
+  .div-end {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    .mid-end {
+      align-items: center;
+      span {
+        font-weight: bolder;
+      }
+    }
+  }
+  .div-side {
+    display: grid;
+    gap: 1rem;
+    place-self: end;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    margin-right: 2rem;
+    .figures {
+      // gap: 15rem;
+      display: flex;
+      .ender {
+        margin-left: auto;
+      }
+      .button-end {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+  .div-button {
+    flex-wrap: wrap;
+  }
+
+  .cartrepo {
+    display: flex;
+    width: auto;
+    align-items: center;
+    padding: 10px 40px;
+    color: white;
+    background-color: #bd3a3a;
+    border-radius: 5px;
+    border: 1px solid white;
+    justify-content: space-evenly;
+  }
+  .heartrepo {
+    display: flex;
+    padding: 10px 40px;
+    width: auto;
+    justify-content: space-evenly;
+    color: #bd3a3a;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #bd3a3a;
+    align-items: center;
+  }
+  .crement {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    button {
+      padding: 10px;
+      color: white;
+      background-color: #bd3a3a;
+      border: 1px solid white;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .card-body {
+      flex-direction: column;
+      .div-full {
+        flex-direction: column;
+        .full-words {
+          margin-bottom: 10px;
+          text-align: center;
+          h4 {
+            margin-bottom: 10px;
+          }
+        }
+        .div-button {
+          margin-bottom: 10px;
+          flex-direction: column;
+        }
+      }
+      .heartrepo {
+        margin-bottom: 10px;
+      }
+      .cartrepo {
+        margin-bottom: 10px;
+      }
+      .div-center,
+      .div-center,
+      .div-end {
+        img {
+          display: none;
+        }
+      }
+    }
+    .div-side{
+      width: 100%;
+      margin: auto;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .div-full {
+      justify-content: space-around;
+      gap: 10px;
+      img {
+        width: 70%;
+      }
+    }
+    .div-side {
+      width: 100%;
+      margin: auto;
+    }
+    .div-center,
+    .div-end {
+      img {
+        display: none;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+    }
+    .heartrepo,
+    .cartrepo {
+      padding: 10px 9px;
+    }
+
+    .button-end {
+      justify-content: center;
+    }
+  }
+}
+
+
+.section1-12{
+  margin-top: 6rem;
+  .card{
+    h3, h4{
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+    .div-full{
+      display: flex;
+    }
+    .hs{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
   }
 }

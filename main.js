@@ -64,6 +64,28 @@ const decrement = () => {
     counterElement.textContent = 0
    }
   };
+
+  function myFunct() {
+    let counterElement = document.getElementById('myNum');
+    let currentValue = counterElement.textContent
+    counterElement.textContent =parseInt(currentValue)+ 1
+
+}
+
+function decreent() {
+    let counterElement = document.getElementById('myNum');
+    let currentValue = counterElement.textContent
+    counterElement.textContent =parseInt(currentValue) -1
+   if(currentValue <= 0){
+    counterElement.textContent = 0
+   }
+  };
+
+
+  console.log("hello");
+
+
+
 //   function myFunction2() {
 //     let counterElement = document.getElementById('myNumber');
 //     let currentValue = parseInt(counterElement.textContent);

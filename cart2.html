@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,7 +25,7 @@
         
                         <ul class="navbar-nav mr-auto">
                           <li class="nav-item active">
-                            <a class="nav-link" href="/Homepage.html">Shop Products <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/index.html">Shop Products <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item active">
                               <a class="nav-link" href="/Blog1.html">Blog <span class="sr-only">(current)</span></a>
@@ -116,25 +117,81 @@
         </div>
         </div> 
 
-        <div class="section1-11">
-            <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-1"></div>
-            <div class="col-sm-12 col-md-12 col-lg-10">
+ <div class="section1-11">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-1"></div>
+        <div class="col-sm-12 col-md-12 col-lg-10">
+            <div class="card">
                 <h3>Cart 1 item(s)</h3>
+                <div class="card-body">
+                <div class="row">
+    <center><img src="/Assets/Rectangle 35.png" alt="" class="golow"></center>
+
+        <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="div-full">
                     <img src="/Assets/Image 1.png" alt="">
-                    <div class="full-words">
-                        <h4>MEN BOXERS</h4>
-                        <h4>BYC 1166</h4>
-                        <p>100% Cotton 12 Pieces Of Mens Boxer </p>
-                        <button class="heartrepo"><i class='bx bx-heart'></i> Wishlist</button>
-                        <button class="cartrepo"><i class="fa-regular fa-trash-can"></i>Remove</button>
+                        <div class="full-words">
+                            <h4>MEN BOXERS</h4>
+                            <h4>BYC 1166</h4>
+                            <p>100% Cotton 12 Pieces Of Mens Boxer </p>
+                            <div class="div-button">
+                            <button class="heartrepo"><i class="fa-regular fa-heart"></i> Wishlist</button>
+                            <button class="cartrepo"><i class="fa-regular fa-trash-can"></i> Remove</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-1"></div>
+        <div class="col-sm-12 col-md-12 col-lg-3">
+            <center>
+                <div class="div-center">
+            <img src="/Assets/Rectangle 34.png" alt="">
+            <div class="mid-center">
+                        <p>Quantity</p>
+                        <div class="crement">
+                            <button onclick="myFunct()"> + </button>
+                            <p class="input-value" id="myNum"> 1 </p>
+                            <button onclick="decreent()"> - </button>
+                        </div>   
+                    </div>                
+                </div>
+                </center>
+            </div>
+        <div class="col-sm-12 col-md-12 col-lg-3">
+
+                <div class="div-end">
+            <img src="/Assets/Rectangle 34.png" alt="">
+            <div class="mid-end">
+                        <p>Unit Price</p>
+                        <p><span>₦2,800.00</span></p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <center><img src="/Assets/Rectangle 35.png" alt=""></center>
+    
+    <div class="div-side">
+        <h3>CART TOTALS</h3>
+        <div class="figures">
+            <P>Subtotal</P>
+        <p class="ender">₦2,800.00</p>
+        </div>
+        <div class="figures">
+            <P>Total</P>
+        <p class="ender">₦2,800.00</p>
+        </div>
+        <div class="button-end" style="display: flex; gap: 5px;">
+            <button class="heartrepo">Continue Shopping</button>
+        <button class="cartrepo">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    </div>
+    
+</div>
+        <div class="col-sm-12 col-md-12 col-lg-1"></div>
+    </div>
+</div>
 
 <!--section 6-->
 <section>
@@ -529,26 +586,28 @@
               </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-4">
-              <div class="footer-subscribe">
-                <h2 class="text-center">
-                  Signup For The Latest News
-                </h2>
-                <div class="input-box">
-                    <input type="email" id="email" name="email" placeholder="Email Address" />
-                  <button>
-                    <i class='bx bx-right-arrow-alt'></i>
-                  </button>
+              <div class="down-footer">
+                <div class="footer-subscribe">
+                    <h2 class="text-center">
+                      Signup For The Latest News
+                    </h2>
+                    <div class="input-box">
+                        <input type="email" id="email" name="email" placeholder="Email Address" />
+                      <button>
+                        <i class='bx bx-right-arrow-alt'></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="footer-copyright">
+                    <div class="mail">
+                        <a href=""><i class='bx bx-envelope'></i></a>
+                    <p><a href="">bycafrica@gmail.com</a></p>
+                    </div>
+                    <div class="phone">
+                    <a href=""><i class='bx bx-phone'></i></a>
+                    <p><a href="">+2348101375376 ; +2349053403403</a></p>
                 </div>
-              </div>
-              <div class="footer-copyright">
-                <div class="mail">
-                    <a href=""><i class='bx bx-envelope'></i></a>
-                <p><a href="">bycafrica@gmail.com</a></p>
-                </div>
-                <div class="phone">
-                <a href=""><i class='bx bx-phone'></i></a>
-                <p><a href="">+2348101375376 ; +2349053403403</a></p>
-            </div>
+                  </div>
               </div>
             </div>
         </div>
@@ -576,7 +635,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="main.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>
