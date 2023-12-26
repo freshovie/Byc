@@ -1953,17 +1953,122 @@ footer .footer-wrapper .row .footer-copyright .phone {
 .section1-12 {
   margin-top: 6rem;
 }
-.section1-12 .card h3, .section1-12 .card h4 {
+.section1-12 .card {
+  margin-bottom: 30px;
+}
+.section1-12 .card h3,
+.section1-12 .card h4 {
   margin-top: 1rem;
   overflow: hidden;
 }
 .section1-12 .card .div-full {
   display: flex;
+  gap: 10px;
 }
 .section1-12 .card .hs {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.section1-12 .card .d-quantity {
+  display: flex;
+  gap: 30px;
+}
+.section1-12 .card .div-second {
+  align-items: center;
+}
+.section1-12 .card .fig-ure {
+  margin-top: 50px;
+  align-items: center;
+}
+.section1-12 .card .figures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.section1-12 .card .form-group {
+  padding: 25px;
+  background: transparent;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 10px;
+  color: #2c3e50;
+}
+.section1-12 .card .form-group .form-group {
+  margin-bottom: 10px;
+  position: relative;
+}
+.section1-12 .card .form-group label {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+.section1-12 .card .form-group input,
+.section1-12 .card .form-group form select {
+  height: 40px;
+  padding: 10px;
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #bd3a3a;
+}
+.section1-12 .card .form-group input:focus,
+.section1-12 .card .form-group form select:focus {
+  border-color: #9a9a9a;
+}
+.section1-12 .card .form-group input.error,
+.section1-12 .card .form-group form select.error {
+  border-color: #bd3a3a;
+  background: #f9f0f1;
+}
+.section1-12 .card .placedred {
+  background-color: #fff8f8;
+}
+.section1-12 .card .placedred .zone {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+.section1-12 .card .placedred div {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  border: 5px solid transparent;
+  margin: 0;
+  border-radius: 10px;
+}
+.section1-12 .card .placedred div p {
+  background-color: white;
+  margin-left: 40px;
+  color: #c9c9c9;
+  font-size: smaller;
+}
+.section1-12 .card .placedred .zoned {
+  display: flex;
+  align-items: center;
+}
+.section1-12 .card .placedred .zoned .zone {
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+.section1-12 .card .placedred .bbsmall {
+  font-size: smaller;
+  margin-left: 40px;
+  margin-top: 50px;
+}
+.section1-12 .placebyred {
+  background-color: #bd3a3a;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  height: 50px;
+  width: 100%;
+  border: 1px solid #bd3a3a;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1977,7 +1977,7 @@ footer {
         }
       }
     }
-    .div-side{
+    .div-side {
       width: 100%;
       margin: auto;
     }
@@ -2013,21 +2013,123 @@ footer {
   }
 }
 
-
-.section1-12{
+.section1-12 {
   margin-top: 6rem;
-  .card{
-    h3, h4{
+  .card {
+    margin-bottom: 30px;
+    h3,
+    h4 {
       margin-top: 1rem;
       overflow: hidden;
     }
-    .div-full{
+    .div-full {
       display: flex;
+      gap: 10px;
     }
-    .hs{
+    .hs {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
+    .d-quantity{
+      display: flex;
+      gap: 30px;
+    }
+    .div-second{
+      align-items: center;
+    }
+      .fig-ure{
+        margin-top: 50px;
+        align-items: center;
+      }
+        .figures{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+    .form-group {
+      padding: 25px;
+      background: transparent;
+      max-width: 500px;
+      width: 100%;
+      border-radius: 10px;
+      color: #2c3e50;
+      .form-group {
+        margin-bottom: 10px;
+        position: relative;
+      }
+      label {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 2px;
+      }
+      input,
+      form select {
+        height: 40px;
+        padding: 10px;
+        width: 100%;
+        font-size: 15px;
+        outline: none;
+        background: #fff;
+        border-radius: 10px;
+        border: 1px solid #bd3a3a;
+      }
+      input:focus,
+      form select:focus {
+        border-color: #9a9a9a;
+      }
+      input.error,
+      form select.error {
+        border-color: #bd3a3a;
+        background: #f9f0f1;
+      }
+    }
+    .placedred{
+      background-color: #fff8f8;
+      .zone{
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+      }
+     div{
+          width: auto;
+          height: auto;
+          padding: 10px;
+          border: 5px solid transparent;
+          margin: 0;
+          border-radius: 10px;
+      p{
+        background-color: white;
+        margin-left: 40px;
+        color: #c9c9c9;
+        font-size: smaller;
+      }
+    }
+    .zoned{
+      display: flex;
+      align-items: center;
+      .zone{
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+      }
+    }
+    .bbsmall{
+      font-size: smaller;
+      margin-left: 40px;
+      margin-top: 50px;
+    }
+    }
+  }
+  .placebyred{
+    background-color: #bd3a3a;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #bd3a3a;
+    border-radius: 10px;
+    margin-top: 20px;
   }
 }
