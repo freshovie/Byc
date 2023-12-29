@@ -19,6 +19,12 @@
 .navl {
   background-color: white;
 }
+.navl .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.navl .dropdown:hover .dropdown-content {
+  display: block;
+}
 
 .navs {
   display: none;
