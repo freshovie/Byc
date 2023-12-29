@@ -82,19 +82,17 @@ function decreent() {
   };
 
 
-  console.log("hello");
+  function togglePasswordVisibility() {
+    const passwordField = document.getElementById('password');
+    const eyeIcon = document.querySelector('.toggle-password i');
 
-
-
-//   function myFunction2() {
-//     let counterElement = document.getElementById('myNumber');
-//     let currentValue = parseInt(counterElement.textContent);
-
-//     if (currentValue > 0) {
-//       currentValue--;
-//       counterElement.textContent = currentValue;
-//     } else {
-//       console.log("Value reached 0");
-//     }
-  
-  
+    if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash' );
+    } else {
+        passwordField.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    }
+}

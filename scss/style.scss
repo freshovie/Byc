@@ -2013,6 +2013,11 @@ footer {
   }
 }
 
+.ender{
+  font-weight: 900;
+  font-size: large;
+}
+
 .section1-12 {
   margin-top: 6rem;
   .card {
@@ -2133,3 +2138,97 @@ footer {
     margin-top: 20px;
   }
 }
+
+.section1-13{
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+  .card{
+    .placebyred{
+      background-color: #bd3a3a;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      height: 50px;
+      width: 100%;
+      border: 1px solid #bd3a3a;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 5rem;
+    }
+     h3{
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 20px;
+      }
+      .bitch{
+        margin-top: 6rem;
+        margin-bottom: 10rem;
+        width: 55%;
+      }
+      .superw{
+        display: flex;
+      }
+      .login-container {
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input {
+        box-sizing: border-box;
+        margin-right: 32px;
+        height: 50px;
+        padding: 10px;
+        width: 100%;
+        font-size: 15px;
+        outline: none;
+        background: #fff;
+        border-radius: 10px;
+        border: 1px solid #bd3a3a;
+    }
+
+    .toggle-password {
+        position: absolute;
+        top: 75%;
+        right: 3%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: lightgray;
+        background-color: white;
+    }
+    .remem{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.7rem;
+      div{
+        display: flex;
+        align-items: center;
+      }
+    }
+    @media screen and (max-width: 994px) {
+      img{
+        display: none;
+      }
+    }
+    @media screen and (min-width: 1800px) {
+      font-size: 25px;   
+      .bitch{
+        margin-bottom: 12.5rem;
+      }   
+    }
+  }
+}
+
