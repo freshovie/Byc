@@ -19,12 +19,6 @@
 .navl {
   background-color: white;
 }
-.navl .dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-.navl .dropdown:hover .dropdown-content {
-  display: block;
-}
 
 .navs {
   display: none;
@@ -946,24 +940,18 @@
   border-radius: none;
 }
 .section4-4 .card .card-body {
-  height: 300px;
+  height: 350px;
   padding: 15px 60px 15px 20px;
   border-radius: 1px;
   background-color: white;
-}
-.section4-4 .card .card-body p {
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 .section4-4 .card .card-body .p-weight {
   font-weight: 900;
   color: red;
 }
-.section4-4 .card .card-body .adjust {
-  margin-bottom: 32px;
-}
 .section4-4 .card .card-body .sony {
-  margin-bottom: 30px;
+  margin-top: 20px;
+  height: 100px;
 }
 @media screen and (min-width: 1800px) {
   .section4-4 {
