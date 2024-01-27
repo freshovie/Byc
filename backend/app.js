@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const express = require('express');
 const app = express();
-const { Product } = require("./model/product");
+const productRoutes  = require("./routes/products");
 
 mongoose
   .connect("mongodb://localhost/byc")
@@ -9,7 +9,7 @@ mongoose
   .catch((err) => console.log("could not connect to mongoDB...", err));
 
 app.use(express.json());
-app.use('/api/products', Product)
+app.use('/api/products', productRoutes) //Use the productRoutes for handling product-related routes.
 
 const port = process.env.PORT || 3000;
 
