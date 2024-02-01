@@ -23,7 +23,6 @@ router.post("/", async (req, res) => {
     price: req.body.price,
     category: req.body.category,
     tag: req.body.tag,
-
   });
   await product.save();
   res.send(product);
@@ -35,18 +34,20 @@ router.put("/:id", async (req, res) => {
 
   if (error) return res.status(404).send(error.details[0].message);
 
-  let product = await Product.findByIdAndUpdate(req.params.id, {
-    image: req.body.image,
-    name: req.body.name,
-    code: req.body.code,
-    description: req.body.description,
-    isAvailable: req.body.isAvailable,
-    price: req.body.price,
-    category: req.body.category,
-    tag: req.body.tag,
-},
+  let product = await Product.findByIdAndUpdate(
+    req.params.id,
+    {
+      image: req.body.image,
+      name: req.body.name,
+      code: req.body.code,
+      description: req.body.description,
+      isAvailable: req.body.isAvailable,
+      price: req.body.price,
+      category: req.body.category,
+      tag: req.body.tag,
+    },
     { new: true } // Return the updated document rather than the original one.
-);
+  );
   if (!product)
     res.status(404).send("The product with the given ID was not found");
   res.send(product);
