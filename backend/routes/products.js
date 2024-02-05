@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const { Product, validate } = require("../model/product");
+const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 
 // get all products
 router.get("/", async (req, res) => {
@@ -9,7 +11,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get product by id
-router.post("/", async (req, res) => {
+router.post("/", [auth, admin], async (req, res) => {
   const { error } = validate(req.body);
 
   if (error) return res.status(404).send(error.details[0].message);
@@ -29,7 +31,7 @@ router.post("/", async (req, res) => {
 });
 
 // Update a product
-router.put("/:id", async (req, res) => {
+router.put("/:id", [auth, admin], async (req, res) => {
   const { error } = validate(req.body);
 
   if (error) return res.status(404).send(error.details[0].message);
@@ -54,7 +56,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a product
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", [auth, admin], async (req, res) => {
   let product = await Product.findByIdAndDelete(req.params.id);
   if (!product)
     return res.status(404).send("The product with the given ID was not found");
