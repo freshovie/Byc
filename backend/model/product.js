@@ -35,11 +35,11 @@ const productSchema = new mongoose.Schema({
   isAvailable: Boolean,
   price: {
     type: Number,
-    required: function () {
-      return this.isAvailable;
-    },
-    min: 10,
-    max: 220,
+    // required: function () {
+    //   return this.isAvailable;
+    // },
+    // min: 10,
+    // max: 220,
   },
   category: {
     type: [String],
@@ -52,6 +52,11 @@ const productSchema = new mongoose.Schema({
     type: [String],
     required: true,
     enum: ["boxers", "camisole", "pants", "t-shirts", "singlets", "towels"],
+  },
+  numberInStock: {
+    type: Number,
+    required: true,
+    min: 0,
   },
   date: {
     type: Date,
@@ -68,9 +73,15 @@ function validateProduct(product) {
     code: Joi.string().required(),
     description: Joi.string().required(),
     isAvailable: Joi.boolean(),
-    price: Joi.number().required(),
+    // price: Joi.number().when("isAvailable", {
+    //   is: true,
+    //   then: Joi.number().required(),
+    //   otherwise: Joi.number().optional(),
+    // }),
+    price: Joi.number(),
     category: Joi.array().required(),
     tag: Joi.array().required(),
+    numberInStock: Joi.number().min(0).required(),
   };
   return Joi.validate(product, Schema);
 }

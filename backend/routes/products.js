@@ -25,6 +25,7 @@ router.post("/", [auth, admin], async (req, res) => {
     price: req.body.price,
     category: req.body.category,
     tag: req.body.tag,
+    numberInStock: req.body.numberInStock,
   });
   await product.save();
   res.send(product);
@@ -47,6 +48,7 @@ router.put("/:id", [auth, admin], async (req, res) => {
       price: req.body.price,
       category: req.body.category,
       tag: req.body.tag,
+      numberInStock: req.body.numberInStock,
     },
     { new: true } // Return the updated document rather than the original one.
   );
