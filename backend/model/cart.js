@@ -2,28 +2,56 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 
 const cartSchema = new mongoose.Schema({
-  userId: {
+  customer: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User", // Reference to the User model if you have one
+    ref: "User",
     required: true,
   },
-  items: [
+  products: [
     {
-      productId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product", // Reference to the Product model if you have one
-        required: true,
-      },
-      quantity: {
-        type: Number,
-        default: 1,
-        required: true,
-      },
+      type: new mongoose.Schema({
+        image: {
+          type: String,
+        },
+        name: {
+          type: String,
+          minlength: 4,
+          maxlength: 25,
+        },
+        code: {
+          type: String,
+        },
+        summary: {
+          type: String,
+          minlength: 10,
+          maxlength: 100,
+        },
+        price: {
+          type: Number,
+        },
+        color: [
+          {
+            type: String,
+          },
+        ],
+        size: [
+          {
+            type: String,
+            enum: ["s", "m", "l", "xl"],
+          },
+        ],
+        quantity: {
+          type: Number,
+          default: 1,
+          max: 10,
+        },
+      }),
+      required: true,
     },
   ],
-  totalPrice: {
+  billing: {
     type: Number,
-    default: 0,
+    min: 0,
     required: true,
   },
 });
@@ -31,14 +59,12 @@ const cartSchema = new mongoose.Schema({
 const Cart = mongoose.model("Cart", cartSchema);
 
 function validateCart(cart) {
-  const Schema = {
-    userId: Joi.objectId().required(),
-    productId: Joi.objectId().required(),
-    quantity: Joi.number().required(),
-    totalPrice: Joi.number().required(),
+  const schema = {
+    customer: Joi.objectId().required(),
+    products: Joi.array().required(),
   };
-  return Joi.validate(cart, Schema);
+  return Joi.validate(cart, schema);
 }
 
-module.exports = Cart;
+exports.Cart = Cart;
 exports.validate = validateCart;
