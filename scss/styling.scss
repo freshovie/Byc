@@ -1,52 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Poppins:wght@200;300;500&display=swap");
 
 * {
-    font-family: "Jost", sans-serif;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-  }
-  
-  .row {
-    margin: 0 !important;
-  }
-  .navimg {
-    width: 20px;
-    margin: 10px 0 0 0;
-  }
-  
-  .navl {
-    background-color: white;
-  
+  font-family: "Jost", sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.row {
+  margin: 0 !important;
+}
+.navimg {
+  width: 20px;
+  margin: 10px 0 0 0;
+}
+
+.navl {
+  background-color: white;
+}
+
+.navs {
+  display: none;
+}
+
+.navbar-light .navbar-toggler {
+  border: 0 !important;
+}
+
+.navbar-dark .navbar-toggler {
+  border: 0 !important;
+}
+
+@media screen and (max-width: 992px) {
+  .navs {
+    display: block;
+    .navbar {
+      background-color: white;
+    }
   }
 
-  .navs {
+  .navl {
     display: none;
   }
+}
 
-  
- 
-  
-  @media screen and (max-width: 992px) {
-    .navs {
-      display: block;
-      .navbar {
-        background-color: white;
-      }
-    }
-  
-    .navl {
-      display: none;
-    }
-  }
-  
-  @media screen and (min-width: 1800px) {
-    .navl {
-      font-size: 30px;
-      li {
-        img {
-          width: 30px;
-        }
+@media screen and (min-width: 1800px) {
+  .navl {
+    font-size: 30px;
+    li {
+      img {
+        width: 30px;
       }
     }
   }
+}
+
+.sectionfaq{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

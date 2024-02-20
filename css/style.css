@@ -24,6 +24,14 @@
   display: none;
 }
 
+.navbar-light .navbar-toggler {
+  border: 0 !important;
+}
+
+.navbar-dark .navbar-toggler {
+  border: 0 !important;
+}
+
 @media screen and (max-width: 992px) {
   .navs {
     display: block;
@@ -43,6 +51,11 @@
     width: 30px;
   }
 }
+.sectionfaq {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 * {
   font-family: "Jost", sans-serif;
   padding: 0;
