@@ -63,6 +63,10 @@
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: 0;
+}
+
 .row {
   margin: 0 !important;
 }
