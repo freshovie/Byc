@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
     <title>Account</title>
@@ -14,108 +15,118 @@
 <body>
 
     <!-- large view -->
-    <div class="navl fixed-top ">
+    <div class="navl fixed-top" data-aos="zoom-in">
       <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-1"></div>
-          <div class="col-sm-12 col-md-12 col-lg-10">
-              
-                  <nav class="navbar navbar-expand-lg navbar-light">
-      
-                      <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="/Homepage.html">Shop Products <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/Blog1.html">Blog <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">FAQ <span class="sr-only">(current)</span></a>
-                        </li>
-                      </ul>
-                      
-                      <a href="/Homepage.html"><img src="./assets/BYC LOGO JPG FILE 1.png" alt="" class="mt-1"></a>
-                    
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="/Aboutus.html">About Us <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active mr-3">
-                            <a class="nav-link" href="/contactpage.html">Contacts <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <img src="./assets/ant-design_search-outlined.png" alt="" class="navimg mr-3">
-                        </li>
-                        <li class="nav-item active">
-                            <img src="./assets/ant-design_user-outlined.png" alt="" class="navimg mr-3">
-                        </li>
-                        <li class="nav-item active">
-                            <img src="./assets/akar-icons_heart.png" alt="" class="navimg mr-3">
-                        </li>
-                        <li class="nav-item active">
-                            <img src="./assets/ant-design_shopping-cart-outlined.png" alt="" class="navimg">
-                        </li>
-                      </ul>
-                   
-                </nav>
-              
-      
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-1"></div>
+        <div class="col-sm-12 col-md-12 col-lg-1"></div>
+        <div class="col-sm-12 col-md-12 col-lg-10">
+    
+          <nav class="navbar navbar-expand-lg navbar-light">
+    
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/index.html">Shop Products <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/Blog1.html">Blog <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">FAQ <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+    
+            <a href="/index.html"><img src="./assets/BYC LOGO JPG FILE 1.png" alt="" class="mt-1"></a>
+            <div class="form-group has-search mt-3">
+              <span class="fa fa-search form-control-feedback"></span>
+              <input type="text" class="form-control" placeholder="Search">
+              <box-icon type='solid' name='x-circle'></box-icon>
+            </div>
+    
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/Aboutus.html">About Us <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active mr-3">
+                <a class="nav-link" href="/contactpage.html">Contacts <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active si" onclick="showSearch(event)">
+                <img src="./assets/ant-design_search-outlined.png" alt="" class="navimg mr-3">
+              </li>
+              <li class="nav-item active">
+                <a href="./Account.html">
+                  <img src="./assets/ant-design_user-outlined.png" alt="" class="navimg mr-3">
+                </a>
+              </li>
+              <li class="nav-item active">
+                <img src="./assets/akar-icons_heart.png" alt="" class="navimg mr-3">
+              </li>
+              <li class="nav-item active">
+                <a href="./cart.html">
+                  <img src="./assets/ant-design_shopping-cart-outlined.png" alt="" class="navimg">
+                </a>
+              </li>
+            </ul>
+    
+          </nav>
+    
+    
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-1"></div>
       </div>
-      </div> 
+    </div>
       
-      <!-- mobile view -->
-      
-      <div class="navs fixed-top bg-light">
+    <!-- mobile view -->
+    <div class="navs fixed-top bg-light">
       <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-1"></div>
-          <div class="col-sm-12 col-md-12 col-lg-10">
-              <nav class="navbar navbar-expand-lg fixed-top navbar-light">
-                  <a class="navbar-brand" href="/Homepage.html">
-                    <img src="./assets/BYC LOGO JPG FILE 1.png" alt="" class="mt-2">
-                  </a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                      <li class="nav-item active">
-                        <a class="nav-link" href="/Homepage.html">Shop Product <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item active">
-                          <a class="nav-link" href="/Blog1.html">Blog <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item active">
-                          <a class="nav-link" href="#">FAQ <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item active">
-                          <a class="nav-link" href="/Aboutus.html">About Us <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item active">
-                          <a class="nav-link" href="/contactpage.html">Contact<span class="sr-only">(current)</span></a>
-                      </li>
-                      <div class="d-flex">
-                          <li class="nav-item active">
-                              <img src="./assets/ant-design_search-outlined.png" alt="" class="navimg mr-3">
-                          </li>
-                          <li class="nav-item active">
-                              <img src="./assets/ant-design_user-outlined.png" alt="" class="navimg mr-3">
-                          </li>
-                          <li class="nav-item active">
-                              <img src="./assets/akar-icons_heart.png" alt="" class="navimg mr-3">
-                          </li>
-                          <li class="nav-item active">
-                              <img src="./assets/ant-design_shopping-cart-outlined.png" alt="" class="navimg">
-                          </li>
-                      </div>
-                  </div>
-                </nav>
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-1"></div>
+        <div class="col-sm-12 col-md-12 col-lg-1"></div>
+        <div class="col-sm-12 col-md-12 col-lg-10">
+          <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+            <a class="navbar-brand" href="/index.html">
+              <img src="./assets/BYC LOGO JPG FILE 1.png" alt="" class="mt-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/index.html">Shop Product <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/Blog1.html">Blog <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">FAQ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/Aboutus.html">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
+                </li>
+                <div class="d-flex">
+                  <li class="nav-item active">
+                    <img src="./assets/ant-design_user-outlined.png" alt="" class="navimg mr-3">
+                  </li>
+                  <li class="nav-item active">
+                    <img src="./assets/akar-icons_heart.png" alt="" class="navimg mr-3">
+                  </li>
+                  <li class="nav-item active">
+                    <img src="./assets/ant-design_shopping-cart-outlined.png" alt="" class="navimg">
+                  </li>
+                </div>
+                <div class="form-group has-search1 mt-3">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <box-icon type='solid' name='x-circle'></box-icon>
+                </div>
+            </div>
+          </nav>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-1"></div>
       </div>
-      </div> 
+    </div>
 
-      <div class="section1-13">
+      <div class="section1-13" data-aos="zoom-out">
         <div class="row">
          <div class="col-sm-12 col-md-12 col-lg-1"></div>
          <div class="col-sm-12 col-md-12 col-lg-10">
@@ -167,7 +178,7 @@
       </div>
 
       <footer>
-        <div class="footer-wrapper">
+        <div class="footer-wrapper" data-aos="zoom-in">
             <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-1"></div>
             <div class="col-sm-12 col-md-12 col-lg-10">
@@ -256,6 +267,11 @@
         </div>
       </footer>
     
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <script src="main.js"></script>

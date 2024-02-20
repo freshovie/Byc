@@ -25,12 +25,12 @@ showSlides(slideIndex);
 // Next/previous controls
 function plusSlides(n) {
   showSlides((slideIndex += n));
-}
+};
 
 // Thumbnail image controls
 function currentSlide(n) {
   showSlides((slideIndex = n));
-}
+};
 
 function showSlides(n) {
   let i;
@@ -48,13 +48,13 @@ function showSlides(n) {
   }
   for (i = 0; i < dots.length; i++) {}
   slides[slideIndex - 1].style.display = "block";
-}
+};
 
 function myFunction() {
   let counterElement = document.getElementById("myNumber");
   let currentValue = counterElement.textContent;
   counterElement.textContent = parseInt(currentValue) + 1;
-}
+};
 
 const decrement = () => {
   let counterElement = document.getElementById("myNumber");
@@ -69,7 +69,7 @@ function myFunct() {
   let counterElement = document.getElementById("myNum");
   let currentValue = counterElement.textContent;
   counterElement.textContent = parseInt(currentValue) + 1;
-}
+};
 
 function decreent() {
   let counterElement = document.getElementById("myNum");
@@ -78,7 +78,7 @@ function decreent() {
   if (currentValue <= 0) {
     counterElement.textContent = 0;
   }
-}
+};
 
 function togglePasswordVisibility() {
   const passwordField = document.getElementById("password");
@@ -93,4 +93,14 @@ function togglePasswordVisibility() {
     eyeIcon.classList.remove("fa-eye-slash");
     eyeIcon.classList.add("fa-eye");
   }
-}
+};
+
+function showSearch(event) {
+    event.preventDefault();
+    const getSearch = document.querySelector(".has-search");
+    const getLogo = document.querySelector(".byclogo");
+    const searchIcon = document.querySelector(".si");
+    getSearch.style.display = "block";
+    searchIcon.style.display = "none";
+    getLogo.style.display = "none"
+};
