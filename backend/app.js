@@ -8,6 +8,7 @@ const productRoutes = require("./routes/products");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const cartRoutes = require("./routes/carts");
+const orderRoutes = require("./routes/orders");
 
 mongoose
   .connect("mongodb://localhost/byc")
@@ -19,6 +20,7 @@ app.use("/api/products", productRoutes); //Use the productRoutes for handling pr
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/carts", cartRoutes);
+app.use("/api/orders", orderRoutes);
 
 const port = process.env.PORT || 5000;
 

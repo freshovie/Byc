@@ -104,3 +104,23 @@ function showSearch(event) {
     searchIcon.style.display = "none";
     getLogo.style.display = "none"
 };
+
+
+//use for the search button.
+// const searchBtn = document.getElementById("button-search");
+// const searchInput = document.getElementById("search-field");
+
+// searchInput.addEventListener("keypress", function(event) {
+//     if (event.key === 'Enter') {
+//         searchBtn.click();
+//     }
+// });
+
+// function search(query){
+//    query.preventDefault();
+//    let vquery = query.target.elements["search"].value;
+//    console.log(vquery)
+   
+// }
+
+// something.addEventListener("submit", search, false)

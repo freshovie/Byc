@@ -49,11 +49,22 @@ const cartSchema = new mongoose.Schema({
       required: true,
     },
   ],
+  
+   companyName:{
+    type: String,
+  },
+
+  city:{
+    type: String,
+    required: true,
+  },
+
   billing: {
     type: Number,
     min: 0,
     required: true,
   },
+
 });
 
 const Cart = mongoose.model("Cart", cartSchema);
