@@ -100,10 +100,22 @@ function showSearch(event) {
     const getSearch = document.querySelector(".has-search");
     const getLogo = document.querySelector(".byclogo");
     const searchIcon = document.querySelector(".si");
+    
     getSearch.style.display = "block";
     searchIcon.style.display = "none";
     getLogo.style.display = "none"
 };
+
+function closeSearch(event) {
+  event.preventDefault
+    const getSearch = document.querySelector(".has-search");
+    const getLogo = document.querySelector(".byclogo");
+    const searchIcon = document.querySelector(".si");
+
+    getSearch.style.display = "inline-block";
+    searchIcon.style.display = "none";
+    getLogo.style.display = "block";
+}
 
 
 //use for the search button.
@@ -124,3 +136,7 @@ function showSearch(event) {
 // }
 
 // something.addEventListener("submit", search, false)
+
+
+
+

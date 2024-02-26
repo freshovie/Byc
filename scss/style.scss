@@ -1015,9 +1015,10 @@ a{
       padding: 1px 30px;
     }
     .card-body {
-      .mentos {
+      .mentos, .mentos2, .mentos3, .mentos4{
         display: flex;
-        gap: 10px;
+        flex-wrap: wrap;
+        // gap: 10px;
         .card {
           padding-bottom: 20px;
           &:hover {
@@ -1032,7 +1033,7 @@ a{
               width: 100%;
             }
             .coloring {
-              font-size: 10px;
+              font-size: 15px;
               color: #ababb2;
             }
             .starlight {
@@ -2190,6 +2191,9 @@ footer {
       margin-bottom: 10rem;
       width: 55%;
     }
+    .round{
+  display: none;
+}
     .superw {
       display: flex;
     }
