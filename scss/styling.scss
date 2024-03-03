@@ -59,3 +59,34 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.helerror{
+  margin-top: 20px;
+  color: red;
+  font-size: 20px;
+  h3{
+    overflow: hidden;
+  }
+  img{
+    margin-top: 40px;
+  }
+  button{
+    background-color: #ff4b4b;
+    margin: 30px;
+    padding: 10px 30px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .grego{
+    width: 100%;
+  }  
+}
+
+.ripd :hover{
+  background-color: black;
+  color: #ff4b4b;
+}

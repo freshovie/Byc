@@ -1,10 +1,34 @@
+const paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener('submit', payWithPaystack, false);
+function payWithPaystack() {
+  const handler = PaystackPop.setup({
+    key: 'Ypk_test_e303af36eef1e26b54a4fcc35b8b5619ffdb2070', // Replace with your public key
+    email: "fxdchange@gmail.com",
+    amount: document.getElementById('amount').value * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
+    currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
+    ref: 'YOUR_REFERENCE', // Replace with a reference you generated
+    callback: function(response) {
+      //this happens after the payment is completed successfully
+      var reference = response.reference;
+      alert('Payment complete! Reference: ' + reference);
+      // Make an AJAX call to your server with the reference to verify the transaction
+    },
+    onClose: function() {
+      alert('Transaction was not completed, window closed.');
+    },
+  });
+  handler.openIframe();
+}
+
 function getProducts() {
   const mentos = document.querySelector(".mentos");
   const mentos2 = document.querySelector(".mentos2");
   const mentos3 = document.querySelector(".mentos3");
   const mentos4 = document.querySelector(".mentos4");
 
-  const url = "http://localhost:4000/api/products";
+
+
+  const url = "http://localhost:5000/api/products";
 
   const methodProduct = {
     method: "GET",
@@ -18,6 +42,9 @@ function getProducts() {
       console.log(result);
 
       result.map((item) => {
+         if (item[0]){
+          active = 'active'
+        }
         data += `
       <div class="col-sm-12 col-md-12 col-lg-3">
         <div class="card">
@@ -62,24 +89,34 @@ function getProducts() {
 getProducts();
 
 function wishProducts() {
-  const mentos = document.querySelector(".mentos");
-  const mentos2 = document.querySelector(".mentos2");
+  const carouselItem = document.querySelector('.smallCar');
+  const carouselItem1 = document.querySelector('.smallCar2');
+  const carouselItem2 = document.querySelector('.smallCar3');
+  const carouselItem3 = document.querySelector('.smallCar4');
 
-  const url = "http://localhost:4000/api/products";
+
+
+
+
+  
+console.log(carouselItem)
+  const url = "http://localhost:5000/api/products";
 
   const methodProduct = {
     method: "GET",
   };
 
   let data = [];
+  let active =""
 
   fetch(url, methodProduct)
     .then((response) => response.json())
     .then((result) => {
       console.log(result);
 
-      result.map((item) => {
+      result.map((item, idx) => {
         data += `
+        <div class="carousel-item ${idx === 0 && 'active'}">
         <div class="card">
           <img src="${item.image[0]}" alt="">
           <div class="card-body">
@@ -109,10 +146,13 @@ function wishProducts() {
               </button>
           </div>
       </div>
+      </div>
       `;
       });
-      mentos.innerHTML = data;
-      mentos2.innerHTML = data;
+      carouselItem.innerHTML +=data;
+      carouselItem1.innerHTML +=data;
+      carouselItem2.innerHTML +=data;
+      carouselItem3.innerHTML +=data;
     });
 }
 
@@ -121,7 +161,7 @@ wishProducts();
 function smallViewProducts() {
   const carouselItem = document.querySelector(".carousel-item");
 
-  const url = "http://localhost:4000/api/products";
+  const url = "http://localhost:5000/api/products";
 
   const methodProduct = {
     method: "GET",
@@ -205,7 +245,7 @@ function logIn(event) {
       body: profile,
     };
 
-    const url = "http://localhost:4000/api/auth";
+    const url = "http://localhost:6000/api/auth";
 
     fetch(url, signMethod)
       .then((response) => response.json())

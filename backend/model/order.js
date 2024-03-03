@@ -3,6 +3,11 @@ const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema(
   {
+   customer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
     orderNo: {
       type: String,
       required: true,
@@ -48,16 +53,7 @@ const Order = mongoose.model("Order", orderSchema);
 function validateOrder(order) {
   const schema = {
     cart: Joi.objectId().required(),
-    company: Joi.string(),
-    shippingAddress: Joi.object({
-      country: Joi.string().required(),
-      town: Joi.string().required(),
-      state: Joi.string().required(),
-    }).required(),
-    status: Joi.string()
-      .valid("pending", "confirmed", "cancelled", "shipped", "completed")
-      .default("pending"),
-    orderDate: Joi.date().default(Date.now),
+    orderNo:  Joi.string().min(5).required()
   };
   return Joi.validate(order, schema);
 }
