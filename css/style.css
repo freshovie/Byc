@@ -57,19 +57,21 @@
 }
 
 .helerror {
-  margin-top: 20px;
+  margin-top: 12px;
   color: red;
   font-size: 20px;
 }
 .helerror h3 {
   overflow: hidden;
+  margin-bottom: 1px;
 }
 .helerror img {
-  margin-top: 40px;
+  margin-top: 0px;
+  margin-bottom: 1px;
 }
 .helerror button {
   background-color: #ff4b4b;
-  margin: 30px;
+  margin: 20px;
   padding: 10px 30px;
   color: white;
   border: none;
@@ -84,6 +86,105 @@
 .ripd :hover {
   background-color: black;
   color: #ff4b4b;
+}
+
+.fulladmin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
+}
+.fulladmin img {
+  width: 100%;
+}
+.fulladmin .glass {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  margin-top: 10px;
+  width: 70%;
+}
+.fulladmin .glass h3 {
+  color: white;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.fulladmin .glass label {
+  color: white;
+}
+.fulladmin .glass .form-group {
+  margin-bottom: 30px;
+  position: relative;
+}
+.fulladmin .glass label {
+  display: block;
+  margin-bottom: 8px;
+}
+.fulladmin .glass input {
+  margin-right: 0px;
+  height: auto;
+  padding: 10px 30px;
+  width: 100%;
+  outline: none;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #bd3a3a;
+}
+.fulladmin .glass .toggle-password {
+  position: absolute;
+  top: 75%;
+  right: 3%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: lightgray;
+  background-color: white;
+}
+.fulladmin .glass .remem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.7rem;
+}
+.fulladmin .glass .remem div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.fulladmin .glass .placebyred {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  color: #bd3a3a;
+  height: 50px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  font-weight: 600;
+}
+.fulladmin .glass .round {
+  display: none;
+}
+@media screen and (max-width: 998px) {
+  .fulladmin {
+    flex-direction: column;
+  }
+  .fulladmin img {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+  .fulladmin .glass {
+    width: 100%;
+    margin: 30px;
+  }
 }
 
 * {
@@ -105,7 +206,6 @@ a {
   position: relative;
   display: none;
 }
-
 .has-search .form-control {
   padding-left: 2rem;
   width: 400px;
@@ -113,7 +213,6 @@ a {
   border-left: none;
   border-right: none;
 }
-
 .has-search .form-control-feedback {
   position: absolute;
   z-index: 2;
@@ -1048,42 +1147,82 @@ a {
   color: red;
   padding: 1px 30px;
 }
-.section5-4 .card .card-body .mentos, .section5-4 .card .card-body .mentos2, .section5-4 .card .card-body .mentos3, .section5-4 .card .card-body .mentos4, .section5-4 .card .card-body .belowhands {
+.section5-4 .card .card-body .mentos,
+.section5-4 .card .card-body .mentos2,
+.section5-4 .card .card-body .mentos3,
+.section5-4 .card .card-body .mentos4,
+.section5-4 .card .card-body .belowhands {
   display: flex;
   flex-wrap: wrap;
 }
-.section5-4 .card .card-body .mentos .card, .section5-4 .card .card-body .mentos2 .card, .section5-4 .card .card-body .mentos3 .card, .section5-4 .card .card-body .mentos4 .card, .section5-4 .card .card-body .belowhands .card {
+.section5-4 .card .card-body .mentos .card,
+.section5-4 .card .card-body .mentos2 .card,
+.section5-4 .card .card-body .mentos3 .card,
+.section5-4 .card .card-body .mentos4 .card,
+.section5-4 .card .card-body .belowhands .card {
   padding-bottom: 20px;
 }
-.section5-4 .card .card-body .mentos .card:hover .clickbtn, .section5-4 .card .card-body .mentos2 .card:hover .clickbtn, .section5-4 .card .card-body .mentos3 .card:hover .clickbtn, .section5-4 .card .card-body .mentos4 .card:hover .clickbtn, .section5-4 .card .card-body .belowhands .card:hover .clickbtn {
+.section5-4 .card .card-body .mentos .card:hover .clickbtn,
+.section5-4 .card .card-body .mentos2 .card:hover .clickbtn,
+.section5-4 .card .card-body .mentos3 .card:hover .clickbtn,
+.section5-4 .card .card-body .mentos4 .card:hover .clickbtn,
+.section5-4 .card .card-body .belowhands .card:hover .clickbtn {
   display: flex;
   flex-wrap: wrap;
 }
-.section5-4 .card .card-body .mentos .card .card-body, .section5-4 .card .card-body .mentos2 .card .card-body, .section5-4 .card .card-body .mentos3 .card .card-body, .section5-4 .card .card-body .mentos4 .card .card-body, .section5-4 .card .card-body .belowhands .card .card-body {
+.section5-4 .card .card-body .mentos .card .card-body,
+.section5-4 .card .card-body .mentos2 .card .card-body,
+.section5-4 .card .card-body .mentos3 .card .card-body,
+.section5-4 .card .card-body .mentos4 .card .card-body,
+.section5-4 .card .card-body .belowhands .card .card-body {
   width: 100%;
 }
-.section5-4 .card .card-body .mentos .card .card-body img, .section5-4 .card .card-body .mentos2 .card .card-body img, .section5-4 .card .card-body .mentos3 .card .card-body img, .section5-4 .card .card-body .mentos4 .card .card-body img, .section5-4 .card .card-body .belowhands .card .card-body img {
+.section5-4 .card .card-body .mentos .card .card-body img,
+.section5-4 .card .card-body .mentos2 .card .card-body img,
+.section5-4 .card .card-body .mentos3 .card .card-body img,
+.section5-4 .card .card-body .mentos4 .card .card-body img,
+.section5-4 .card .card-body .belowhands .card .card-body img {
   width: 100%;
 }
-.section5-4 .card .card-body .mentos .card .card-body .coloring, .section5-4 .card .card-body .mentos2 .card .card-body .coloring, .section5-4 .card .card-body .mentos3 .card .card-body .coloring, .section5-4 .card .card-body .mentos4 .card .card-body .coloring, .section5-4 .card .card-body .belowhands .card .card-body .coloring {
+.section5-4 .card .card-body .mentos .card .card-body .coloring,
+.section5-4 .card .card-body .mentos2 .card .card-body .coloring,
+.section5-4 .card .card-body .mentos3 .card .card-body .coloring,
+.section5-4 .card .card-body .mentos4 .card .card-body .coloring,
+.section5-4 .card .card-body .belowhands .card .card-body .coloring {
   font-size: 15px;
   color: #ababb2;
 }
-.section5-4 .card .card-body .mentos .card .card-body .starlight, .section5-4 .card .card-body .mentos2 .card .card-body .starlight, .section5-4 .card .card-body .mentos3 .card .card-body .starlight, .section5-4 .card .card-body .mentos4 .card .card-body .starlight, .section5-4 .card .card-body .belowhands .card .card-body .starlight {
+.section5-4 .card .card-body .mentos .card .card-body .starlight,
+.section5-4 .card .card-body .mentos2 .card .card-body .starlight,
+.section5-4 .card .card-body .mentos3 .card .card-body .starlight,
+.section5-4 .card .card-body .mentos4 .card .card-body .starlight,
+.section5-4 .card .card-body .belowhands .card .card-body .starlight {
   display: flex;
   margin-bottom: 20px;
   gap: 10px;
 }
-.section5-4 .card .card-body .mentos .card .card-body .starlight .imgs img, .section5-4 .card .card-body .mentos2 .card .card-body .starlight .imgs img, .section5-4 .card .card-body .mentos3 .card .card-body .starlight .imgs img, .section5-4 .card .card-body .mentos4 .card .card-body .starlight .imgs img, .section5-4 .card .card-body .belowhands .card .card-body .starlight .imgs img {
+.section5-4 .card .card-body .mentos .card .card-body .starlight .imgs img,
+.section5-4 .card .card-body .mentos2 .card .card-body .starlight .imgs img,
+.section5-4 .card .card-body .mentos3 .card .card-body .starlight .imgs img,
+.section5-4 .card .card-body .mentos4 .card .card-body .starlight .imgs img,
+.section5-4 .card .card-body .belowhands .card .card-body .starlight .imgs img {
   width: auto;
 }
-.section5-4 .card .card-body .mentos .card .clickbtn, .section5-4 .card .card-body .mentos2 .card .clickbtn, .section5-4 .card .card-body .mentos3 .card .clickbtn, .section5-4 .card .card-body .mentos4 .card .clickbtn, .section5-4 .card .card-body .belowhands .card .clickbtn {
+.section5-4 .card .card-body .mentos .card .clickbtn,
+.section5-4 .card .card-body .mentos2 .card .clickbtn,
+.section5-4 .card .card-body .mentos3 .card .clickbtn,
+.section5-4 .card .card-body .mentos4 .card .clickbtn,
+.section5-4 .card .card-body .belowhands .card .clickbtn {
   display: none;
   gap: 3px;
   margin-top: -32px;
   justify-content: center;
 }
-.section5-4 .card .card-body .mentos .card .clickbtn button, .section5-4 .card .card-body .mentos2 .card .clickbtn button, .section5-4 .card .card-body .mentos3 .card .clickbtn button, .section5-4 .card .card-body .mentos4 .card .clickbtn button, .section5-4 .card .card-body .belowhands .card .clickbtn button {
+.section5-4 .card .card-body .mentos .card .clickbtn button,
+.section5-4 .card .card-body .mentos2 .card .clickbtn button,
+.section5-4 .card .card-body .mentos3 .card .clickbtn button,
+.section5-4 .card .card-body .mentos4 .card .clickbtn button,
+.section5-4 .card .card-body .belowhands .card .clickbtn button {
   display: flex;
   gap: 2px;
   outline: none;
@@ -1094,15 +1233,27 @@ a {
   margin-left: 3px;
   border: 1px solid #bd3a3a;
 }
-.section5-4 .card .card-body .mentos .card .clickbtn img, .section5-4 .card .card-body .mentos2 .card .clickbtn img, .section5-4 .card .card-body .mentos3 .card .clickbtn img, .section5-4 .card .card-body .mentos4 .card .clickbtn img, .section5-4 .card .card-body .belowhands .card .clickbtn img {
+.section5-4 .card .card-body .mentos .card .clickbtn img,
+.section5-4 .card .card-body .mentos2 .card .clickbtn img,
+.section5-4 .card .card-body .mentos3 .card .clickbtn img,
+.section5-4 .card .card-body .mentos4 .card .clickbtn img,
+.section5-4 .card .card-body .belowhands .card .clickbtn img {
   width: auto;
   margin-top: 4px;
 }
-.section5-4 .card .card-body .mentos .card .clickbtn .wishlist, .section5-4 .card .card-body .mentos2 .card .clickbtn .wishlist, .section5-4 .card .card-body .mentos3 .card .clickbtn .wishlist, .section5-4 .card .card-body .mentos4 .card .clickbtn .wishlist, .section5-4 .card .card-body .belowhands .card .clickbtn .wishlist {
+.section5-4 .card .card-body .mentos .card .clickbtn .wishlist,
+.section5-4 .card .card-body .mentos2 .card .clickbtn .wishlist,
+.section5-4 .card .card-body .mentos3 .card .clickbtn .wishlist,
+.section5-4 .card .card-body .mentos4 .card .clickbtn .wishlist,
+.section5-4 .card .card-body .belowhands .card .clickbtn .wishlist {
   background: transparent;
   color: #bd3a3a;
 }
-.section5-4 .card .card-body .mentos .card .clickbtn .buynow, .section5-4 .card .card-body .mentos2 .card .clickbtn .buynow, .section5-4 .card .card-body .mentos3 .card .clickbtn .buynow, .section5-4 .card .card-body .mentos4 .card .clickbtn .buynow, .section5-4 .card .card-body .belowhands .card .clickbtn .buynow {
+.section5-4 .card .card-body .mentos .card .clickbtn .buynow,
+.section5-4 .card .card-body .mentos2 .card .clickbtn .buynow,
+.section5-4 .card .card-body .mentos3 .card .clickbtn .buynow,
+.section5-4 .card .card-body .mentos4 .card .clickbtn .buynow,
+.section5-4 .card .card-body .belowhands .card .clickbtn .buynow {
   background: #bd3a3a;
   color: white;
 }
@@ -1160,29 +1311,36 @@ a {
   color: red;
   padding: 1px 30px;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card:hover .clickbtn, .section5-4-md .carousel .smallCar .carousel-item .card:hover .clickbtn {
+.section5-4-md .carousel .carousel-inner .carousel-item .card:hover .clickbtn,
+.section5-4-md .carousel .smallCar .carousel-item .card:hover .clickbtn {
   display: flex;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card .card-body img, .section5-4-md .carousel .smallCar .carousel-item .card .card-body img {
+.section5-4-md .carousel .carousel-inner .carousel-item .card .card-body img,
+.section5-4-md .carousel .smallCar .carousel-item .card .card-body img {
   width: 100%;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card .card-body .coloring, .section5-4-md .carousel .smallCar .carousel-item .card .card-body .coloring {
+.section5-4-md .carousel .carousel-inner .carousel-item .card .card-body .coloring,
+.section5-4-md .carousel .smallCar .carousel-item .card .card-body .coloring {
   font-size: 20px;
   color: #ababb2;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card .card-body .starlight, .section5-4-md .carousel .smallCar .carousel-item .card .card-body .starlight {
+.section5-4-md .carousel .carousel-inner .carousel-item .card .card-body .starlight,
+.section5-4-md .carousel .smallCar .carousel-item .card .card-body .starlight {
   display: flex;
   gap: 20px;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card .card-body .starlight .imgs img, .section5-4-md .carousel .smallCar .carousel-item .card .card-body .starlight .imgs img {
+.section5-4-md .carousel .carousel-inner .carousel-item .card .card-body .starlight .imgs img,
+.section5-4-md .carousel .smallCar .carousel-item .card .card-body .starlight .imgs img {
   width: auto;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn, .section5-4-md .carousel .smallCar .carousel-item .card .clickbtn {
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn,
+.section5-4-md .carousel .smallCar .carousel-item .card .clickbtn {
   display: none;
   gap: 5px;
   margin-bottom: 15px;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn button, .section5-4-md .carousel .smallCar .carousel-item .card .clickbtn button {
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn button,
+.section5-4-md .carousel .smallCar .carousel-item .card .clickbtn button {
   display: inline-block;
   width: 100%;
   gap: 3px;
@@ -1193,15 +1351,18 @@ a {
   border: 1px solid #bd3a3a;
   font-size: 20px;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn img, .section5-4-md .carousel .smallCar .carousel-item .card .clickbtn img {
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn img,
+.section5-4-md .carousel .smallCar .carousel-item .card .clickbtn img {
   width: 15%;
   margin-top: 4px;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn .wishlist, .section5-4-md .carousel .smallCar .carousel-item .card .clickbtn .wishlist {
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn .wishlist,
+.section5-4-md .carousel .smallCar .carousel-item .card .clickbtn .wishlist {
   background: transparent;
   color: #bd3a3a;
 }
-.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn .buynow, .section5-4-md .carousel .smallCar .carousel-item .card .clickbtn .buynow {
+.section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn .buynow,
+.section5-4-md .carousel .smallCar .carousel-item .card .clickbtn .buynow {
   background: #bd3a3a;
   color: white;
 }

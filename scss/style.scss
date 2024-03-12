@@ -8,7 +8,7 @@
   overflow-x: hidden;
 }
 
-a{
+a {
   text-decoration: 0;
 }
 
@@ -17,17 +17,16 @@ a{
 }
 
 .has-search {
-    position: relative;
-    display: none;
-}
-.has-search .form-control {
+  position: relative;
+  display: none;
+  .form-control {
     padding-left: 2rem;
     width: 400px;
     border-top: none;
     border-left: none;
     border-right: none;
-}
-.has-search .form-control-feedback {
+  }
+  .form-control-feedback {
     position: absolute;
     z-index: 2;
     display: block;
@@ -38,7 +37,9 @@ a{
     pointer-events: none;
     color: #aaa;
     right: 0;
+  }
 }
+
 //section 1
 
 .firstsection {
@@ -1016,7 +1017,11 @@ a{
       padding: 1px 30px;
     }
     .card-body {
-      .mentos, .mentos2, .mentos3, .mentos4, .belowhands{
+      .mentos,
+      .mentos2,
+      .mentos3,
+      .mentos4,
+      .belowhands {
         display: flex;
         flex-wrap: wrap;
         // gap: 10px;
@@ -1148,7 +1153,8 @@ a{
     }
   }
   .carousel {
-    .carousel-inner, .smallCar {
+    .carousel-inner,
+    .smallCar {
       .carousel-item {
         .card {
           &:hover {
@@ -1420,7 +1426,7 @@ a{
         gap: 0px;
         font-size: 25px;
         box-shadow: inset;
-        i{
+        i {
           font-size: 20px;
         }
       }
@@ -1857,7 +1863,7 @@ footer {
     font-weight: 600;
   }
   .emmet {
-    .supa{
+    .supa {
       font-size: 20px;
     }
     span {
@@ -1962,7 +1968,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: baseline;
-    div{
+    div {
       padding: 10px;
     }
     button {
@@ -2192,9 +2198,9 @@ footer {
       margin-bottom: 10rem;
       width: 55%;
     }
-    .round{
-  display: none;
-}
+    .round {
+      display: none;
+    }
     .superw {
       display: flex;
     }

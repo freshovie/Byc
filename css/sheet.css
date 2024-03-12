@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Poppins:wght@200;300;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  /* overflow: hidden; */
+  font-family: "Jost", sans-serif;
+}
+
+
+.container-fluid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+.navbar-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    @media screen and (max-width: 998px) {
+        flex-direction: row;
+        display: flex;
+        gap: 20px;
+    }
+}
+
+._navbar-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.dropdown{
+    flex-wrap: wrap;
+}
+
+.navbar-collapse{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    @media screen and (min-width: 999px){
+      display: none;
+    }
+}
+
+.searchA input{
+    border-radius: 20px;
+    background: transparent;
+    color: #3c4858;
+    font-size: 16px;
+    transition: all .3s ease;
+    width: 30rem;
+}
+
+.searchA{
+    position: relative;
+}
+
+.searchBtn{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    outline: none;
+}
+
+.profileimage{
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    margin-top: 90px;
+}
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    /* Adjust width as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 80px;
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+}
+
+/* Style the sidebar links on hover */
+.sidebar a:hover {
+    background-color: #555;
+}
+
+/* Page content */
+.content {
+    margin-left: 250px;
+    /* Adjust margin-left to match the width of the sidebar */
+    padding: 20px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the sidebar and the content area stack on top of each other */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+}
+
+
