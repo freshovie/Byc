@@ -55,24 +55,26 @@
   }
 }
 
-.sectionfaq{
+.sectionfaq {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.helerror{
-  margin-top: 20px;
+.helerror {
+  margin-top: 12px;
   color: red;
   font-size: 20px;
-  h3{
+  h3 {
     overflow: hidden;
+    margin-bottom: 1px;
   }
-  img{
-    margin-top: 40px;
+  img {
+    margin-top: 0px;
+    margin-bottom: 1px;
   }
-  button{
+  button {
     background-color: #ff4b4b;
-    margin: 30px;
+    margin: 20px;
     padding: 10px 30px;
     color: white;
     border: none;
@@ -81,12 +83,113 @@
 }
 
 @media screen and (max-width: 992px) {
-  .grego{
+  .grego {
     width: 100%;
-  }  
+  }
 }
 
-.ripd :hover{
+.ripd :hover {
   background-color: black;
   color: #ff4b4b;
 }
+
+.fulladmin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
+  img {
+    width: 100%;
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    margin-top: 10px;
+    width: 70%;
+    h3 {
+      color: white;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    label {
+      color: white;
+    }
+    .form-group {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      margin-right: 0px;
+      height: auto;
+      padding: 10px 30px;
+      width: 100%;
+      outline: none;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #bd3a3a;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 75%;
+      right: 3%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: lightgray;
+      background-color: white;
+    }
+    .remem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.7rem;
+      div {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+      }
+    }
+    .placebyred {
+      background-color: white;
+      padding: 10px;
+      text-align: center;
+      color: #bd3a3a;
+      height: 50px;
+      width: 100%;
+      border: 1px solid black;
+      border-radius: 10px;
+      margin-top: 2rem;
+      margin-bottom: 5rem;
+      font-weight: 600;
+    }
+    .round {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 998px) {
+    flex-direction: column;
+    img {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+    }
+    .glass {
+      width: 100%;
+      margin: 30px;
+    }
+  }
+}
+
