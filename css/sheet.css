@@ -124,4 +124,18 @@
     }
 }
 
+.chain{
+    display: flex;
+    gap: 10px;
+}
+.dollar{
+    font-weight: 600;
+}
+.doller{
+    font-weight: 800;
+    font-size: large;
+}
+.month{
+    color: grey;
+}
 
