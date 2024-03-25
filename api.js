@@ -1,20 +1,22 @@
-const paymentForm = document.getElementById('paymentForm');
-paymentForm.addEventListener('submit', payWithPaystack, false);
+//This script is for calling api's only.
+
+const paymentForm = document.getElementById("paymentForm");
+paymentForm.addEventListener("submit", payWithPaystack, false);
 function payWithPaystack() {
   const handler = PaystackPop.setup({
-    key: 'Ypk_test_e303af36eef1e26b54a4fcc35b8b5619ffdb2070', // Replace with your public key
+    key: "Ypk_test_e303af36eef1e26b54a4fcc35b8b5619ffdb2070", // Replace with your public key
     email: "fxdchange@gmail.com",
-    amount: document.getElementById('amount').value * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
-    currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
-    ref: 'YOUR_REFERENCE', // Replace with a reference you generated
-    callback: function(response) {
+    amount: document.getElementById("amount").value * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
+    currency: "NGN", // Use GHS for Ghana Cedis or USD for US Dollars
+    ref: "YOUR_REFERENCE", // Replace with a reference you generated
+    callback: function (response) {
       //this happens after the payment is completed successfully
       var reference = response.reference;
-      alert('Payment complete! Reference: ' + reference);
+      alert("Payment complete! Reference: " + reference);
       // Make an AJAX call to your server with the reference to verify the transaction
     },
-    onClose: function() {
-      alert('Transaction was not completed, window closed.');
+    onClose: function () {
+      alert("Transaction was not completed, window closed.");
     },
   });
   handler.openIframe();
@@ -26,9 +28,7 @@ function getProducts() {
   const mentos3 = document.querySelector(".mentos3");
   const mentos4 = document.querySelector(".mentos4");
 
-
-
-  const url = "http://localhost:5000/api/products";
+  const url = "http://localhost:9000/api/products";
 
   const methodProduct = {
     method: "GET",
@@ -42,8 +42,8 @@ function getProducts() {
       console.log(result);
 
       result.map((item) => {
-         if (item[0]){
-          active = 'active'
+        if (item[0]) {
+          active = "active";
         }
         data += `
       <div class="col-sm-12 col-md-12 col-lg-3">
@@ -89,25 +89,20 @@ function getProducts() {
 getProducts();
 
 function wishProducts() {
-  const carouselItem = document.querySelector('.smallCar');
-  const carouselItem1 = document.querySelector('.smallCar2');
-  const carouselItem2 = document.querySelector('.smallCar3');
-  const carouselItem3 = document.querySelector('.smallCar4');
+  const carouselItem = document.querySelector(".smallCar");
+  const carouselItem1 = document.querySelector(".smallCar2");
+  const carouselItem2 = document.querySelector(".smallCar3");
+  const carouselItem3 = document.querySelector(".smallCar4");
 
-
-
-
-
-  
-console.log(carouselItem)
-  const url = "http://localhost:5000/api/products";
+  console.log(carouselItem);
+  const url = "http://localhost:9000/api/products";
 
   const methodProduct = {
     method: "GET",
   };
 
   let data = [];
-  let active =""
+  let active = "";
 
   fetch(url, methodProduct)
     .then((response) => response.json())
@@ -116,7 +111,7 @@ console.log(carouselItem)
 
       result.map((item, idx) => {
         data += `
-        <div class="carousel-item ${idx === 0 && 'active'}">
+        <div class="carousel-item ${idx === 0 && "active"}">
         <div class="card">
           <img src="${item.image[0]}" alt="">
           <div class="card-body">
@@ -149,10 +144,10 @@ console.log(carouselItem)
       </div>
       `;
       });
-      carouselItem.innerHTML +=data;
-      carouselItem1.innerHTML +=data;
-      carouselItem2.innerHTML +=data;
-      carouselItem3.innerHTML +=data;
+      carouselItem.innerHTML += data;
+      carouselItem1.innerHTML += data;
+      carouselItem2.innerHTML += data;
+      carouselItem3.innerHTML += data;
     });
 }
 
@@ -161,7 +156,7 @@ wishProducts();
 function smallViewProducts() {
   const carouselItem = document.querySelector(".carousel-item");
 
-  const url = "http://localhost:5000/api/products";
+  const url = "http://localhost:9000/api/products";
 
   const methodProduct = {
     method: "GET",
@@ -213,6 +208,31 @@ function smallViewProducts() {
 
 smallViewProducts();
 
+function showProgress() {
+  const getProgress = document.querySelector(".progress-section");
+
+  let progress = [
+    { value: 80, key: 5, display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>' },
+    { value: 80, key: 4, display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>'},
+    { value: 80, key: 3, display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>'},
+    { value: 80, key: 2, display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>'},
+    { value: 40, key: 1, display: '<i class="fa-solid fa-star-half-stroke" style="color: #ffd700;"></i>'},
+  ];
+
+  let data = [];
+
+  progress.forEach((item) => {
+    data += `
+        <div class="tins">
+        <h3>${item.key}</h3>
+        <div>${item.display}</div>
+        <progress id="file" value="${item.value}" max="100"> ${item.value}% </progress>
+        </div>
+        `;
+  });
+  getProgress.innerHTML = data;
+}
+
 // login function
 function logIn(event) {
   event.preventDefault();
@@ -253,7 +273,7 @@ function logIn(event) {
         console.log(result);
         localStorage.setItem("admin", JSON.stringify(result));
 
-        if (result.user.hasOwnProperty("email")) {
+        if (result.user.hasOwnProperty("isAdmin")) {
           location.href = "Allproducts.html";
         } else {
           Swal.fire({
@@ -449,5 +469,3 @@ function logIn(event) {
 
 // // add event listener for submit button
 // document.querySelector(".submitBtn").addEventListener("click", updateAccount);
-
-

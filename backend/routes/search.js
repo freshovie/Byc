@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { Product } = require("../model/product");
-// const auth = require("../middleware/auth");
-// const admin = require("../middleware/admin");
 
 // get all products
 

@@ -122,6 +122,8 @@ function logout() {
 
 
 
+
+
 //use for the search button.
 // const searchBtn = document.getElementById("button-search");
 // const searchInput = document.getElementById("search-field");

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Categories</title>
+    <!-- <script src="oauth.js"></script> -->
+
+    <link rel="stylesheet" href="./css/sheet.css" />
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body onload="getDashBoardApi(), getAllStudents()">
+    <!-- <div class="pagemodal">
+      <div class="preloader">
+        <svg
+          width="200"
+          height="200"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid"
+          class="lds-ripple"
+          style="background: 0 0"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="4.719"
+            fill="none"
+            stroke="#1d3f72"
+            stroke-width="2"
+          >
+            <animate
+              attributeName="r"
+              calcMode="spline"
+              values="0;40"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0 0.2 0.8 1"
+              begin="-1.5s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              calcMode="spline"
+              values="1;0"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0.2 0 0.8 1"
+              begin="-1.5s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle
+            cx="50"
+            cy="50"
+            r="27.591"
+            fill="none"
+            stroke="#5699d2"
+            stroke-width="2"
+          >
+            <animate
+              attributeName="r"
+              calcMode="spline"
+              values="0;40"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0 0.2 0.8 1"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              calcMode="spline"
+              values="1;0"
+              keyTimes="0;1"
+              dur="3"
+              keySplines="0.2 0 0.8 1"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        </svg>
+      </div>
+    </div> -->
+    <input type="checkbox" id="nav-toggle" />
+    <div class="sidebar bg-dark">
+      <div class="sidebar-brand">
+        <!-- <img class="uk-margin-small-right in-offset-top-10" src="img/nan.png" alt="wave" width="95" height="50" data-uk-img> -->
+        <img src="./Assets/BYC LOGO JPG FILE 1.png" alt="" />
+      </div>
+
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <a
+              href="AdminDashboard.html"
+              style="text-decoration: none"
+              ><span class="fa-solid fa-layer-group" style="color: blue"> </span
+              ><span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="AdminCategory.html" 
+            class="active"
+            style="text-decoration: none"
+              ><span
+                class="fa-solid fa-grip-horizontal"
+                style="color: blue"
+              ></span
+              ><span>Categories</span></a
+            >
+          </li>
+          <li>
+            <a href="AdminProduct.html" style="text-decoration: none"
+              ><span
+                class="fa-brands fa-product-hunt"
+                style="color: blue"
+              ></span
+              ><span>Products</span></a
+            >
+          </li>
+          <li>
+            <a href="AdminBlog.html" style="text-decoration: none"
+              ><span class="fa-solid fa-blog" style="color: blue"></span
+              ><span>Blog</span></a
+            >
+          </li>
+          <li>
+            <a href="AdminSettings.html" style="text-decoration: none"
+              ><span class="fa-solid fa-gear" style="color: blue"></span
+              ><span>Settings</span></a
+            >
+          </li>
+          <li>
+            <a onclick="logout()" style="text-decoration: none"
+              ><span
+                class="fa-solid fa-arrow-right-from-bracket"
+                style="color: blue"
+              ></span
+              ><span class="logspan">Logout</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <h2>
+          <label for="nav-toggle">
+            <span class="d-flex g-3">
+              <img src="./Assets/BYC LOGO JPG FILE 1.png" alt="" />
+              <img src="./Assets/icons8-fries-menu-48.png" alt="" />
+            </span>
+          </label>
+          <span id="adminId"></span>
+        </h2>
+      </header>
+
+      <main>
+        <div class="content">
+
+        </div>
+      </main>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom Javascript -->
+    <script src="chartjs.js"></script>
+    <script src="index.js"></script>
+    <!-- <script src="oauth.js"></script> -->
+  </body>
+</html>

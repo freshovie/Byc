@@ -5,7 +5,7 @@ const cartSchema = new mongoose.Schema({
   customer: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    required: true,
+    // required: true,
   },
   products: [
     {
@@ -32,6 +32,7 @@ const cartSchema = new mongoose.Schema({
         color: [
           {
             type: String,
+            enum: ["blue", "green", "purple", "brown", "white", "pink", "black"],
           },
         ],
         size: [
@@ -49,15 +50,6 @@ const cartSchema = new mongoose.Schema({
       required: true,
     },
   ],
-  
-   companyName:{
-    type: String,
-  },
-
-  city:{
-    type: String,
-    required: true,
-  },
 
   billing: {
     type: Number,

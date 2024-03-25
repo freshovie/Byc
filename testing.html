@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <title>Admin Login</title>
+
+    <style>
+        body {
+            /* background-image: url("4770.jpg"); */
+            /* background-repeat: no-repeat; */
+            /* background-attachment: fixed; */
+            /* background-size: cover; */
+            margin: 1px;
+            padding: 0px 10px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            /* Send the canvas to the background */
+        }
+
+        .fulladmin {
+            position: relative;
+            /* Ensure the content appears above the canvas */
+            z-index: 1;
+            /* Ensure the content appears above the canvas */
+            color: #fff;
+            /* Set text color to white */
+        }
+
+        .fulladmin img {
+            align-items: center;
+            justify-content: center;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 998px) {
+            .fulladmin {
+                padding: 20px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas-container"></div>
+
+    <script>
+        // Emulate navigation with History.pushState or History.replaceState
+        function emulateNavigation() {
+            history.pushState({}, "", "admin");
+        }
+
+        // Remove the password form completely
+        function removePasswordForm() {
+            var formElement = document.getElementById("loginForm");
+            if (formElement) {
+                formElement.remove();
+            }
+        }
+
+        // Call the functions to emulate navigation and remove the password form
+        emulateNavigation();
+        removePasswordForm();
+    </script>
+
+    <center>
+        <img src="./Assets/BYC LOGO JPG FILE 1.png" alt="Logo" style="margin-top: 2px">
+    </center>
+
+    <div class="fulladmin">
+        <img src="./Assets/cart transparent.png" alt="" data-aos="zoom-in-up" data-aos-duration="1000">
+        <div class="glass" data-aos="zoom-in-down" data-aos-duration="1000">
+            <div class="card-body">
+                <h3 class="text-center">Admin Login</h3>
+                <!-- Your content here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+    // Your Three.js code here
+    </script>
+
+</body>
+
+</html>

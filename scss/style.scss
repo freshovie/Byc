@@ -1823,6 +1823,9 @@ footer {
         flex-direction: column;
         width: 100%;
       }
+      .allols {
+        text-align: center;
+      }
     }
     @media screen and (min-width: 980px) and (max-width: 1240px) {
       .availables {
@@ -1862,22 +1865,79 @@ footer {
     overflow: hidden;
     font-weight: 600;
   }
-  .emmet {
-    .supa {
-      font-size: 20px;
-    }
+  .starts img {
+    text-align: center;
+    width: 20.5px;
+  }
+  .star-sec {
+    margin-bottom: 20px;
+  }
+  .starts {
+    display: flex;
+    justify-content: center;
+  }
+
+  .rates {
+    text-align: center;
+    justify-content: center;
+    background-color: #f8f5f5;
+    padding: 40px 30px;
+    width: auto;
+  }
+
+  .rates h1 {
+    padding-top: 40px;
+    font-weight: 100;
+  }
+  .rates span {
+    font-weight: 800;
+  }
+
+  .star-sec {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  progress[value] {
+    /* display: block; */
+    --color: #fb8200; /* the progress color */
+    --background: lightgrey; /* the background color */
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: 200px;
+    margin: 15px 10px;
+    border-radius: 10em;
+    background: var(--background);
+  }
+  progress[value]::-webkit-progress-bar {
+    border-radius: 10em;
+    background: var(--background);
+  }
+  progress[value]::-webkit-progress-value {
+    border-radius: 10em;
+    background: var(--color);
+  }
+  progress[value]::-moz-progress-bar {
+    border-radius: 10em;
+    background: var(--color);
+  }
+
+  .tins {
+    display: flex;
+    align-items: center;
+  }
+
+  .tins h3 {
+    margin: 11px;
+  }
+  .secline {
+    display: flex;
+    gap: 10px;
     span {
-      font-weight: bold;
-    }
-    .card {
-      // background-color: #f8f5f5;
-      align-items: center;
-      border-width: 5rem;
-      display: flex;
-      .card-body {
-        // display: flex;
-        background-color: #909090;
-      }
+      font-size: 12px;
     }
   }
 }

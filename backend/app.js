@@ -11,6 +11,7 @@ const authRoutes = require("./routes/auth");
 const cartRoutes = require("./routes/carts");
 const orderRoutes = require("./routes/orders");
 const searchRoutes = require("./routes/search");
+const adminRoutes = require("./routes/adminauth");
 
 
 mongoose
@@ -19,17 +20,19 @@ mongoose
   .catch((err) => console.log("could not connect to mongoDB...", err));
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
+//validation middleware
 app.use("/api/products", productRoutes); //Use the productRoutes for handling product-related routes.
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/carts", cartRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/search", searchRoutes);
+app.use("/api/adminauth", adminRoutes);
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 1600;
 
 app.listen(port, () => {
   console.log(`listening on port ${port}....`);

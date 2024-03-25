@@ -75,7 +75,6 @@ router.get("/:id", async (req, res) => {
 
 router.get('/', async(req, res) => {
     const category = req.query.category;
-    console.log(category)
 
     try {
         if (!category) return res.status(400).json({ message: 'Category parameter not found!'});

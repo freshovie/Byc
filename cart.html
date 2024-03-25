@@ -15,7 +15,7 @@
 
     <title>Cart</title>
 </head>
-<body>
+<body onload="showProgress(), getProducts(), wishProducts(), smallViewProducts()">
 
     <!-- large view -->
 <div class="navl fixed-top" data-aos="zoom-in">
@@ -235,7 +235,7 @@
                        <p style="color: grey;">4.05</p>
                     </div>
                     <img src="/Assets/Rectangle small.png" alt="">
-                    <h3>₦2,800.00</h3>
+                    <h3 class="allols">₦2,800.00</h3>
                     <div class="availables">
                         <div class="sizes">
                             <p>Availables Sizes</p>
@@ -296,7 +296,7 @@
 
 <!--Section 3-->
 <section>
-    <div class="section2-10" data-aos="fade-left">
+    <div class="section2-10" data-aos="fade-up-left">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-1"></div> 
             <div class="col-sm-12 col-md-12 col-lg-10">
@@ -317,109 +317,88 @@
 
 <!--Section 4-->
 <section>
-    <div class="section3-10" data-aos="fade-right">
+    <div class="section3-10" data-aos="fade-up-right">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-1"></div>
             <div class="col-sm-12 col-md-12 col-lg-10">
                 <div class="card">
-                    <h2>Customer Reviews</h2>
-                    <img src="/Assets/Rectangle small.png" alt="">
-                        <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-6">
+                    <h2 class="mt-3"> Customer Reviews</h2>
+                    <hr>
                     <div class="card-body">
                         <p>PRODUCT RATINGS (1129)</p>
-                        <div class="emmet d-flex w-100">
-                                <div>
-                                    <p class="supa"><span>4.5</span>/5.0</p>
-                                    <div class="imgs">
-                                        <img src="/Assets/star.png" alt="">
-                                        <img src="/Assets/star.png" alt="">
-                                        <img src="/Assets/star.png" alt="">
-                                        <img src="/Assets/star.png" alt="">
-                                        <img src="/Assets/star-half.png" alt="">
-                                    </div>
-                            </div>
-                            <div class="p-ratings">
-                                <div class="ratings">
-                                    <img src="/Assets/star.png" alt="">
-                                    <p>5</p>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div>                                </div>
-                                <div class="ratings">
-                                    <img src="/Assets/star.png" alt="">
-                                    <p>4</p>
-                                    <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                    </div>
-                                    </div>
-                                    <div class="ratings">
-                                        <img src="/Assets/star.png" alt="">
-                                        <p>3</p>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    <div class="ratings">
-                                        <img src="/Assets/star.png" alt="">
-                                        <p>2</p>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    <div class="ratings">
-                                        <img src="/Assets/star.png" alt="">
-                                        <p>1</p>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="75" aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="star-sec">
+                        <div class="rates">
+                            <h1><span>4.5/</span>5.0</h1>
+                            <div class="starts">
+                                <div><i class="fa-solid fa-star" style="color: #ffd700;"></i></div>
+                                <div><i class="fa-solid fa-star" style="color: #ffd700;"></i></div>
+                                <div><i class="fa-solid fa-star" style="color: #ffd700;"></i></div>
+                                <div><i class="fa-solid fa-star" style="color: #ffd700;"></i></div>
+                                <div><i class="fa-solid fa-star-half-stroke" style="color: #ffd700;"></i></div>
                             </div>
                         </div>
+                        <div class="progress-section">
+                    
+                        </div>
+                    
+                        <!--  -->
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6"></div>
-                </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-1"></div>
-        </div>
-</section>
+                                <h4>PRODUCT REVIEWS (438)</h4>
+                                <P style="text-align: right; color: #ff4b4b;">See all > </P>
+                                <hr>
+                                <div class="comments">
+                                    <h5>Good product</h5>
+                                    <p class="quotes">The product lasts, the design is perfect I love it</p>
+                                    <div class="secline">
+                                        <div class="imgs-vert">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star-half.png" alt="">
+                                        </div>
+                                        <p><span>12-08-2021 by JAMES JOHN</span></p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="comments">
+                                    <h5>Good product</h5>
+                                    <p class="quotes">The product lasts, the design is perfect I love it</p>
+                                    <div class="secline">
+                                        <div class="imgs-vert">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star-half.png" alt="">
+                                        </div>
+                                        <p><span>12-08-2021 by JAMES JOHN</span></p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="comments">
+                                    <h5>Looks nice</h5>
+                                    <p class="quotes">The product lasts, the design is perfect I love it</p>
+                                    <div class="secline">
+                                        <div class="imgs-vert">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star.png" alt="">
+                                            <img src="/Assets/star-half.png" alt="">
+                                        </div>
+                                        <p><span>12-08-2021 by JAMES JOHN</span></p>
+                                    </div>
+                                </div>
+                           
 
-<!--Section 5-->
-<div class="section4-10" data-aos="fade-left">
-    <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-1"></div>
-        <div class="col-sm-12 col-md-12 col-lg-10">
-            <div class="p-places">
-                <p>PRODUCT REVIEWS (438)</p>
-                <P>See all  > </P>
-            </div>
-            <div class="comments">
-                <h5>Good product</h5>
-                <p class="quotes">The product lasts, the design is perfect I love it</p>
-                <div class="secline">
-                    <div class="imgs-vert">
-                        <img src="/Assets/star.png" alt="">
-               <img src="/Assets/star.png" alt="">
-               <img src="/Assets/star.png" alt="">
-               <img src="/Assets/star.png" alt="">
-               <img src="/Assets/star-half.png" alt=""> 
-                   </div>
-                   <p>12-08-2021 by JAMES JOHN</p>
+                        </div>
+                    </div>
+                    </div>
+                <div class="col-sm-12 col-md-12 col-lg-1"></div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-1"></div>
-    </div>
-</div>
+</section>
 
 <!--section 6-->
 <section>
@@ -459,161 +438,6 @@
                     </div>
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="card">
-                            <img src="/Assets/image 17.png" alt="">
-                            <div class="card-body">
-                                <p><strong>MEN BOXERS</strong></p>
-                                <p>BYC 1163</p>
-                                <p class="coloring">Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1</p>
-                                <p>₦1,900.00</p>
-                                <div class="starlight">
-                                    <div class="imgs">
-                                         <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star-half.png" alt=""> 
-                                    </div>
-                                   <p>4.05</p>
-                                </div>
-                            </div>
-                            <div class="clickbtn">
-                                <button class="wishlist">
-                                    <img src="/Assets/ant-design_heart-outlined.png" alt="">
-                                    Wishlist
-                                </button>
-                                <button class="buynow">
-                                    <img src="/Assets/ant-design_shopping-cart-outlined White.png" alt="">
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card">
-                            <img src="/Assets/image 17.png" alt="">
-                            <div class="card-body">
-                                <p><strong>MEN BOXERS</strong></p>
-                                <p>BYC 1163</p>
-                                <p class="coloring">Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1</p>
-                                <p>₦1,900.00</p>
-                                <div class="starlight">
-                                    <div class="imgs">
-                                         <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star-half.png" alt=""> 
-                                    </div>
-                                   <p>4.05</p>
-                                </div>
-                            </div>
-                            <div class="clickbtn">
-                                <button class="wishlist">
-                                    <img src="/Assets/ant-design_heart-outlined.png" alt="">
-                                    Wishlist
-                                </button>
-                                <button class="buynow">
-                                    <img src="/Assets/ant-design_shopping-cart-outlined White.png" alt="">
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card">
-                            <img src="/Assets/image 17.png" alt="">
-                            <div class="card-body">
-                                <p><strong>MEN BOXERS</strong></p>
-                                <p>BYC 1163</p>
-                                <p class="coloring">Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1</p>
-                                <p>₦1,900.00</p>
-                                <div class="starlight">
-                                    <div class="imgs">
-                                         <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star-half.png" alt=""> 
-                                    </div>
-                                   <p>4.05</p>
-                                </div>
-                            </div>
-                            <div class="clickbtn">
-                                <button class="wishlist">
-                                    <img src="/Assets/ant-design_heart-outlined.png" alt="">
-                                    Wishlist
-                                </button>
-                                <button class="buynow">
-                                    <img src="/Assets/ant-design_shopping-cart-outlined White.png" alt="">
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card">
-                            <img src="/Assets/image 17.png" alt="">
-                            <div class="card-body">
-                                <p><strong>MEN BOXERS</strong></p>
-                                <p>BYC 1163</p>
-                                <p class="coloring">Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1</p>
-                                <p>₦1,900.00</p>
-                                <div class="starlight">
-                                    <div class="imgs">
-                                         <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star-half.png" alt=""> 
-                                    </div>
-                                   <p>4.05</p>
-                                </div>
-                            </div>
-                            <div class="clickbtn">
-                                <button class="wishlist">
-                                    <img src="/Assets/ant-design_heart-outlined.png" alt="">
-                                    Wishlist
-                                </button>
-                                <button class="buynow">
-                                    <img src="/Assets/ant-design_shopping-cart-outlined White.png" alt="">
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card">
-                            <img src="/Assets/image 17.png" alt="">
-                            <div class="card-body">
-                                <p><strong>MEN BOXERS</strong></p>
-                                <p>BYC 1163</p>
-                                <p class="coloring">Fashionable Men's Underwear Boxer Cotton Underwear 3 In 1</p>
-                                <p>₦1,900.00</p>
-                                <div class="starlight">
-                                    <div class="imgs">
-                                         <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star.png" alt="">
-                                <img src="/Assets/star-half.png" alt=""> 
-                                    </div>
-                                   <p>4.05</p>
-                                </div>
-                            </div>
-                            <div class="clickbtn">
-                                <button class="wishlist">
-                                    <img src="/Assets/ant-design_heart-outlined.png" alt="">
-                                    Wishlist
-                                </button>
-                                <button class="buynow">
-                                    <img src="/Assets/ant-design_shopping-cart-outlined White.png" alt="">
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                      </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">                      
                     </a>
@@ -726,7 +550,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="main.js"></script>
+    <script src="main.js"></script>
     <script src="api.js"></script>
 
 
