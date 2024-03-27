@@ -4,7 +4,9 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 
+// Route to authenticate user
 router.post("/", async (req, res) => {
+  // Validate request body
   const { error } = validate(req.body);
 
   if (error) return res.status(400).send(error.details[0].message);
@@ -36,6 +38,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Validate request body schema using Joi
 function validate(req) {
   const schema = Joi.object({
     email: Joi.string().min(5).max(255).required().email(),

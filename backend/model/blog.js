@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
 
+// Define the schema for the Blog model
 const blogSchema = new mongoose.Schema({
     image: {
         type: String,
@@ -37,8 +38,10 @@ const blogSchema = new mongoose.Schema({
     }
 });
 
+// Create the Blog model using the schema
 const Blog = mongoose.model("Blog", blogSchema);
 
+// Function to validate the blog object using Joi schema validation
 function validateBlog(blog) {
     const schema = {
         image: Joi.string().required(),
@@ -46,8 +49,9 @@ function validateBlog(blog) {
         author: Joi.string().required(),
         body: Joi.string().min(20).required(),
     };
-    return schema.validate(blog, schema);
+    return schema.validate(blog); // Validate the blog object against the schema
 }
 
+// Export the Blog model and the validate function
 exports.Blog = Blog;
 exports.validate = validateBlog;

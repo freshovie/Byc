@@ -323,3 +323,7 @@ main {
 .secondSection {
     margin-top: 10px;
 }
+
+.today{
+    display: flex;
+}
