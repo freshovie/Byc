@@ -76,8 +76,8 @@ new Chart(doughnutCtx, {
     datasets: [
       {
         data: [
-          { id: "Sales", nested: { value: 1500 } },
-          { id: "Purchases", nested: { value: 500 } },
+          { id: "Sales", nested: { value: 20 } },
+          { id: "Purchases", nested: { value: 50 } },
         ],
       },
     ],

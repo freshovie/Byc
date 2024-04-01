@@ -10,7 +10,7 @@ const blogSchema = new mongoose.Schema({
     title: {
         type: String,
         minlength: 15,
-        maxlength: 70,
+        maxlength: 100,
         required: true
     },
     author: {
@@ -49,7 +49,7 @@ function validateBlog(blog) {
         author: Joi.string().required(),
         body: Joi.string().min(20).required(),
     };
-    return schema.validate(blog); // Validate the blog object against the schema
+    return Joi.validate(blog, schema); // Validate the blog object against the schema
 }
 
 // Export the Blog model and the validate function

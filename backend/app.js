@@ -14,6 +14,7 @@ const cartRoutes = require("./routes/carts");
 const orderRoutes = require("./routes/orders");
 const searchRoutes = require("./routes/search");
 const adminRoutes = require("./routes/adminauth");
+const blogRoutes = require("./routes/blogs");
 
 // Connect to MongoDB database
 mongoose
@@ -33,6 +34,23 @@ app.use("/api/carts", cartRoutes); // Use the cartRoutes for handling cart-relat
 app.use("/api/orders", orderRoutes); // Use the orderRoutes for handling order-related routes
 app.use("/api/search", searchRoutes); // Use the searchRoutes for handling search-related routes
 app.use("/api/adminauth", adminRoutes); // Use the adminRoutes for handling admin authentication-related routes
+app.use("/api/blogs", blogRoutes); //Use the blogRoutes for handling  blog related routes
+
+// // Error handler
+// app.use(function (err, req, res, next) {
+//   if (err.type === "entity.parse.failed") {
+//     return res.status(400).send({ error: "Bad request payload" });
+//   } else if (err.name === "UnauthorizedError") {
+//     return res.status(401).send({ type: "unauthorized", message: "Invalid token" });
+//   } else if (err.message.startsWith("User not found")) {
+//     return res.status(404).send({ type: "not_found", message: err.message });
+//   } else if (err instanceof Joi.ValidationError) {
+//     return res.status(422).send({ error: `Invalid input data`, details: err.details });
+//   }
+
+//   console.error(err.stack);
+//   res.status(500).send({ error: "Internal server error" });
+// });
 
 // Start the server
 const port = process.env.PORT || 1600; // Define the port number

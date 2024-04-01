@@ -324,6 +324,16 @@ main {
     margin-top: 10px;
 }
 
-.today{
+.todays{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+/* .myDough{
+    height: 50px;
+    width: 50px;
+}
+.upsection{
+    display: flex;
+    width: 100px;
+} */
