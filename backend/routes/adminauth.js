@@ -1,7 +1,7 @@
 const Joi = require("joi");
-const { User } = require("../model/user");
-const express = require("express");
-const router = express.Router();
+const { User } = require("../model/user");  // Importing User model
+const express = require("express"); // Importing Express framework
+const router = express.Router(); // Creating an Express router
 const bcrypt = require("bcrypt");
 
 // Route to authenticate user

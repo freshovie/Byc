@@ -28,7 +28,7 @@ function getProducts() {
   const mentos3 = document.querySelector(".mentos3");
   const mentos4 = document.querySelector(".mentos4");
 
-  const url = "http://localhost:9000/api/products";
+  const url = "http://localhost:1600/api/products";
 
   const methodProduct = {
     method: "GET",
@@ -95,7 +95,7 @@ function wishProducts() {
   const carouselItem3 = document.querySelector(".smallCar4");
 
   console.log(carouselItem);
-  const url = "http://localhost:9000/api/products";
+  const url = "http://localhost:1600/api/products";
 
   const methodProduct = {
     method: "GET",
@@ -156,7 +156,7 @@ wishProducts();
 function smallViewProducts() {
   const carouselItem = document.querySelector(".carousel-item");
 
-  const url = "http://localhost:9000/api/products";
+  const url = "http://localhost:1600/api/products";
 
   const methodProduct = {
     method: "GET",
@@ -265,7 +265,7 @@ function logIn(event) {
       body: profile,
     };
 
-    const url = "http://localhost:6000/api/auth";
+    const url = "http://localhost:1600/api/auth";
 
     fetch(url, signMethod)
       .then((response) => response.json())

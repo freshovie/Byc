@@ -1,10 +1,9 @@
-const express = require("express");
-const { Cart } = require("../model/cart");
-const { User } = require("../model/user");
-const { Product } = require("../model/product");
-const auth = require("../middleware/auth");
-
-const router = express.Router();
+const express = require("express"); // Importing Express framework
+const router = express.Router(); // Creating an Express router
+const { Cart } = require("../model/cart"); // Importing Cart model
+const { User } = require("../model/user"); // Importing User model
+const { Product } = require("../model/product"); // Importing Product model
+const auth = require("../middleware/auth"); // Importing auth middleware
 
 //Get all carts
 router.get("/", async (req, res) => {
