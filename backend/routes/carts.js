@@ -5,14 +5,20 @@ const { User } = require("../model/user"); // Importing User model
 const { Product } = require("../model/product"); // Importing Product model
 const auth = require("../middleware/auth"); // Importing auth middleware
 
-//Get all carts
+// @route   GET api/carts
+// @desc    Get all carts
+// @access  Public
+// Routes to get all carts
 router.get("/", async (req, res) => {
   // Fetch all carts from the database and send them as the response
   const carts = await Cart.find().sort("name");
   res.send(carts);
 });
 
-// Get a product by ID
+// @route   GET api/carts using cartId
+// @desc    Get by carts using cartId
+// @access  Public
+// Routes to get carts by ID
 router.get("/:id", async (req, res) => {
   // Find the cart with the specified ID
   const cart = await Cart.findById(req.params.id);
@@ -22,7 +28,10 @@ router.get("/:id", async (req, res) => {
   res.send(cart);
 });
 
-// Get carts by user ID
+// @route   GET api/carts by user cartId
+// @desc    Get carts user cartId
+// @access  Public
+// Routes to get carts by user ID
 router.get("/user/:userId", async (req, res) => {
   try {
     // Extract the user ID from the request parameters
@@ -38,7 +47,10 @@ router.get("/user/:userId", async (req, res) => {
   }
 });
 
-//Post to create new cart
+// @route   Post api/carts
+// @desc    Post carts
+// @access  Private
+// Routes to post carts by ID
 router.post("/", async (req, res) => {
   // Extract customer ID and products from the request body
   const { customer, products } = req.body;
@@ -100,7 +112,10 @@ router.post("/", async (req, res) => {
   }
 });
 
-// DELETE cart by ID
+// @route   Delete api/carts using cartId
+// @desc    Delete carts using cartId
+// @access  Private
+// Routes to delete carts by ID
 router.delete("/:cartId/:productId", auth, async (req, res) => {
   // Extract cart ID and product ID from the request parameters
   const { cartId, productId } = req.params;
