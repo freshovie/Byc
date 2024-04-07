@@ -8,7 +8,7 @@ const auth = require("../middleware/auth"); // Importing auth middleware
 
 //get all wishlists
 router.get("/", async (req, res) => {
-  const wishlists = await Wishlist.find().sort("");
+  const wishlists = await Wishlist.find().sort("dateAdded");
   res.send(wishlists);
 });
 
@@ -127,6 +127,7 @@ router.delete("/:wishlistId/:productId", auth, async (req, res) => {
         await wishlist.save();
 
         // Respond with the removed product
+        res.json({ message: "Product removed from the wishlist!"});
         res.status(200).json(removedProduct);
     } catch (e) {
         // Handle any errors
