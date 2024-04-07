@@ -6,13 +6,19 @@ const { Wishlist } = require("../model/wishlist"); //Importing  Wishlist model
 const auth = require("../middleware/auth"); // Importing auth middleware
 
 
-//get all wishlists
+// @route   GET api/wishlists
+// @desc    Get all wishlists
+// @access  Public
+// Route to get all wishlists
 router.get("/", async (req, res) => {
   const wishlists = await Wishlist.find().sort("dateAdded");
   res.send(wishlists);
 });
 
-//Get a specific wishlist by ID
+// @route   GET api/wishlists/:id
+// @desc    Get a specific wishlist by ID
+// @access  Public
+// Route to get a specific wishlist by its ID
 router.get("/:id", async (req, res) => {
   const wishlist = await Wishlist.findById(req.params.id);
   if (!wishlist)
@@ -22,9 +28,10 @@ router.get("/:id", async (req, res) => {
   res.send(wishlist);
 });
 
-// @desc    Add a product from user's wishlist
+// @route   POST api/wishlists
+// @desc    Create a new wishlist
 // @access  Private
-//Create new wishlist
+// Route to create a new wishlist
 router.post("/", async (req, res) => {
   const { customer, products } = req.body; // Extract customer and products from request body
 
@@ -135,6 +142,42 @@ router.delete("/:wishlistId/:productId", auth, async (req, res) => {
         res.status(500).json({message:"Server Error"})
     };
 });
+
+// Define a function to clear expired wishlists
+const clearExpiredWishlist = async () => {
+  try {
+    // Get all wishlists from the database
+    const wishlists = await Wishlist.find();
+
+    // Iterate through each wishlist
+    for (const wishlist of wishlists) {
+      // Filter out expired products from the wishlist
+      wishlist.products = wishlist.products.filter(product => {
+        // Get the creation date of the product
+        const creationDate = new Date(product.dateAdded);
+        
+        // Get the date 30 days ago
+        const thirtyDaysAgo = new Date();
+        thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+        
+        // Check if the creation date is after 30 days ago
+        return creationDate > thirtyDaysAgo;
+      });
+
+      // Save the updated wishlist with expired products removed
+      await wishlist.save();
+    }
+  } catch (error) {
+    // Log any errors that occur during the process
+    console.error('Error clearing expired wishlists:', error);
+  }
+};
+
+// Call the function to clear expired wishlists
+clearExpiredWishlist();
+
+
+
 
 
 module.exports = router;
