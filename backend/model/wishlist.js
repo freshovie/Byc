@@ -13,34 +13,27 @@ const wishlistSchema = new mongoose.Schema({
   products: [
     {
       type: new mongoose.Schema({
-        // Product details
         image: {
           type: String,
         },
         name: {
           type: String,
-          minlength: 4, // Minimum length for product name
-          maxLength: 25, // Maximum length for product name
+          minlength: 4,
+          maxlength: 25,
         },
         code: {
           type: String,
         },
         summary: {
           type: String,
-          minlength: 10, // Minimum length for product summary
-          maxLength: 100, // Maximum length for product summary
+          minlength: 10,
+          maxlength: 100,
         },
         price: {
           type: Number,
         },
-        color: [
-          {
-            type: String,
-            enum: ["s", "m", "l", "xl"], // Allowed colors for product
-          },
-        ],
       }),
-      required: true, // Each product is required in the wishlist
+      required: true,
     },
   ],
   dateAdded: {
@@ -55,7 +48,7 @@ const Wishlist = mongoose.model("Wishlist", wishlistSchema);
 // Function to validate the wishlist object using Joi schema validation
 function validateWishlist(wishlist) {
   const schema = Joi.object({
-    products: Joi.array().required(), // Validate products as an array (required)
+    products: Joi.array().required(),
   });
   return Joi.validate(wishlist, schema); // Validate the wishlist object against the schema
 }
