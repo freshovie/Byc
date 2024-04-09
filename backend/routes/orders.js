@@ -4,6 +4,7 @@ const { Order, validate } = require("../model/order"); // Importing Order model 
 const { Product } = require("../model/product"); // Importing Product model
 const { Cart } = require("../model/cart"); // Importing Cart model
 const auth = require("../middleware/auth"); // Importing auth middleware
+const { User } = require("../model/user"); // Importing User middleware
 
 // Route to get all orders
 router.get("/", async (req, res) => {
@@ -27,100 +28,107 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Route to get order by order number
-router.get("/:orderNo", auth, async (req, res) => {
+//Route to find by orderNo.
+router.get("/:orderNo", async (req, res) => {
   try {
-    const { orderNo } = req.params; // Extract the order number from the request parameters
-
-    // Find the order by order number and populate the associated cart and customer details
-    const order = await Order.findOne({ orderNo }).populate({
+    // Find the order by its order number in the request parameters
+    const order = await Order.findOne({ orderNo: req.params.orderNo }).populate({
       path: "cartId",
       populate: {
         path: "customer",
       },
     });
 
-    // If no order found, send a 404 Not Found response
+    // If no order is found for the orderNo, send a 404 not found response.
     if (!order)
-      return res
-        .status(404)
-        .send("No order found with the provided order number.");
+      return res.status(404).send("No order found with the given order number.");
 
-    // Send the order as the response
+    // Return the requested order
     res.send(order);
-  } catch (err) {
-    // If an error occurs, send a 500 Internal Server Error response with the error message
-    res.status(500).json({ message: err.message });
+  } catch (error) {
+    // If there's an error, log it and send a 500 Internal Server Error response
+    console.log(`Error in getting order by order No : ${error}`);
+    res.status(500).send('Server Error');
   }
 });
+
 
 // Route to create a new order
 router.post("/", auth, async (req, res) => {
-  const userId = req.user._id; // Extracting user ID from request object
+    const userId = req.user._id;
 
-  try {
-    const { cartItem, company, shippingAddress, status, orderDate } = req.body; // Destructuring request body
+    try {
+        // Destructure req.body
+        const { cartId, company, shippingAddress, status, orderDate } = req.body;
+        
+        // Validate with Joi
+        const { error } = validate(req.body)
+        if (error) return res.status(400).send(error.details[0].message);
+        
+        // Retrieve the cart using the provided cart ID
+        const cart = await Cart.findOne({ customer: userId }).populate('products');
+        if (!cart) return res.status(404).send('Cart not found');
 
-    const { error } = validate(req.body); // Validating request body
-    if (error) return res.status(400).send(error.details[0].message); // Returning 400 status with error message if validation fails
+        // Extract the product IDs and quantities associated with the retrieved cart
+        const productsToUpdate = cart.products.map(product => ({
+            productId: product._id,
+            quantity: product.quantity
+        }));
 
-    const cart = await Cart.findOne({ customer: userId }).populate("products"); // Finding cart for the user
-    if (!cart) return res.status(404).send("Cart not found"); // Returning 404 status if cart is not found
+        // Clear cart products and reset billing
+        cart.products = [];
+        cart.billing = 0;
 
-    const productsToUpdate = cart.products.map((product) => ({
-      // Mapping products in cart to update their stock later
-      productId: product.id,
-      quantity: product.quantity,
-    }));
+        // Save the updated cart
+        await cart.save();
 
-    cart.products = []; // Emptying cart products
-    cart.billing = 0; // Resetting billing to 0
-    await cart.save(); // Saving the updated cart
+        // Update the stock quantity for each product
+        for (const { productId, quantity } of productsToUpdate) {
+            const product = await Product.findById(productId);
+            if (!product) continue; // Skip if product not found
+            
+            // Check if there are enough items in stock
+            if (product.numberInStock < quantity) {
+                return res.status(400).send(`Insufficient stock`);
+            }
 
-    // Updating stock for each product in the cart
-    for (const { productId, quantity } of productsToUpdate) {
-      const product = await Product.findById(productId); // Finding product by ID
-      if (!product) continue; // Skipping if product is not found
+            // Update the stock quantity
+            product.numberInStock -= quantity;
+            await product.save();
+        }
+        
+        // Function for generating a random order number
+        function generateOrderNumber(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+        
+        // Create new order
+        const order = new Order({
+            orderNo: generateOrderNumber(15),
+            cartId,
+            company,
+            shippingAddress,
+            status,
+            orderDate
+        });
 
-      if (product.numberInStock < quantity) {
-        // Checking if there is enough stock
-        return res.status(400).send(`Insufficient Stock`); // Returning 400 status if stock is insufficient
-      }
+        // Save the order to the database
+        const newOrder = await order.save();
 
-      product.numberInStock -= quantity; // Deducting quantity from stock
-      await product.save(); // Saving the updated product
+        // Return the newly created order
+        res.status(201).json(newOrder);
+    } 
+    catch (error) {
+        console.error('Error placing order:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
     }
-
-    // Function to generate a random order number
-    function generateOrderNumber(length) {
-      const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; // Define characters for generating order number
-      let result = "";
-      for (let i = 0; i < length; i++) {
-        result += characters.charAt(
-          Math.floor(Math.random() * characters.length)
-        ); // Generating random character
-      }
-      return result; // Returning generated order number
-    }
-
-    // Creating a new order with provided details
-    const order = new Order({
-      orderNo: generateOrderNumber(15), // Generating order number
-      cartItem,
-      company,
-      shippingAddress,
-      status,
-      orderDate,
-    });
-
-    const newOrder = await order.save(); // Saving the new order to the database
-
-    res.status(201).json(newOrder); // Returning 201 status with the new order details
-  } catch (error) {
-    console.error("Error placing order", error); // Logging error to console
-    res.status(500).json({ message: "Internal Server Error" }); // Returning 500 status for any internal server error
-  }
 });
+
 
 // Route to update an order
 router.put("/:orderNo", auth, async (req, res) => {

@@ -65,7 +65,7 @@ const Order = mongoose.model("Order", orderSchema);
 function validateOrder(order) {
   const schema = {
     // Validate cart as a valid ObjectId
-    cart: Joi.objectId().required(),
+    cartId: Joi.objectId().required(),
     // Validate company name as a string (optional)
     company: Joi.string(),
     // Validate shipping address
@@ -79,12 +79,11 @@ function validateOrder(order) {
       // Validate streetName as a string with min and max length
       streetName: Joi.string().min(6).max(80),
       // Validate phone as a number with a regex pattern
-      phone: Joi.number().regex(/^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,15}$/).required()
+      phone: Joi.number().required()
     }).required(),
     // Validate status as a string with predefined values and default to 'pending'
     status: Joi.string().valid('pending', 'confirmed', 'cancelled', 'shipped', 'completed').default('pending'),
     // Validate orderDate as a date with default value of current date
-    orderDate: Joi.date().default(Date.now)
   };
   return Joi.validate(order, schema); // Validate the order object against the schema
 }
