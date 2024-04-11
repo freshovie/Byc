@@ -110,7 +110,9 @@ function getDashBoardApi() {
       getPageSpin.style.display = "none";
     })
     .catch((error) => console.log("error", error));
-}
+};
+
+
 
 // Function to navigate to the admin login page
 function gotoLoginPage(event) {

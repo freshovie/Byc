@@ -136,9 +136,9 @@ router.delete("/:wishlistId/:productId", auth, async (req, res) => {
         // Respond with the removed product
         res.json({ message: "Product removed from the wishlist!"});
         res.status(200).json(removedProduct);
-    } catch (e) {
+    } catch (err) {
         // Handle any errors
-        console.log(e);
+        console.log(err);
         res.status(500).json({message:"Server Error"})
     };
 });

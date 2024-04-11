@@ -83,6 +83,8 @@ new Chart(doughnutCtx, {
     ],
   },
   options: {
+    circumference: Math.PI * 2, // Adjust the circumference of the chart
+    radius: "40%", // Adjust the radius of the chart
     parsing: {
       key: "nested.value",
     },
