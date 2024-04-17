@@ -1,5 +1,7 @@
 //This script is for calling api's only.
 
+const { response } = require("express");
+
 const paymentForm = document.getElementById("paymentForm");
 paymentForm.addEventListener("submit", payWithPaystack, false);
 function payWithPaystack() {
@@ -212,11 +214,32 @@ function showProgress() {
   const getProgress = document.querySelector(".progress-section");
 
   let progress = [
-    { value: 80, key: 5, display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>' },
-    { value: 80, key: 4, display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>'},
-    { value: 80, key: 3, display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>'},
-    { value: 80, key: 2, display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>'},
-    { value: 40, key: 1, display: '<i class="fa-solid fa-star-half-stroke" style="color: #ffd700;"></i>'},
+    {
+      value: 80,
+      key: 5,
+      display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>',
+    },
+    {
+      value: 80,
+      key: 4,
+      display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>',
+    },
+    {
+      value: 80,
+      key: 3,
+      display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>',
+    },
+    {
+      value: 80,
+      key: 2,
+      display: '<i class="fa-solid fa-star" style="color: #ffd700;"></i>',
+    },
+    {
+      value: 40,
+      key: 1,
+      display:
+        '<i class="fa-solid fa-star-half-stroke" style="color: #ffd700;"></i>',
+    },
   ];
 
   let data = [];
@@ -232,6 +255,8 @@ function showProgress() {
   });
   getProgress.innerHTML = data;
 }
+
+showProgress();
 
 // login function
 function logIn(event) {
@@ -288,6 +313,86 @@ function logIn(event) {
   }
 }
 
+function viewBlogs() {
+  const blogView = document.querySelector(".blogpost");
+
+  const url = "http://localhost:1600/api/blogs";
+
+  const methodBlog = {
+    method: "GET",
+  };
+
+  fetch(url, methodBlog)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((result) => {
+      console.log(result);
+
+      let data = "";
+
+      result.forEach((item) => {
+        data += `<tr>
+                      <th scope="row fixed-side">${item._id}</th>
+                      <td>${item.title}</td>
+                      <td>${item.author}</td>
+                      <td>${item.body}</td>
+                      <td>${item.views}</td>
+                      <td>${item.likes}</td>
+                      <td>${item.dateAdded}</td>
+                    </tr>`;
+      });
+
+      blogView.querySelector("tbody").innerHTML = data;
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+    });
+}
+
+viewBlogs();
+
+function viewOrders() {
+  const orderView = document.querySelector(".orderlist");
+
+  const url = "http://localhost:1600/api/orders";
+
+  const methodOrder = {
+    method: "GET",
+  };
+
+  let data = [];
+
+  fetch(url, methodOrder)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+
+      result.map((item) => {
+        data += `
+       <tr>
+                        <th scope="row">${item.orderNo}</th>
+                        <td>${item.customerId}</td>
+                        <td>${item.cartId}</td>
+                        <td>${item.shippingAddress.country}</td>
+                        <td>${item.shippingAddress.town}</td>
+                        <td>${item.shippingAddress.phone}</td>
+                        <td><button class="btn btn-success">${
+                          item.status
+                        }</button></td>
+                        <td>${item.orderDate}</td>
+                      </tr>
+      `;
+      });
+
+      orderView.querySelector("tbody").innerHTML = data;
+    });
+}
+
+viewOrders();
 // fetch("https://reqres.in/api/users", {
 //   method: "POST",
 //   headers: {
@@ -469,3 +574,33 @@ function logIn(event) {
 
 // // add event listener for submit button
 // document.querySelector(".submitBtn").addEventListener("click", updateAccount);
+
+// // Sorting orders by date
+// data = data.sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt));
+
+// const tableBody = document.createElement("tbody");
+// orderView.appendChild(tableBody);
+
+// for (let i=0;i<3;i++) {
+//   const row = data[i];
+//   const tr = document.createElement("tr");
+//   Object.values(row).forEach((field)=>{
+//     const td = document.createElement("td");
+//     td.textContent = field;
+//     tr.append(td);
+//   })
+//   tableBody.append(tr);
+// }
+// }).catch((err) => console.log(err))
+// }
+
+// // Function to show the details of an Order
+// function showDetails(id){
+// alert(`You clicked on ${id}`);
+
+// const detailUrl = `http://localhost:8000/orders/${id}/detail`;
+
+// fetch(detailUrl)
+// .then(res=> res.json())
+// .then(data =>{
+// })

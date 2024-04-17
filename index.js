@@ -126,3 +126,38 @@ function logout() {
   // Redirect to admin login page
   location.href = "admin.html";
 }
+
+
+
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      const formData = {
+        image: document.getElementById('image').value,
+        title: document.getElementById('title').value,
+        author: document.getElementById('author').value,
+        body: document.getElementById('body').value
+      };
+
+      fetch('http://localhost:1600/api/blogs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(rawData)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Success:', data);
+        // Do something with the response data if needed
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Handle errors
+      });
+    });

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | Blog</title>
+    <title>Dashboard | Categories</title>
     <!-- <script src="oauth.js"></script> -->
 
     <link rel="stylesheet" href="./css/sheet.css" />
@@ -24,7 +24,7 @@
     />
   </head>
 
-  <body onload="viewBlogs()">
+  <body onload="viewOrders()">
     <!-- <div class="pagemodal">
       <div class="preloader">
         <svg
@@ -107,38 +107,39 @@
       <div class="sidebar-menu">
         <ul>
           <li>
-            <a href="AdminDashboard.html" style="text-decoration: none"
+            <a
+              href="AdminDashboard.html"
+              style="text-decoration: none"
               ><span class="fa-solid fa-layer-group" style="color: blue"> </span
               ><span>Dashboard</span></a
             >
           </li>
           <li>
             <a href="AdminProduct.html" style="text-decoration: none"
-              ><span
-                class="fa-brands fa-product-hunt"
-                style="color: blue"
-              ></span
-              ><span>Products</span></a
+            ><span
+            class="fa-brands fa-product-hunt"
+            style="color: blue"
+            ></span
+            ><span>Products</span></a
             >
           </li>
           <li>
-            <a
-              href="AdminBlog.html"
+            <a href="AdminBlog.html" style="text-decoration: none"
+            ><span class="fa-solid fa-blog" style="color: blue"></span
+              ><span>Blog</span></a
+              >
+            </li>
+            <li>
+              <a href="AdminOrders.html" 
               class="active"
               style="text-decoration: none"
-              ><span class="fa-solid fa-blog" style="color: blue"></span
-              ><span>Blog</span></a
-            >
-          </li>
-          <li>
-            <a href="AdminOrders.html" style="text-decoration: none"
-              ><span
-                class="fa-solid fa-grip-horizontal"
-                style="color: blue"
-              ></span
-              ><span>Orders</span></a
-            >
-          </li>
+                ><span
+                  class="fa-solid fa-grip-horizontal"
+                  style="color: blue"
+                ></span
+                ><span>Orders</span></a
+              >
+            </li>
           <li>
             <a href="AdminSettings.html" style="text-decoration: none"
               ><span class="fa-solid fa-gear" style="color: blue"></span
@@ -172,52 +173,34 @@
 
       <main>
         <div class="content">
-          <h1>All Blogs</h1>
+          <h1>Orders</h1>
 
           <div class="productsoptions d-flex justify-content-end">
-            <button
-              type="button"
-              class="btn btn-light editbtn mr-2"
-              data-bs-toggle="modal"
-              data-bs-target="#editProductModal"
-            >
+            <button type="button" class="btn btn-light editbtn mr-2" data-bs-toggle="modal" data-bs-target="#editProductModal">
               <i class="fa-solid fa-sliders"></i> Filter
             </button>
-            <button
-              type="button"
-              class="btn btn-light deletebtn mr-2"
-              data-bs-toggle="modal"
-              data-bs-target="#removeProductModal"
-            >
+            <button type="button" class="btn btn-light deletebtn" data-bs-toggle="modal"
+              data-bs-target="#removeProductModal">
               <i class="fa-solid fa-arrow-up-wide-short"></i> Sort
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary addbtn"
-              data-bs-toggle="modal"
-              data-bs-target="#addProductModal"
-              onclick="window.location.href='./adminAddBlog.html'"
-            >
-              <i class="fa-solid fa-plus"></i> Add Blog
             </button>
           </div>
 
-          <div class="blogpost">
+          <div class="orderlist">
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-1"></div>
               <div class="col-sm-12 col-md-12 col-lg-10">
-                <!-- Wrap the table in a div with table-responsive class -->
                 <div class="table-responsive">
                   <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">Body</th>
-                        <th scope="col">Views</th>
-                        <th scope="col">Likes</th>
-                        <th scope="col">Date Added</th>
+                        <th scope="col">orderNo</th>
+                        <th scope="col">customerId</th>
+                        <th scope="col">cartId</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Town</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Order Date</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -229,6 +212,7 @@
               <div class="col-sm-12 col-md-12 col-lg-1"></div>
             </div>
           </div>
+          
         </div>
       </main>
     </div>

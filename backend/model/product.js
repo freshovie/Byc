@@ -57,7 +57,7 @@ const productSchema = new mongoose.Schema({
   tag: {
     type: [String],
     required: true,
-    enum: ["boxers", "camisole", "pants", "t-shirts", "singlets", "towels"],
+    enum: ["Boxers", "Camisole", "Pants", "T-Shirts", "Singlets", "Towels"],
   },
   // Number of items in stock for the product
   numberInStock: {

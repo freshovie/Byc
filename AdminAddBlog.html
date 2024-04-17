@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | Categories</title>
+    <title>Dashboard | Blog</title>
     <!-- <script src="oauth.js"></script> -->
 
     <link rel="stylesheet" href="./css/sheet.css" />
@@ -24,7 +24,7 @@
     />
   </head>
 
-  <body onload="getDashBoardApi(), getAllStudents()">
+  <body onload="">
     <!-- <div class="pagemodal">
       <div class="preloader">
         <svg
@@ -107,22 +107,9 @@
       <div class="sidebar-menu">
         <ul>
           <li>
-            <a
-              href="AdminDashboard.html"
-              style="text-decoration: none"
+            <a href="AdminDashboard.html" style="text-decoration: none"
               ><span class="fa-solid fa-layer-group" style="color: blue"> </span
               ><span>Dashboard</span></a
-            >
-          </li>
-          <li>
-            <a href="AdminCategory.html" 
-            class="active"
-            style="text-decoration: none"
-              ><span
-                class="fa-solid fa-grip-horizontal"
-                style="color: blue"
-              ></span
-              ><span>Categories</span></a
             >
           </li>
           <li>
@@ -135,9 +122,21 @@
             >
           </li>
           <li>
-            <a href="AdminBlog.html" style="text-decoration: none"
+            <a
+              href="AdminBlog.html"
+              class="active"
+              style="text-decoration: none"
               ><span class="fa-solid fa-blog" style="color: blue"></span
               ><span>Blog</span></a
+            >
+          </li>
+          <li>
+            <a href="AdminOrders.html" style="text-decoration: none"
+              ><span
+                class="fa-solid fa-grip-horizontal"
+                style="color: blue"
+              ></span
+              ><span>Orders</span></a
             >
           </li>
           <li>
@@ -164,7 +163,6 @@
         <h2>
           <label for="nav-toggle">
             <span class="d-flex g-3">
-              <img src="./Assets/BYC LOGO JPG FILE 1.png" alt="" />
               <img src="./Assets/icons8-fries-menu-48.png" alt="" />
             </span>
           </label>
@@ -174,7 +172,60 @@
 
       <main>
         <div class="content">
-
+          <h1>Add Blogs</h1>
+          <div class="blogform">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-1"></div>
+              <div class="col-sm-12 col-md-12 col-lg-10">
+                <div class="form-grouping">
+                  <form id="myForm">
+                    <div class="form-group fullname">
+                      <label for="fullname">Image url</label>
+                      <input
+                        type="text"
+                        id="imageUrl"
+                        name="image"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                    <div class="form-group fullname">
+                      <label for="fullname">Title</label>
+                      <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                    <div class="form-group fullname">
+                      <label for="fullname">Author</label>
+                      <input
+                        type="text"
+                        id="author"
+                        name="author"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                    <div class="form-group-story">
+                      <label for="fullname">Body</label>
+                      <input
+                        type="text"
+                        id="body"
+                        name="body"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                    <button type="submit" class="submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-1"></div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
@@ -194,6 +245,7 @@
     <!-- Custom Javascript -->
     <script src="chartjs.js"></script>
     <script src="index.js"></script>
+    <script src="admin.js"></script>
     <!-- <script src="oauth.js"></script> -->
   </body>
 </html>
