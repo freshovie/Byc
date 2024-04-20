@@ -375,8 +375,8 @@ function viewOrders() {
         data += `
        <tr>
                         <th scope="row">${item.orderNo}</th>
-                        <td>${item.customerId}</td>
-                        <td>${item.cartId}</td>
+                        <td>${item.cartId.customer}</td>
+                        <td>${item.cartId._id}</td>
                         <td>${item.shippingAddress.country}</td>
                         <td>${item.shippingAddress.town}</td>
                         <td>${item.shippingAddress.phone}</td>
@@ -393,6 +393,169 @@ function viewOrders() {
 }
 
 viewOrders();
+
+// Function to display Swal message
+function showMessage(icon, text, confirmButtonColor) {
+  Swal.fire({
+    icon: icon,
+    text: text,
+    confirmButtonColor: confirmButtonColor,
+  });
+}
+
+// Function to handle successful response
+function handleSuccess(result) {
+  console.log(result); // Log the response from the server
+
+  if (result.status === "success") {
+    showMessage("success", `${result.message}`, "#2D85DE");
+    // Reload the page after 3 seconds if successful
+    setTimeout(() => {
+      location.reload();
+    }, 3000);
+  } else {
+    showMessage("info", `${result.message}`, "#2D85DE");
+  }
+}
+
+// Function to handle errors
+function handleError(error) {
+  console.error("There was a problem with the fetch operation:", error);
+  showMessage("error", "There was a problem with the fetch operation", "#FF0000");
+}
+
+// Function to submit product data
+function submitProduct(formData, dashHeader) {
+  const dashMethod = {
+    method: "POST",
+    headers: dashHeader,
+    body: JSON.stringify(formData),
+  };
+
+  const url = "http://localhost:1600/api/products";
+
+  // Make a POST request to the server
+  fetch(url, dashMethod)
+    .then((response) => response.json())
+    .then(handleSuccess) // Handle success response
+    .catch(handleError); // Handle errors
+}
+
+// Function to handle form submission
+function addProduct(event) {
+  event.preventDefault(); // Prevent default form submission behavior
+
+  const getSpin = document.querySelector(".spinner-border");
+  getSpin.style.display = "inline-block"; // Show spinner while processing
+
+  // Retrieve form data
+  const rawData = {
+    image: document.getElementById("image").value,
+    name: document.getElementById("name").value,
+    code: document.getElementById("code").value,
+    description: document.getElementById("description").value,
+    price: document.getElementById("price").value,
+    category: document.getElementById("category").value,
+    tag: document.getElementById("tag").value,
+    numberInStock: document.getElementById("NumberInStock").value
+  };
+
+  // Check if all required fields are filled
+  const requiredFields = Object.values(rawData).every(value => value.trim() !== "");
+
+  if (!requiredFields) {
+    // Display an info message if any required field is empty
+    showMessage("info", "All fields required!", "#2D85DE");
+    getSpin.style.display = "none"; // Hide spinner
+    return; // Exit function
+  }
+
+  // Retrieve token from localStorage
+  const getToken = localStorage.getItem("admin");
+  const myToken = JSON.parse(getToken);
+  const token = myToken.token;
+
+  // Create header with authorization token
+  const dashHeader = new Headers();
+  dashHeader.append("Authorization", `Bearer ${token}`);
+
+  // Construct formData object
+  const formData = {
+    image: rawData.image,
+    name: rawData.name,
+    code: rawData.code,
+    description: rawData.description,
+    price: rawData.price,
+    category: rawData.category,
+    tag: rawData.tag,
+    numberInStock: rawData.numberInStock
+  };
+
+  // Submit product data
+  submitProduct(formData, dashHeader);
+  
+  getSpin.style.display = "none"; // Hide spinner after submission
+}
+
+// Attach the addProduct function to the button click event
+document.querySelector('.addbtn').addEventListener('click', addProduct);
+
+// function createCategory(event) {
+//   event.preventDefault();
+
+//   const getSpin = document.querySelector(".spin");
+//   getSpin.style.display = "inline-block";
+
+//   const catName = document.getElementById("cat").value;
+//   const catImage = document.getElementById("imcat").files[0];
+//   if (catName === "") {
+//     Swal.fire({
+//       icon: "info",
+//       text: "All Fields Required!",
+//       confirmButtonColor: "#2D85DE",
+//     });
+//     getSpin.style.display = "none";
+//   } else {
+//     const getToken = localStorage.getItem("admin");
+//     const myToken = JSON.parse(getToken);
+//     const token = myToken.token;
+//     const dashHeader = new Headers();
+//     dashHeader.append("Authorization", `Bearer ${token}`);
+//     const catData = new FormData();
+//     catData.append("name", catName);
+//     catData.append("image", catImage);
+//     const dashMethod = {
+//       method: "POST",
+//       headers: dashHeader,
+//       body: catData,
+//     };
+//     const url =
+//       "https://pluralcodesandbox.com/yorubalearning/api/admin/create_category";
+//     fetch(url, dashMethod)
+//       .then((response) => response.json())
+//       .then((result) => {
+//         console.log(result);
+//         if (result.status === "success") {
+//           Swal.fire({
+//             icon: "success",
+//             text: `${result.message}`,
+//             confirmButtonColor: "#2D85DE",
+//           });
+//           setTimeout(() => {
+//             location.reload();
+//           }, 3000);
+//         } else {
+//           Swal.fire({
+//             icon: "info",
+//             text: `${result.message}`,
+//             confirmButtonColor: "#2D85DE",
+//           });
+//         }
+//       })
+//       .catch((error) => console.log("error", error));
+//   }
+// }
+
 // fetch("https://reqres.in/api/users", {
 //   method: "POST",
 //   headers: {

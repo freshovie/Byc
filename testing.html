@@ -1,120 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>View Orders</title>
-    <!-- Link to Bootstrap CSS -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      /* Custom CSS */
-      /* Adjust spacing between columns */
-      .col-lg-1,
-      .col-lg-10 {
-        padding: 0;
-      }
-    </style>
-  </head>
 
-  <body>
-    <div class="orderlist">
-      <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-          <!-- Wrap the table in a div with table-responsive class -->
-          <div class="table-responsive">
-            <table class="table fixed-header">
-              <thead>
-                <tr>
-                  <th scope="col">Order No</th>
-                  <th scope="col">Customer ID</th>
-                  <th scope="col">Cart ID</th>
-                  <th scope="col">Country</th>
-                  <th scope="col">Town</th>
-                  <th scope="col">Phone</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Timestamps</th>
-                </tr>
-              </thead>
-              <tbody class="scrollable-body">
-                <!-- Table rows will be populated dynamically using JavaScript -->
-              </tbody>
-            </table>
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="productform">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-1"></div>
+            <div class="col-sm-12 col-md-12 col-lg-10">
+                <form action="/addProduct" method="post" enctype="multipart/form-data">
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Image :</label>
+                        <div class="col-sm-7">
+                            <input type="text" required class="form-control" id="image" name="Image">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Name :</label>
+                        <div class="col-sm-7">
+                            <input type="text" required class="form-control" id="name" name="name">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Code :</label>
+                        <div class="col-sm-7">
+                            <input type="text" required class="form-control" id="code" name="code">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Description :</label>
+                        <div class="col-sm-7">
+                            <input type="text" required class="form-control" id="description" name="Description">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Price :</label>
+                        <div class="col-sm-7">
+                            <span class="dollar-symbol">$</span>
+                            <input type="number" required class="form-control" id="price" name="Price" value="$">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="category" class="col-sm-5 col-form-label">Category :</label>
+                        <div class="col-sm-7">
+                            <input list="categories" name="category" required class="form-control" id="category">
+                            <datalist id="categories">
+                                <option value="Men">
+                                <option value="Women">
+                                <option value="Kids">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="tag" class="col-sm-5 col-form-label">Tag :</label>
+                        <div class="col-sm-7">
+                            <input list="tags" name="tag" required class="form-control" id="tag">
+                            <datalist id="tags">
+                                <option value="Boxers">
+                                <option value="Camisole">
+                                <option value="Pants">
+                                <option value="T-Shirts">
+                                <option value="Singlets">
+                                <option value="Towels">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Number In Stock:</label>
+                        <div class="col-sm-7">
+                            <input type="number" required class="form-control" id="numberInStock"
+                                name="Number In Stock">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary addbtn" data-bs-toggle="modal"
+                        data-bs-target="#addProductModal">Add Product</button>
+                </form>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-1"></div>
         </div>
-        <div class="col-lg-1"></div>
-      </div>
     </div>
 
     <script>
-      function viewOrders() {
-        const orderView = document.querySelector(".orderlist");
-        const urlOrders = "http://localhost:1600/api/orders";
-        const urlCustomers = "http://localhost:1600/api/customers"; // New API endpoint URL
+        // Function to handle form submission
+        function addProduct() {
+            // Get form data
+            const formData = {
+                image: document.getElementById('image').value,
+                name: document.getElementById('name').value,
+                code: document.getElementById('code').value,
+                description: document.getElementById('description').value,
+                price: document.getElementById('price').value,
+                category: document.getElementById('category').value,
+                tag: document.getElementById('tag').value,
+                numberInStock: document.getElementById('numberInStock').value
+            };
 
-        const methodOrder = {
-          method: "GET",
-        };
+            // Make a POST request to the server
+            fetch('/addProduct', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Network response was not ok.');
+                })
+                .then(data => {
+                    console.log(data); // Log the response from the server
+                    // Handle the response as needed
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                    // Handle errors
+                });
+        }
 
-        let ordersData = [];
-        let customersData = []; // Array to store data from the new endpoint
-
-        // Fetch data from the orders API endpoint
-        fetch(urlOrders, methodOrder)
-          .then((response) => response.json())
-          .then((ordersResult) => {
-            console.log("Orders:", ordersResult); // Log the response data
-
-            // Process data from the orders endpoint
-            ordersResult.forEach((order) => {
-              ordersData += `
-        <tr>
-          <th scope="row">${order.orderNo}</th>
-          <td>${order.customerId}</td>
-          <td>${order.cartId}</td>
-          <td>${order.shippingAddress.country}</td>
-          <td>${order.shippingAddress.town}</td>
-          <td>${order.shippingAddress.phone}</td>
-          <td><button class="btn btn-success">${order.status}</button></td>
-          <td>${order.orderDate}</td>
-        </tr>
-      `;
-            });
-
-            // Update the orders table with the fetched data
-            orderView.querySelector("tbody").innerHTML = ordersData;
-          })
-          .catch((error) => {
-            console.error("Error fetching orders:", error);
-          });
-
-        // Fetch data from the customers API endpoint
-        fetch(urlCustomers, methodOrder)
-          .then((response) => response.json())
-          .then((customersResult) => {
-            console.log("Customers:", customersResult); // Log the response data
-
-            // Process data from the customers endpoint
-            customersResult.forEach((customer) => {
-              // Example: Display customer data in the console
-              console.log("Customer ID:", customer.id);
-              console.log("Customer Name:", customer.name);
-
-              // Store customer data in the customersData array for further use if needed
-              customersData.push(customer);
-            });
-
-            // Further processing of customer data can be added here
-          })
-          .catch((error) => {
-            console.error("Error fetching customers:", error);
-          });
-      }
-
-      viewOrders();
+        // Attach the addProduct function to the button click event
+        document.querySelector('.addbtn').addEventListener('click', addProduct);
     </script>
-  </body>
+</body>
+
 </html>
