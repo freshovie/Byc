@@ -1,6 +1,8 @@
 //This script is for calling api's only.
 
 const { response } = require("express");
+const { image, code } = require("fontawesome");
+const { description } = require("joi/lib/types/lazy");
 
 const paymentForm = document.getElementById("paymentForm");
 paymentForm.addEventListener("submit", payWithPaystack, false);
@@ -290,7 +292,7 @@ function logIn(event) {
       body: profile,
     };
 
-    const url = "http://localhost:1600/api/auth";
+    const url = "http://localhost:1900/api/auth";
 
     fetch(url, signMethod)
       .then((response) => response.json())
@@ -313,192 +315,169 @@ function logIn(event) {
   }
 }
 
-function viewBlogs() {
-  const blogView = document.querySelector(".blogpost");
 
-  const url = "http://localhost:1600/api/blogs";
 
-  const methodBlog = {
-    method: "GET",
-  };
 
-  fetch(url, methodBlog)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((result) => {
-      console.log(result);
 
-      let data = "";
 
-      result.forEach((item) => {
-        data += `<tr>
-                      <th scope="row fixed-side">${item._id}</th>
-                      <td>${item.title}</td>
-                      <td>${item.author}</td>
-                      <td>${item.body}</td>
-                      <td>${item.views}</td>
-                      <td>${item.likes}</td>
-                      <td>${item.dateAdded}</td>
-                    </tr>`;
-      });
 
-      blogView.querySelector("tbody").innerHTML = data;
-    })
-    .catch((error) => {
-      console.error("There was a problem with the fetch operation:", error);
-    });
-}
+// function updateProduct(id){
+//   // Get the modal
+//   var modal = document.getElementById("myModal");
 
-viewBlogs();
+//   // Get the <span> element that closes the modal and store it in a variable.
+//   var span = document.getElementsByClassName("close")[0];
 
-function viewOrders() {
-  const orderView = document.querySelector(".orderlist");
+//   // When the user clicks on <span> (x), close the modal.
+//   span.onclick = function() {
+//     modal.style.display = "none";
+//   }
 
-  const url = "http://localhost:1600/api/orders";
+//   // When the user clicks anywhere outside of the modal, close it.
+//   window.onload = function(){
+//     window.addEventListener("click", function(event) {
+//       if (event.target === modal) {
+//         modal.style.display = "none";
+//       }
+//     });
+//   };
 
-  const methodOrder = {
-    method: "GET",
-  };
+//   fetch('http://localhost:3001/products/' + id).then(function(res){
+//     return res.json();
+//   }).then(function(data){
+//     document.querySelector('#update-form').action= 'http://localhost:3001/products/'+ data.id;
+//     document.querySelector("#prodId").value = data.id;
+//     document.querySelector("#tagSelect").value = data.category_id;
+//     document.querySelector("#nameField").value = data.name;
+//     document.querySelector("#priceField").value = data.price;
+//     document.querySelector("#descArea").innerHTML = data.description;
+//     document.querySelector("#qtyField").value = data.quantity;
+//     modal.style.display = "block";
+//   });
+// }
 
-  let data = [];
+// const addProduct = JSON.stringify({
+//   name: name,
+//   image: image,
+//   code: code,
+//   description: description,
+//   price: price,
+//   category: category,
+//   tag: tag,
+//   numberInStock: numberInStock,
+// });
 
-  fetch(url, methodOrder)
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
+// const courMethod = {
+//   method: "POST",
+//   headers: myHead,
+//   body: courseProfile,
+// };
 
-      result.map((item) => {
-        data += `
-       <tr>
-                        <th scope="row">${item.orderNo}</th>
-                        <td>${item.cartId.customer}</td>
-                        <td>${item.cartId._id}</td>
-                        <td>${item.shippingAddress.country}</td>
-                        <td>${item.shippingAddress.town}</td>
-                        <td>${item.shippingAddress.phone}</td>
-                        <td><button class="btn btn-success">${
-                          item.status
-                        }</button></td>
-                        <td>${item.orderDate}</td>
-                      </tr>
-      `;
-      });
+// // Function to display Swal message
+// function showMessage(icon, text, confirmButtonColor) {
+//   Swal.fire({
+//     icon: icon,
+//     text: text,
+//     confirmButtonColor: confirmButtonColor,
+//   });
+// }
 
-      orderView.querySelector("tbody").innerHTML = data;
-    });
-}
+// // Function to handle successful response
+// function handleSuccess(result) {
+//   console.log(result); // Log the response from the server
 
-viewOrders();
+//   if (result.status === "success") {
+//     showMessage("success", `${result.message}`, "#2D85DE");
+//     // Reload the page after 3 seconds if successful
+//     setTimeout(() => {
+//       location.reload();
+//     }, 3000);
+//   } else {
+//     showMessage("info", `${result.message}`, "#2D85DE");
+//   }
+// }
 
-// Function to display Swal message
-function showMessage(icon, text, confirmButtonColor) {
-  Swal.fire({
-    icon: icon,
-    text: text,
-    confirmButtonColor: confirmButtonColor,
-  });
-}
+// // Function to handle errors
+// function handleError(error) {
+//   console.error("There was a problem with the fetch operation:", error);
+//   showMessage("error", "There was a problem with the fetch operation", "#FF0000");
+// }
 
-// Function to handle successful response
-function handleSuccess(result) {
-  console.log(result); // Log the response from the server
+// // Function to submit product data
+// function submitProduct(formData, dashHeader) {
+//   const dashMethod = {
+//     method: "POST",
+//     headers: dashHeader,
+//     body: JSON.stringify(formData),
+//   };
 
-  if (result.status === "success") {
-    showMessage("success", `${result.message}`, "#2D85DE");
-    // Reload the page after 3 seconds if successful
-    setTimeout(() => {
-      location.reload();
-    }, 3000);
-  } else {
-    showMessage("info", `${result.message}`, "#2D85DE");
-  }
-}
+//   const url = "http://localhost:1600/api/products";
 
-// Function to handle errors
-function handleError(error) {
-  console.error("There was a problem with the fetch operation:", error);
-  showMessage("error", "There was a problem with the fetch operation", "#FF0000");
-}
+//   // Make a POST request to the server
+//   fetch(url, dashMethod)
+//     .then((response) => response.json())
+//     .then(handleSuccess) // Handle success response
+//     .catch(handleError); // Handle errors
+// }
 
-// Function to submit product data
-function submitProduct(formData, dashHeader) {
-  const dashMethod = {
-    method: "POST",
-    headers: dashHeader,
-    body: JSON.stringify(formData),
-  };
+// // Function to handle form submission
+// function addProduct(event) {
+//   event.preventDefault(); // Prevent default form submission behavior
 
-  const url = "http://localhost:1600/api/products";
+//   const getSpin = document.querySelector(".spinner-border");
+//   getSpin.style.display = "inline-block"; // Show spinner while processing
 
-  // Make a POST request to the server
-  fetch(url, dashMethod)
-    .then((response) => response.json())
-    .then(handleSuccess) // Handle success response
-    .catch(handleError); // Handle errors
-}
+//   // Retrieve form data
+//   const rawData = {
+//     image: document.getElementById("image").value,
+//     name: document.getElementById("name").value,
+//     code: document.getElementById("code").value,
+//     description: document.getElementById("description").value,
+//     price: document.getElementById("price").value,
+//     category: document.getElementById("category").value,
+//     tag: document.getElementById("tag").value,
+//     numberInStock: document.getElementById("NumberInStock").value
+//   };
 
-// Function to handle form submission
-function addProduct(event) {
-  event.preventDefault(); // Prevent default form submission behavior
+//   // Check if all required fields are filled
+//   const requiredFields = Object.values(rawData).every(value => value.trim() !== "");
 
-  const getSpin = document.querySelector(".spinner-border");
-  getSpin.style.display = "inline-block"; // Show spinner while processing
+//   if (!requiredFields) {
+//     // Display an info message if any required field is empty
+//     showMessage("info", "All fields required!", "#2D85DE");
+//     getSpin.style.display = "none"; // Hide spinner
+//     return; // Exit function
+//   }
 
-  // Retrieve form data
-  const rawData = {
-    image: document.getElementById("image").value,
-    name: document.getElementById("name").value,
-    code: document.getElementById("code").value,
-    description: document.getElementById("description").value,
-    price: document.getElementById("price").value,
-    category: document.getElementById("category").value,
-    tag: document.getElementById("tag").value,
-    numberInStock: document.getElementById("NumberInStock").value
-  };
+//   // Retrieve token from localStorage
+//   const getToken = localStorage.getItem("admin");
+//   const myToken = JSON.parse(getToken);
+//   const token = myToken.token;
 
-  // Check if all required fields are filled
-  const requiredFields = Object.values(rawData).every(value => value.trim() !== "");
+//   // Create header with authorization token
+//   const dashHeader = new Headers();
+//   dashHeader.append("Authorization", `Bearer ${token}`);
 
-  if (!requiredFields) {
-    // Display an info message if any required field is empty
-    showMessage("info", "All fields required!", "#2D85DE");
-    getSpin.style.display = "none"; // Hide spinner
-    return; // Exit function
-  }
+//   // Construct formData object
+//   const formData = {
+//     image: rawData.image,
+//     name: rawData.name,
+//     code: rawData.code,
+//     description: rawData.description,
+//     price: rawData.price,
+//     category: rawData.category,
+//     tag: rawData.tag,
+//     numberInStock: rawData.numberInStock
+//   };
 
-  // Retrieve token from localStorage
-  const getToken = localStorage.getItem("admin");
-  const myToken = JSON.parse(getToken);
-  const token = myToken.token;
+//   // Submit product data
+//   submitProduct(formData, dashHeader);
 
-  // Create header with authorization token
-  const dashHeader = new Headers();
-  dashHeader.append("Authorization", `Bearer ${token}`);
-
-  // Construct formData object
-  const formData = {
-    image: rawData.image,
-    name: rawData.name,
-    code: rawData.code,
-    description: rawData.description,
-    price: rawData.price,
-    category: rawData.category,
-    tag: rawData.tag,
-    numberInStock: rawData.numberInStock
-  };
-
-  // Submit product data
-  submitProduct(formData, dashHeader);
-  
-  getSpin.style.display = "none"; // Hide spinner after submission
-}
+//   getSpin.style.display = "none"; // Hide spinner after submission
+// }
 
 // Attach the addProduct function to the button click event
-document.querySelector('.addbtn').addEventListener('click', addProduct);
+// document.querySelector('.addbtn').addEventListener('click', addProduct);
 
 // function createCategory(event) {
 //   event.preventDefault();

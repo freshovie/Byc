@@ -9,12 +9,19 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
+<style>
+    .spinner-border {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+</style>
+
 <body>
     <div class="productform">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-1"></div>
             <div class="col-sm-12 col-md-12 col-lg-10">
-                <form action="/addProduct" method="post" enctype="multipart/form-data">
+                <form id="productForm" action="/addProduct" method="post" enctype="multipart/form-data">
                     <div class="mb-3 row">
                         <label for="staticEmail" class="col-sm-5 col-form-label">Image :</label>
                         <div class="col-sm-7">
@@ -43,7 +50,7 @@
                         <label for="staticEmail" class="col-sm-5 col-form-label">Price :</label>
                         <div class="col-sm-7">
                             <span class="dollar-symbol">$</span>
-                            <input type="number" required class="form-control" id="price" name="Price" value="$">
+                            <input type="number" required class="form-control" id="price" name="Price">
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -78,55 +85,74 @@
                                 name="Number In Stock">
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary addbtn" data-bs-toggle="modal"
-                        data-bs-target="#addProductModal">Add Product</button>
+                    <button type="submit" class="btn btn-primary addbtn">Add Product</button>
                 </form>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-1"></div>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <script>
         // Function to handle form submission
-        function addProduct() {
-            // Get form data
-            const formData = {
-                image: document.getElementById('image').value,
-                name: document.getElementById('name').value,
-                code: document.getElementById('code').value,
-                description: document.getElementById('description').value,
-                price: document.getElementById('price').value,
-                category: document.getElementById('category').value,
-                tag: document.getElementById('tag').value,
-                numberInStock: document.getElementById('numberInStock').value
-            };
+        function createProduct(event) {
+            event.preventDefault();
 
-            // Make a POST request to the server
-            fetch('/addProduct', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    }
-                    throw new Error('Network response was not ok.');
-                })
-                .then(data => {
-                    console.log(data); // Log the response from the server
-                    // Handle the response as needed
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                    // Handle errors
+            const addButton = document.getElementById('addBtn');
+            addButton.innerHTML = '<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...';
+            addButton.disabled = true;
+
+            const productName = document.getElementById("name").value;
+            const ProductPrice = document.getElementById("price").value;
+            const ProductCategory = document.getElementById("category").value;
+            const ProductCode = document.getElementById("code").value;
+            const productDescription = document.getElementById("description").value;
+            const productTag = document.getElementById("tag").value;
+            const productNumberInStock = document.getElementById("numberInStock").value;
+            const imageURL = document.getElementById("image").value;
+            if (
+                productName === "" ||
+                ProductPrice === "" ||
+                ProductCategory === "" ||
+                productDescription === "" ||
+                productTag === "" ||
+                productNumberInStock === "" ||
+                !imageURL.startsWith("http")
+            ) {
+                // Use Swal for displaying alerts
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please fill all fields!'
                 });
+            } else {
+                fetch("http://localhost:1900/api/products", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        name: productName,
+                        price: ProductPrice,
+                        category: ProductCategory,
+                        code: ProductCode,
+                        description: productDescription,
+                        tag: productTag,
+                        numberInstock: parseInt(productNumberInStock),
+                        imgUrl: imageURL,
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        window.location.replace("/admin");
+                    })
+                    .catch((error) => {
+                        console.log("Error: ", error);
+                    });
+            }
         }
 
-        // Attach the addProduct function to the button click event
-        document.querySelector('.addbtn').addEventListener('click', addProduct);
+        // Attach the createProduct function to the form submission event
+        document.getElementById('productForm').addEventListener('submit', createProduct);
     </script>
 </body>
 

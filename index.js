@@ -36,7 +36,7 @@ function logIn(event) {
     };
 
     // Define API endpoint URL
-    const url = "http://localhost:6000/api/adminauth";
+    const url = "http://localhost:1900/api/adminauth";
 
     // Send login request to server
     fetch(url, signMethod)

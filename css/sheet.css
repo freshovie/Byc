@@ -491,6 +491,7 @@ main {
 .section5-4 .card .card-body .belowhands .clickbtn .wishlist {
   width: 100%;
   background-color: rgb(10, 156, 235);
+  color: white;
 }
 
 .section5-4 .card .card-body .mentos .clickbtn .buynow,
@@ -499,7 +500,8 @@ main {
 .section5-4 .card .card-body .mentos4 .clickbtn .buynow,
 .section5-4 .card .card-body .belowhands .clickbtn .buynow {
   width: 100%;
-  background-color: #bd3a3a;
+  background-color: grey;
+  color: white;
 }
 
 @media screen and (max-width: 1000px) {
@@ -624,6 +626,7 @@ main {
   border: 1px solid rgb(10, 156, 235);
   font-size: 20px;
   background-color: rgb(10, 156, 235);
+  color: #fff;
 }
 
 .section5-4-md .carousel .carousel-inner .carousel-item .card .clickbtn img {
@@ -649,7 +652,7 @@ main {
   .card
   .clickbtn
   .buynow {
-  background: #bd3a3a;
+  background: grey;
   color: white;
 }
 
@@ -684,10 +687,10 @@ th {
   /* Adjust as needed */
 }
 
-.fixed-side{
-    position: sticky;
-    top: 0;
-    z-index: 1;
+.fixed-side {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 /* Adjust spacing between columns */
@@ -702,4 +705,18 @@ th {
   .blogpost {
     margin: 0 auto;
   }
+}
+
+
+
+.spinner-border {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: -.125em;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: .75s linear infinite spinner-border;
+    animation: .75s linear infinite spinner-border;
 }
