@@ -14,7 +14,7 @@ router.get("/admin-only", isAdmin, async (req, res) => {
 });
 
 // Route to register a new user
-router.post("/", auth, async (req, res) => {
+router.post("/", async (req, res) => {
   // Validate the request body
   const { error } = validate(req.body);
 

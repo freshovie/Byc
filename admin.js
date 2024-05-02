@@ -4,7 +4,7 @@
 //   const mentos3 = document.querySelector(".mentos3");
 //   const mentos4 = document.querySelector(".mentos4");
 
-const { result } = require("lodash");
+// const { result } = require("lodash");
 
 //   const url = "http://localhost:1600/api/products";
 
@@ -283,7 +283,9 @@ function createProduct(event) {
   const getTag = document.getElementById("protag").value;
   const getNumberInStock = document.getElementById("pronumberInStock").value;
 
-  if (getImage === "" || getName === "" || getCode === "" || getDescription === "" || getPrice === "" || getCategories === "" || getTag === "" || getNumberInStock === "" ) {
+  console.log(getImage, getName, getCode, getDescription, getPrice, getCategories, getTag, getNumberInStock)
+
+  if (getName === "" || getCode === "" || getDescription === "" || getPrice === "" || getCategories === "" || getTag === "" || getNumberInStock === "" ) {
     Swal.fire({
       icon: 'info',
       text: 'All fields are required!',
@@ -297,30 +299,25 @@ function createProduct(event) {
     const getTok = JSON.parse(getToken);
     const token = getTok.token;
 
-    // console.log(token)
-
-    // const proheader = new Headers();
-
-    // proheader.append("Content-Type", "application/json");
-    // proheader.append("x-auth-token", token);
+    console.log(token)
 
     const profile = JSON.stringify({
-      "image": getImage,
+      "image": [getImage],
       "name": getName,
       "code": getCode,
       "description": getDescription,
       "price": getPrice,
-      "category": getCategories,
-      "tags": getTag,
+      "category": [getCategories],
+      "tag": [getTag],
       "numberInStock": getNumberInStock,
       "isAvailable": true
-    })
+    });
 
     const proMethod = {
-      method: 'post',
+      method: 'POST',
       headers: {
         "Content-Type": "application/json",
-        "x-auth-token": token,
+        "x-auth-token": token
       },
       body: profile
     }

@@ -45,7 +45,7 @@ router.post("/", [auth, admin], async (req, res) => {
   // Save the new product to the database
   await product.save();
   // Send the newly created product as a response
-  res.send(product);
+  res.json(product);
 });
 
 // Update a product by ID

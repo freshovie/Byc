@@ -19,7 +19,7 @@ const wishlistRoutes = require("./routes/wishlists");
 
 // Connect to MongoDB database
 mongoose
-  .connect("mongodb://localhost/byc")
+  .connect("mongodb://localhost/byc2")
   .then(() => console.log("connected to mongoDB..."))
   .catch((err) => console.log("could not connect to mongoDB...", err));
 

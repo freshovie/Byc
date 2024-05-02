@@ -292,7 +292,7 @@ function logIn(event) {
       body: profile,
     };
 
-    const url = "http://localhost:1900/api/auth";
+    const url = "http://localhost:1600/api/auth";
 
     fetch(url, signMethod)
       .then((response) => response.json())
