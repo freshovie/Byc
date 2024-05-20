@@ -61,57 +61,6 @@ function logIn(event) {
   }
 }
 
-// This function makes a call to the dashboard API to fetch admin dashboard data.
-function getDashBoardApi() {
-  // Get elements to display dashboard data
-  const showName = document.getElementById("adminId");
-  const showCategory = document.getElementById("category");
-  const showLearn = document.getElementById("learnmat");
-  const showSubCategory = document.getElementById("subCat");
-  const showTotalQuiz = document.getElementById("quiz");
-  const showStudent = document.getElementById("student");
-  const getPageSpin = document.querySelector(".pagemodal");
-
-  // Display spinner while fetching data
-  getPageSpin.style.display = "block";
-
-  // Get token from local storage
-  const myToken = localStorage.getItem("admin");
-  const token = JSON.parse(myToken);
-  const getToken = token.token;
-
-  // Set up request headers with token
-  const dashHeader = new Headers();
-  dashHeader.append("Authorization", `Bearer ${getToken}`);
-
-  // Set up fetch request options
-  const dashMethod = {
-    method: "GET",
-    headers: dashHeader,
-  };
-
-  // Define API endpoint URL
-  const url = "https://pluralcodesandbox.com/yorubalearning/api/admin/admin_dashboardapi";
-
-  // Fetch dashboard data from server
-  fetch(url, dashMethod)
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-      // Display dashboard data in respective elements
-      showName.innerHTML = `Welcome ${result.admin_name}`;
-      showCategory.innerHTML = `${result.total_number_of_categories}`;
-      showLearn.innerHTML = `${result.total_number_of_learningmaterial}`;
-      showSubCategory.innerHTML = `${result.total_number_of_subcategories}`;
-      showTotalQuiz.innerHTML = `${result.total_number_of_quize}`;
-      showStudent.innerHTML = `${result.total_number_of_students}`;
-      
-      // Hide spinner after data is fetched
-      getPageSpin.style.display = "none";
-    })
-    .catch((error) => console.log("error", error));
-};
-
 
 
 // Function to navigate to the admin login page
@@ -129,35 +78,3 @@ function logout() {
 
 
 
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the default form submission
-      
-      const formData = {
-        image: document.getElementById('image').value,
-        title: document.getElementById('title').value,
-        author: document.getElementById('author').value,
-        body: document.getElementById('body').value
-      };
-
-      fetch('http://localhost:1600/api/blogs', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(rawData)
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('Success:', data);
-        // Do something with the response data if needed
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        // Handle errors
-      });
-    });

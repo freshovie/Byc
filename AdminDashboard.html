@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | BYC </title>
+    <title>Dashboard | BYC</title>
     <!-- <script src="oauth.js"></script> -->
 
     <link rel="stylesheet" href="./css/sheet.css" />
@@ -25,83 +25,10 @@
   </head>
 
   <body onload="getDashBoardApi(), getAllStudents()">
-    <!-- <div class="pagemodal">
-      <div class="preloader">
-        <svg
-          width="200"
-          height="200"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="xMidYMid"
-          class="lds-ripple"
-          style="background: 0 0"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="4.719"
-            fill="none"
-            stroke="#1d3f72"
-            stroke-width="2"
-          >
-            <animate
-              attributeName="r"
-              calcMode="spline"
-              values="0;40"
-              keyTimes="0;1"
-              dur="3"
-              keySplines="0 0.2 0.8 1"
-              begin="-1.5s"
-              repeatCount="indefinite"
-            />
-            <animate
-              attributeName="opacity"
-              calcMode="spline"
-              values="1;0"
-              keyTimes="0;1"
-              dur="3"
-              keySplines="0.2 0 0.8 1"
-              begin="-1.5s"
-              repeatCount="indefinite"
-            />
-          </circle>
-          <circle
-            cx="50"
-            cy="50"
-            r="27.591"
-            fill="none"
-            stroke="#5699d2"
-            stroke-width="2"
-          >
-            <animate
-              attributeName="r"
-              calcMode="spline"
-              values="0;40"
-              keyTimes="0;1"
-              dur="3"
-              keySplines="0 0.2 0.8 1"
-              begin="0s"
-              repeatCount="indefinite"
-            />
-            <animate
-              attributeName="opacity"
-              calcMode="spline"
-              values="1;0"
-              keyTimes="0;1"
-              dur="3"
-              keySplines="0.2 0 0.8 1"
-              begin="0s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </svg>
-      </div>
-    </div> -->
     <input type="checkbox" id="nav-toggle" />
     <div class="sidebar bg-dark">
       <div class="sidebar-brand">
-        <!-- <img class="uk-margin-small-right in-offset-top-10" src="img/nan.png" alt="wave" width="95" height="50" data-uk-img> -->
-        <img src="./Assets/BYC LOGO JPG FILE 1.png" alt="">
+        <img src="./Assets/BYC LOGO JPG FILE 1.png" alt="" />
       </div>
 
       <div class="sidebar-menu">
@@ -117,22 +44,28 @@
           </li>
           <li>
             <a href="AdminProduct.html" style="text-decoration: none"
-            ><span class="fa-brands fa-product-hunt" style="color: blue"></span
+              ><span
+                class="fa-brands fa-product-hunt"
+                style="color: blue"
+              ></span
               ><span>Products</span></a
-              >
-            </li>
-            <li>
-              <a href="AdminBlog.html" style="text-decoration: none"
+            >
+          </li>
+          <li>
+            <a href="AdminBlog.html" style="text-decoration: none"
               ><span class="fa-solid fa-blog" style="color: blue"></span
-                ><span>Blog</span></a
-                >
-              </li>
-              <li>
-                <a href="AdminOrders.html" style="text-decoration: none"
-                  ><span class="fa-solid fa-grip-horizontal" style="color: blue"></span
-                  ><span>Orders</span></a
-                >
-              </li>
+              ><span>Blog</span></a
+            >
+          </li>
+          <li>
+            <a href="AdminOrders.html" style="text-decoration: none"
+              ><span
+                class="fa-solid fa-grip-horizontal"
+                style="color: blue"
+              ></span
+              ><span>Orders</span></a
+            >
+          </li>
           <li>
             <a href="AdminSettings.html" style="text-decoration: none"
               ><span class="fa-solid fa-gear" style="color: blue"></span
@@ -141,7 +74,10 @@
           </li>
           <li>
             <a onclick="logout()" style="text-decoration: none"
-              ><span class="fa-solid fa-arrow-right-from-bracket"style="color: blue"></span
+              ><span
+                class="fa-solid fa-arrow-right-from-bracket"
+                style="color: blue"
+              ></span
               ><span class="logspan">Logout</span></a
             >
           </li>
@@ -168,6 +104,75 @@
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-1"></div>
             <div class="col-sm-12 col-md-12 col-lg-10">
+              <div class="topshelf">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="cards">
+                      <div class="card bg-info">
+                        <div class="card-body">
+                          <h5 class="card-title">Total Orders</h5>
+                          <h2 class="card-text" style="color: white">1990</h2>
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-outline-secondary"
+                            >
+                              More info
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card bg-primary">
+                        <div class="card-body">
+                          <h5 class="card-title">New Orders</h5>
+                          <h2 class="card-text" style="color: white">10</h2>
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-outline-secondary"
+                            >
+                              More info
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="cards">
+                      <div class="card bg-success">
+                        <div class="card-body">
+                          <h5 class="card-title">Total Users</h5>
+                          <h2 class="card-text" style="color: white">150</h2>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                          >
+                            More info
+                          </button>
+                        </div>
+                      </div>
+                      <div class="card bg-warning">
+                        <div class="card-body">
+                          <h5 class="card-title">New Users</h5>
+                          <h2 class="card-text" style="color: black">10</h2>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-secondary"
+                            style="color: black"
+                          >
+                            More info
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="firstSection">
                 <div class="row">
                   <div class="col-sm-12 col-md-12 col-lg-6">
@@ -192,7 +197,10 @@
                     <div class="container">
                       <p><span class="doller">Total Sales:</span></p>
                       <div>
-                        <canvas id="myPie" class="w-auto align-content-center"></canvas>
+                        <canvas
+                          id="myPie"
+                          class="w-auto align-content-center"
+                        ></canvas>
                       </div>
                     </div>
                   </div>
@@ -261,12 +269,17 @@
                     <div class="container">
                       <div class="card card-body">
                         <h5 class="doller">Total Reports</h5>
-                        <p class="asaba">All periods per 01/01/2022 - 08/28/2023</p>
+                        <p class="asaba">
+                          All periods per 01/01/2022 - 08/28/2023
+                        </p>
                         <div class="posh">
                           <p>Revenue</p>
                           <p>$123,231</p>
                           <div class="posh-inside d-flex">
-                            <i class="fa-solid fa-caret-up" style="color: green"></i>
+                            <i
+                              class="fa-solid fa-caret-up"
+                              style="color: green"
+                            ></i>
                             <p>12.3%</p>
                           </div>
                         </div>
@@ -274,7 +287,10 @@
                           <p>Expenses</p>
                           <p>$132,343</p>
                           <div class="posh-inside d-flex">
-                            <i class="fa-solid fa-caret-up" style="color: green"></i>
+                            <i
+                              class="fa-solid fa-caret-up"
+                              style="color: green"
+                            ></i>
                             <p>25.9%</p>
                           </div>
                         </div>
@@ -282,7 +298,10 @@
                           <p>Profit <span style="opacity: 0">m</span></p>
                           <p>$143,104</p>
                           <div class="posh-inside d-flex">
-                            <i class="fa-solid fa-caret-up" style="color: green"></i>
+                            <i
+                              class="fa-solid fa-caret-up"
+                              style="color: green"
+                            ></i>
                             <p>21.3%</p>
                           </div>
                         </div>
@@ -290,7 +309,10 @@
                           <p>Balance</p>
                           <p>$83,934<span style="opacity: 0">m</span></p>
                           <div class="posh-inside d-flex">
-                            <i class="fa-solid fa-caret-down" style="color: #ef0101"></i>
+                            <i
+                              class="fa-solid fa-caret-down"
+                              style="color: #ef0101"
+                            ></i>
                             <p>-22.3%</p>
                           </div>
                         </div>
@@ -323,6 +345,5 @@
     <script src="index.js"></script>
     <script src="admin.js"></script>
     <!-- <script src="oauth.js"></script> -->
-
   </body>
 </html>

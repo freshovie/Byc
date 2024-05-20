@@ -720,3 +720,31 @@ th {
     -webkit-animation: .75s linear infinite spinner-border;
     animation: .75s linear infinite spinner-border;
 }
+
+.topshelf{
+  margin-bottom: 30px;
+}
+
+.cards{
+  display: flex;
+  width: auto;
+  justify-content: space-evenly;
+  align-items:center;
+  gap: 20px;
+}
+
+.card-body:hover{
+  background-color: transparent;
+}
+.card{
+  width: 100%;
+  border-radius: 10px;
+}
+.card button{
+  color: #fff;
+  border: none;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+}

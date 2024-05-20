@@ -5,25 +5,17 @@ const ctx = document.getElementById("myChart");
 new Chart(ctx, {
   type: "bar",
   data: {
+    // Labels for the x-axis
     labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sept",
-      "Oct",
-      "Nov",
-      "Dec",
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+      "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"
     ],
     datasets: [
+      // Data for the bars
       {
         data: [
-          2000, 1900, 3400, 5000, 2893, 3839, 6980, 3254, 3256, 7654, 12000,
-          15234,
+          2000, 1900, 3400, 5000, 2893, 3839, 
+          6980, 3254, 3256, 7654, 12000, 15234
         ],
         borderWidth: 1,
         label: "Amount of Sales",
@@ -31,6 +23,7 @@ new Chart(ctx, {
     ],
   },
   options: {
+    // Options for the y-axis
     scales: {
       y: {
         beginAtZero: true,
@@ -46,8 +39,10 @@ const pie = document.getElementById("myPie");
 new Chart(pie, {
   type: "pie",
   data: {
+    // Labels for the pie chart
     labels: ["Towels", "Singlets", "Camisole", "Boxers", "Pants", "T-shirts"],
     datasets: [
+      // Data for the pie chart
       {
         data: [2000, 1900, 3400, 5000, 2893, 3839],
         backgroundColor: [
@@ -69,11 +64,12 @@ const doughnutCtx = document.getElementById("myDough");
 const doughnutCtx1 = document.getElementById("myDough1");
 const doughnutCtx2 = document.getElementById("myDough2");
 
-// Initialize the first doughnut chart
+// Initialize the doughnut charts
 new Chart(doughnutCtx, {
   type: "doughnut",
   data: {
     datasets: [
+      // Data for the first doughnut chart
       {
         data: [
           { id: "Sales", nested: { value: 20 } },
@@ -83,8 +79,9 @@ new Chart(doughnutCtx, {
     ],
   },
   options: {
-    circumference: Math.PI * 2, // Adjust the circumference of the chart
-    radius: "40%", // Adjust the radius of the chart
+    // Adjustments for the chart
+    circumference: Math.PI * 2,
+    radius: "40%",
     parsing: {
       key: "nested.value",
     },
@@ -96,6 +93,7 @@ new Chart(doughnutCtx1, {
   type: "doughnut",
   data: {
     datasets: [
+      // Data for the second doughnut chart
       {
         data: [
           { id: "Sales", nested: { value: 1500 } },
@@ -116,6 +114,7 @@ new Chart(doughnutCtx2, {
   type: "doughnut",
   data: {
     datasets: [
+      // Data for the third doughnut chart
       {
         data: [
           { id: "Sales", nested: { value: 1500 } },
